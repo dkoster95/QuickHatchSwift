@@ -3,4 +3,4 @@ language: swift
 os: osx
 xcode_project: QuickHatch.xcodeproj
 xcode_scheme: QuickHatch
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone 8
+xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
