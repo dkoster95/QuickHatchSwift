@@ -1,6 +1,6 @@
-osx_image: xcode11
+osx_image: xcode10.2
 language: swift
 os: osx
 xcode_project: QuickHatch/QuickHatch.xcodeproj
 xcode_scheme: QuickHatch
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
+xcode_destination: platform=iOS Simulator,OS=11.0,name=iPhone X
