@@ -1,9 +1,9 @@
 //
 //  URLSessionDataTaskMock.swift
-//  NetworkingLayerTests
+//  QuickHatchTests
 //
 //  Created by Daniel Koster on 6/5/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

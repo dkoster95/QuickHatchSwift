@@ -1,9 +1,9 @@
 //
 //  LoosyMapper.swift
-//  FordPass
+//  QuickHatch
 //
-//  Created by Bruno Garelli on 9/9/17.
-//  Copyright © 2017 Daniel Koster. All rights reserved.
+//  Created by Daniel Koster on 9/9/17.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

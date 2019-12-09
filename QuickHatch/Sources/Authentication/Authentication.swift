@@ -1,9 +1,9 @@
 //
 //  Authentication.swift
-//  ADP
+//  QuickHatch
 //
 //  Created by Daniel Koster on 9/26/17.
-//  Copyright © 2017 Shri Harsha. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

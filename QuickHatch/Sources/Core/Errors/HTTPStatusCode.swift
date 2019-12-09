@@ -1,9 +1,9 @@
 //
 //  HTTPStatusCode.swift
-//  iDeate
+//  QuickHatch
 //
 //  Created by Daniel Koster on 3/30/17.
-//  Copyright © 2017 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

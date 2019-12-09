@@ -3,39 +3,39 @@
 //  NetworkingLayerTests
 //
 //  Created by Daniel Koster on 8/6/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import XCTest
 import QuickHatch
 
-class HTTPCommandTests: XCTestCase {
+class HTTPCommandTests: CommandTestBase {
     
     let trafficController = StaticTrafficController()
     
-    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
-        return HTTPURLResponse(url: URL(string:"www.google.com")!,
-                               statusCode: statusCode,
-                               httpVersion: "1.1",
-                               headerFields: nil)!
-    }
-    
-    var getDataModelSample: Data {
-        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
-        return try! JSONEncoder().encode(dataModel)
-    }
-    
-    var getArrayModelSample: Data {
-        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
-        let dataModel2 = DataModel(name: "dani", nick: "sp1", age: 13)
-        let array = [dataModel,dataModel2]
-        return try! JSONEncoder().encode(array)
-    }
-    
-    private func buildRequest() -> URLRequest {
-        return try! URLRequest.get(url: URL(fileURLWithPath: ""),
-                              encoding: URLEncoding.default)
-    }
+//    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
+//        return HTTPURLResponse(url: URL(string:"www.google.com")!,
+//                               statusCode: statusCode,
+//                               httpVersion: "1.1",
+//                               headerFields: nil)!
+//    }
+//
+//    var getDataModelSample: Data {
+//        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
+//        return try! JSONEncoder().encode(dataModel)
+//    }
+//
+//    var getArrayModelSample: Data {
+//        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
+//        let dataModel2 = DataModel(name: "dani", nick: "sp1", age: 13)
+//        let array = [dataModel,dataModel2]
+//        return try! JSONEncoder().encode(array)
+//    }
+//
+//    private func buildRequest() -> URLRequest {
+//        return try! URLRequest.get(url: URL(fileURLWithPath: ""),
+//                              encoding: URLEncoding.default)
+//    }
     
     func testCommandFailureUnauthorized() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
@@ -43,8 +43,7 @@ class HTTPCommandTests: XCTestCase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler {
-            (result: Result<DataModel, Error>) in
+            .completionHandler { (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
                 XCTAssert(false)
@@ -82,7 +81,7 @@ class HTTPCommandTests: XCTestCase {
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .completionHandler {
-            (result: Result<DataModel, Error>) in
+            (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
                 XCTAssert(false)
@@ -101,7 +100,7 @@ class HTTPCommandTests: XCTestCase {
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .completionHandler {
-            (result: Result<DataModel, Error>) in
+                (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
                 XCTAssert(false)
@@ -120,7 +119,7 @@ class HTTPCommandTests: XCTestCase {
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .completionHandler {
-            (result: Result<DataModel, Error>) in
+            (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
                 XCTAssert(false)

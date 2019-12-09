@@ -17,6 +17,13 @@
 		7F0C92D823072F16002E103E /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2722FBB84B0083BD1D /* URLSessionDataTaskMock.swift */; };
 		7F0C92D923072F16002E103E /* MockAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4C62303324400E731FA /* MockAuthentication.swift */; };
 		7F0C92DA23072F16002E103E /* MockServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4CF23034B0D00E731FA /* MockServerEnvironmentConfiguration.swift */; };
+		7F473F452350FCF400175CB8 /* ErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F442350FCF400175CB8 /* ErrorsTests.swift */; };
+		7F473F47235101EB00175CB8 /* URLSessionLayer+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */; };
+		7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */; };
+		7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */; };
+		7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */; };
+		7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F63235796DC00175CB8 /* CommandTestBase.swift */; };
+		7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */; };
 		7F65D57222FDBFEB00FA1762 /* QuickHatch_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */; };
 		7F65D57722FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D57622FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift */; };
 		7F65D57922FDBFEB00FA1762 /* QuickHatch_Alamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +31,7 @@
 		7F65D58522FDC02E00FA1762 /* AlamofireRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D58322FDC02D00FA1762 /* AlamofireRequest+Additions.swift */; };
 		7F65D58822FDC1B500FA1762 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65D58722FDC1B500FA1762 /* Alamofire.framework */; };
 		7F65D64122FDE59300FA1762 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
+		7F698C5A235A406F00978721 /* URLSessionLayer+ObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */; };
 		7F6E7CD822FBB81B0083BD1D /* QuickHatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6E7CCE22FBB81B0083BD1D /* QuickHatch.framework */; };
 		7F6E7CDD22FBB81B0083BD1D /* QuickHatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7CDC22FBB81B0083BD1D /* QuickHatchTests.swift */; };
 		7F6E7CDF22FBB81B0083BD1D /* QuickHatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F6E7CD122FBB81B0083BD1D /* QuickHatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +107,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F473F442350FCF400175CB8 /* ErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsTests.swift; sourceTree = "<group>"; };
+		7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+StringTests.swift"; sourceTree = "<group>"; };
+		7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionLayerBase.swift; sourceTree = "<group>"; };
+		7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+JSONTests.swift"; sourceTree = "<group>"; };
+		7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandAuthRefresherTests.swift; sourceTree = "<group>"; };
+		7F473F63235796DC00175CB8 /* CommandTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTestBase.swift; sourceTree = "<group>"; };
+		7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationRefresher.swift; sourceTree = "<group>"; };
 		7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch_Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickHatch_Alamofire.h; sourceTree = "<group>"; };
 		7F65D56C22FDBFEB00FA1762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +124,7 @@
 		7F65D58322FDC02D00FA1762 /* AlamofireRequest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlamofireRequest+Additions.swift"; sourceTree = "<group>"; };
 		7F65D58722FDC1B500FA1762 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7F65D64022FDE59300FA1762 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+ObjectTests.swift"; sourceTree = "<group>"; };
 		7F6E7CCE22FBB81B0083BD1D /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6E7CD122FBB81B0083BD1D /* QuickHatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickHatch.h; sourceTree = "<group>"; };
 		7F6E7CD222FBB81B0083BD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +247,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F698C57235A342C00978721 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F6E7D6E22FBBC010083BD1D /* Errors */,
+				7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */,
+				7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */,
+				7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */,
+				7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */,
+				7F6E7D8322FBBC010083BD1D /* URLSessionNetworking */,
+				7F6E7D7D22FBBC010083BD1D /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		7F6E7CC422FBB81B0083BD1D = {
 			isa = PBXGroup;
 			children = (
@@ -259,17 +289,11 @@
 			children = (
 				7F6E7D7222FBBC010083BD1D /* Authentication */,
 				7F6E7D7A22FBBC010083BD1D /* Command */,
-				7F6E7D6E22FBBC010083BD1D /* Errors */,
+				7F698C57235A342C00978721 /* Core */,
+				7F6E7CD222FBB81B0083BD1D /* Info.plist */,
 				7F6E7D7622FBBC010083BD1D /* Mapper */,
 				7F6E7D8B22FBBC010083BD1D /* Network Settings */,
-				7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */,
-				7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */,
-				7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */,
-				7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */,
-				7F6E7D8322FBBC010083BD1D /* URLSessionNetworking */,
-				7F6E7D7D22FBBC010083BD1D /* Utils */,
 				7F6E7CD122FBB81B0083BD1D /* QuickHatch.h */,
-				7F6E7CD222FBB81B0083BD1D /* Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -298,6 +322,7 @@
 				7F6E7D2722FBB84B0083BD1D /* URLSessionDataTaskMock.swift */,
 				7FFCD4C62303324400E731FA /* MockAuthentication.swift */,
 				7FFCD4CF23034B0D00E731FA /* MockServerEnvironmentConfiguration.swift */,
+				7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -309,6 +334,10 @@
 				7F6E7D2A22FBB84B0083BD1D /* swifticon.png */,
 				7F6E7D2B22FBB84B0083BD1D /* URLSessionLayer+ImageTests.swift */,
 				7FFCD4ED2305FA5A00E731FA /* URLSessionDataTasksTests.swift */,
+				7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */,
+				7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */,
+				7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */,
+				7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */,
 			);
 			path = URLSessionLayerTests;
 			sourceTree = "<group>";
@@ -319,6 +348,8 @@
 				7F6E7D2D22FBB84B0083BD1D /* HTTPCommandTests.swift */,
 				7FFCD4D12303524000E731FA /* TrafficControllerTests.swift */,
 				7FFCD4E62305DCC300E731FA /* HTTPCommandSuccessCasesTests.swift */,
+				7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */,
+				7F473F63235796DC00175CB8 /* CommandTestBase.swift */,
 			);
 			path = CommandTests;
 			sourceTree = "<group>";
@@ -353,9 +384,9 @@
 		7F6E7D7A22FBBC010083BD1D /* Command */ = {
 			isa = PBXGroup;
 			children = (
+				7F65D64022FDE59300FA1762 /* Command.swift */,
 				7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */,
 				7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */,
-				7F65D64022FDE59300FA1762 /* Command.swift */,
 			);
 			path = Command;
 			sourceTree = "<group>";
@@ -364,10 +395,10 @@
 			isa = PBXGroup;
 			children = (
 				7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */,
-				7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */,
 				7F6E7D8022FBBC010083BD1D /* Logger.swift */,
 				7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */,
 				7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */,
+				7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -375,10 +406,10 @@
 		7F6E7D8322FBBC010083BD1D /* URLSessionNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */,
-				7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */,
 				7F6E7D8622FBBC010083BD1D /* Headers.swift */,
+				7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */,
 				7F6E7D8722FBBC010083BD1D /* ParameterEncoding */,
+				7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */,
 			);
 			path = URLSessionNetworking;
 			sourceTree = "<group>";
@@ -445,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				7F6E7D2422FBB84B0083BD1D /* Mocks */,
+				7F473F442350FCF400175CB8 /* ErrorsTests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -554,7 +586,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Daniel Koster";
+				ORGANIZATIONNAME = "DaVinci Labs";
 				TargetAttributes = {
 					7F65D56822FDBFEB00FA1762 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -729,9 +761,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F473F452350FCF400175CB8 /* ErrorsTests.swift in Sources */,
 				7F0C92D223072F15002E103E /* URLSessionMock.swift in Sources */,
 				7FFCD4E72305DCC300E731FA /* HTTPCommandSuccessCasesTests.swift in Sources */,
 				7FFCD4C523030ED700E731FA /* URLRequest+MethodTests.swift in Sources */,
+				7F473F47235101EB00175CB8 /* URLSessionLayer+StringTests.swift in Sources */,
 				7F0C92D423072F15002E103E /* MockAuthentication.swift in Sources */,
 				7F6E7D3422FBB84B0083BD1D /* URLSessionLayer+ImageTests.swift in Sources */,
 				7F0C92D123072F15002E103E /* MockDataModel.swift in Sources */,
@@ -739,15 +773,21 @@
 				7F0C92D523072F15002E103E /* MockServerEnvironmentConfiguration.swift in Sources */,
 				7F6E7D3222FBB84B0083BD1D /* URLSessionLayerTests.swift in Sources */,
 				7F6E7D3522FBB84B0083BD1D /* HTTPCommandTests.swift in Sources */,
+				7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */,
+				7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */,
+				7F698C5A235A406F00978721 /* URLSessionLayer+ObjectTests.swift in Sources */,
 				7FFCD4D22303524000E731FA /* TrafficControllerTests.swift in Sources */,
 				7FFCD4E32304962B00E731FA /* StringEncodingTests.swift in Sources */,
 				7F6E7CDD22FBB81B0083BD1D /* QuickHatchTests.swift in Sources */,
 				7FFCD4E52304A16300E731FA /* EncodingHelpersTests.swift in Sources */,
+				7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */,
 				7FFCD4EA2305F5DB00E731FA /* DataTest.swift in Sources */,
+				7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */,
 				7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */,
 				7FFCD4CE230349E300E731FA /* NetworkSettingsTests.swift in Sources */,
 				7FFCD4EC2305F6B000E731FA /* LoosyMapperTests.swift in Sources */,
 				7FFCD4CB230344B200E731FA /* URLRequest+AdditionTests.swift in Sources */,
+				7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,9 @@
 //
 //  GenericAPI.swift
-//  Watch-iOS
+//  QuickHatch
 //
-//  Created by common on 9/6/18.
-//  Copyright © 2018 Ford Motor Company. All rights reserved.
+//  Created by Daniel Koster on 9/6/18.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

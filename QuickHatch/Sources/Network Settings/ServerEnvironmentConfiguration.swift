@@ -1,9 +1,9 @@
 //
 //  EnvironmentFactory.swift
-//  Watch
+//  QuickHatch
 //
-//  Created by fordpass on 01/04/2019.
-//  Copyright © 2019 Ford Motor Company. All rights reserved.
+//  Created by QuickHatch on 01/04/2019.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation
@@ -22,8 +22,10 @@ public enum Environment: String {
     case qa = "QA"
     case staging = "Staging"
     case production = "Prod"
-    
-    public func getCurrentEnvironment(server: ServerEnvironmentConfiguration) -> HostEnvironment {
+}
+
+public extension Environment {
+    func getCurrentEnvironment(server: ServerEnvironmentConfiguration) -> HostEnvironment {
         switch self {
         case .qa:
             return server.qa

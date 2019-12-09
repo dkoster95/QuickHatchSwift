@@ -1,9 +1,9 @@
 //
 //  NSObject+Extension.swift
-//  fordpass-watch-na Extension
+//  QuickHatch
 //
-//  Created by Common on 2/22/18.
-//  Copyright © 2018 Ford. All rights reserved.
+//  Created by Daniel Koster on 2/22/18.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

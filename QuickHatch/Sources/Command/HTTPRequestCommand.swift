@@ -1,9 +1,9 @@
 //
 //  HTTPRequestCommand.swift
-//  NetworkingLayer
+//  QuickHatch
 //
 //  Created by Daniel Koster on 8/6/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation
@@ -14,6 +14,7 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
     private var networkFactory: NetworkRequestFactory
     private var authentication: Authentication?
     private var request: Request?
+    private var authenticationRefresher: RefreshableAuthentication?
     
     
     public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory) {
@@ -32,6 +33,12 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
         urlRequest = authentication.authorize(request: urlRequest) 
         return self
     }
+    
+//    public override func refresh(authenticationRefresher: RefreshableAuthentication) -> Command<T> {
+//        self.authenticationRefresher = authenticationRefresher
+//        log?.info("AuthenticationRefresher set")
+//        return self
+//    }
     
     public override func execute() {
         setupTrafficController()
@@ -57,7 +64,7 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
     
     private func setupArrayHandler() {
         if let arrayHandler = self.arrayHandler {
-            request = networkFactory.array(request: urlRequest,dispatchQueue: resultsQueue) { [weak self] (result: Result<[T], Error>) in
+            request = networkFactory.array(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<Response<Array<T>>, Error>) in
                 guard let self = self else { return }
                 self.resetTraffic()
                 arrayHandler(result)
@@ -65,12 +72,12 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
             return
         }
         if let handleResults = self.results {
-            request = networkFactory.array(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<[T], Error>) in
+            request = networkFactory.array(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<Response<Array<T>>, Error>) in
                 guard let self = self else { return }
                 self.resetTraffic()
                 switch result {
-                case .success(let array):
-                    handleResults(array)
+                case .success(let arrayResponse):
+                    handleResults(arrayResponse.data)
                 case .failure(let error):
                     self.handleError?(error)
                 }
@@ -80,7 +87,7 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
     
     private func setupObjectHandler() {
         if let handler = self.handler {
-            request = networkFactory.object(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<T, Error>) in
+            request = networkFactory.object(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<Response<T>, Error>) in
                 guard let self = self else { return }
                 self.resetTraffic()
                 handler(result)
@@ -88,18 +95,31 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
             return
         }
         if let handleResult = self.result {
-            request = networkFactory.object(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<T, Error>) in
+            request = networkFactory.object(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<Response<T>, Error>) in
                 guard let self = self else { return }
                 self.resetTraffic()
                 switch result {
                 case .success(let object):
-                    handleResult(object)
+                    handleResult(object.data)
                 case .failure(let error):
                     self.handleError?(error)
                 }
             }
         }
     }
+    
+//    private func refreshAuthenticationHandler(error: Error) {
+//        if error.isUnauthorized, let refresher = authenticationRefresher {
+//            refresher.refresh(params: [:]) { result in
+//                switch result {
+//                case .success(_ ):
+//                    self.execute()
+//                case .failure(let error):
+//                    self.log?.error("Refresh AuthenticationFailed with error \(error)")
+//                }
+//            }
+//        }
+//    }
     
     public override func cancel() {
         request?.cancel()

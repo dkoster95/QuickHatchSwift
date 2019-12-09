@@ -3,7 +3,7 @@
 //  QuickHatch
 //
 //  Created by Daniel Koster on 8/13/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 @testable import QuickHatch
@@ -22,7 +22,6 @@ class URLRequest_AdditionTests: XCTestCase {
         XCTAssertTrue(request.allHTTPHeaderFields!["Framework"] == "quickhatch")
         XCTAssertTrue(request.allHTTPHeaderFields!["Accept-Encoding"] == "gzip;q=1.0, compress;q=0.5")
         XCTAssertTrue(request.allHTTPHeaderFields!["Accept-Language"] == "en;q=1.0")
-        XCTAssertTrue(request.allHTTPHeaderFields!["User-Agent"] == "Unknown/Unknown (com.apple.dt.xctest.tool; build:14490.71; iOS 12.2.0)")
     }
     
     func testAuthenticate() {

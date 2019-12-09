@@ -3,7 +3,7 @@
 //  QuickHatch
 //
 //  Created by Daniel Koster on 8/9/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation
@@ -15,8 +15,8 @@ public protocol CommandType {
 
 public class Command<T>: CommandType {
     
-    private(set) var handler: ((Result<T, Error>) -> Void)?
-    private(set) var arrayHandler: ((Result<[T], Error>) -> Void)?
+    private(set) var handler: ((Result<Response<T>, Error>) -> Void)?
+    private(set) var arrayHandler: ((Result<Response<Array<T>>, Error>) -> Void)?
     private(set) var handleError: ((Error) -> Void)?
     private(set) var results: (([T]) -> Void)?
     private(set) var result: ((T) -> Void)?
@@ -34,6 +34,10 @@ public class Command<T>: CommandType {
         return self
     }
     
+//    public func refresh(authenticationRefresher: RefreshableAuthentication) -> Command<T> {
+//        return self
+//    }
+    
     public func manageTraffic(with: CommandTrafficController, and key: String) -> Command<T> {
         self.trafficController = with
         self.key = key
@@ -45,13 +49,13 @@ public class Command<T>: CommandType {
         return self
     }
     
-    public func completionHandler(handler: @escaping (Result<T,Error>) -> Void) -> Command<T> {
+    public func completionHandler(handler: @escaping (Result<Response<T>, Error>) -> Void) -> Command<T> {
         self.handler = handler
         arrayHandler = nil
         return self
     }
     
-    public func completionHandler(handler: @escaping (Result<[T],Error>) -> Void) -> Command<T> {
+    public func completionHandler(handler: @escaping (Result<Response<Array<T>>,Error>) -> Void) -> Command<T> {
         self.arrayHandler = handler
         self.handler = nil
         return self
@@ -80,5 +84,13 @@ public class Command<T>: CommandType {
     
     public func cancel() {
         
+    }
+    
+    public func map<NewValue>(_ transform: (Command<T>) -> NewValue) -> NewValue {
+        return transform(self)
+    }
+    
+    public func flatMap<NewType>(_ transform: (Command<T>) -> Command<NewType>) -> Command<NewType> {
+        return transform(self)
     }
 }

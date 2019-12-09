@@ -3,26 +3,26 @@
 //  NetworkingLayerTests
 //
 //  Created by Daniel Koster on 6/10/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import XCTest
 import QuickHatch
 
-class URLSessionLayer_ImageTests: XCTestCase {
+class URLSessionLayer_ImageTests: URLSessionLayerBase {
 
     
-    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
-        return HTTPURLResponse(url: URL(string:"www.google.com")!,
-                               statusCode: statusCode,
-                               httpVersion: "1.1",
-                               headerFields: nil)!
-    }
+//    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
+//        return HTTPURLResponse(url: URL(string:"www.google.com")!,
+//                               statusCode: statusCode,
+//                               httpVersion: "1.1",
+//                               headerFields: nil)!
+//    }
     
-    fileprivate var getDataModelSample: Data {
-        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
-        return try! JSONEncoder().encode(dataModel)
-    }
+//    fileprivate var getDataModelSample: Data {
+//        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
+//        return try! JSONEncoder().encode(dataModel)
+//    }
     
     fileprivate var imageData: Data {
         let bundle = Bundle.init(for: URLSessionLayer_ImageTests.self)

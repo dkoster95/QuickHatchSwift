@@ -1,9 +1,9 @@
 //
 //  NetworkEnvironment.swift
-//  Watch-iOS
+//  QuickHatch
 //
-//  Created by fordpass on 05/03/2019.
-//  Copyright © 2019 Ford Motor Company. All rights reserved.
+//  Created by QuickHatch on 05/03/2019.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation

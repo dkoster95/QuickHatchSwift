@@ -1,9 +1,9 @@
 //
 //  NetworkingLayer.swift
-//  FordPass
+//  QuickHatch
 //
 //  Created by Daniel Koster on 10/25/17.
-//  Copyright © 2017 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation
@@ -14,9 +14,14 @@ public protocol Request {
     func cancel()
 }
 
-public typealias DataCompletionHandler = (Result<Data, Error>) -> Void
-public typealias StringCompletionHandler = (Result<String, Error>) -> Void
-public typealias AnyCompletionHandler = (Result<Any, Error>) -> Void
+public struct Response<Value> {
+    public var data: Value
+    public var httpResponse: URLResponse
+}
+
+public typealias DataCompletionHandler = (Result<Response<Data>, Error>) -> Void
+public typealias StringCompletionHandler = (Result<Response<String>, Error>) -> Void
+public typealias AnyCompletionHandler = (Result<Response<Any>, Error>) -> Void
 
 
 public protocol NetworkRequestFactory {

@@ -1,9 +1,9 @@
 //
 //  URLSessionDataTask+Additions.swift
-//  NetworkingLayer
+//  QuickHatch
 //
 //  Created by Daniel Koster on 6/3/19.
-//  Copyright © 2019 Daniel Koster. All rights reserved.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
 import Foundation
