@@ -1,6 +1,6 @@
 
 
-## 🌐QuickHatch🌐
+## 🌐 QuickHatch 🌐
 - **Use an abstract networking layer**
 - **Use a functional module for your requests**
 - **91.3 % Test coverage**
