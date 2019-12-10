@@ -11,7 +11,7 @@
 
 - **NetworkRequestFactory protocol**:
 	- [QuickHatch implementation](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/GettingStarted.md)
-	- Codable extensions
+	- [Codable extensions](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CodableExtensions.md)
 	- Image extension
 	- Data, String, JSON responses
 	- Dispatcher extension
