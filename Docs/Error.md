@@ -13,7 +13,7 @@ public enum RequestError: Error, Equatable {
     case malformedRequest
 }	
 ```
-Now if we want to check what error it is..
+Now if we want to check what error is..
 ```swift
 import QuickHatch
 
