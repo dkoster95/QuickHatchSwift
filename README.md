@@ -40,7 +40,7 @@
 
 ## Requirements
 
-- iOS 11.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
+- iOS 11.0+ 
 - Xcode 10.2+
 - Swift 5+
 
@@ -78,16 +78,7 @@ No Package manager? no problem, you can use QuickHatch as a git submodule
     > It should appear nested underneath your application's blue project icon. Whether it is above or below all the other Xcode groups does not matter.
 
 - Select the `QuickHatch.xcodeproj` in the Project Navigator and verify the deployment target matches that of your application target.
-- Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
-- In the tab bar at the top of that window, open the "General" panel.
-- Click on the `+` button under the "Embedded Binaries" section.
-- You will see two different `QuickHatch.xcodeproj` folders each with two different versions of the `QuickHatch.framework` nested inside a `Products` folder.
 
-    > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `QuickHatch.framework`.
-
-- Select the top `QuickHatch.framework` for iOS and the bottom one for macOS.
-
-    > You can verify which one you selected by inspecting the build log for your project. The build target for `QuickHatch` will be listed as either `QuickHatch iOS`, `QuickHatch macOS`, `QuickHatch tvOS` or `QuickHatch watchOS`.
 
 - And that's it!
 ---
