@@ -16,7 +16,7 @@
 	- [Image extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/ImageExtension.md)
 	- [Data, String, JSON responses](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Responses.md)
 	- [Dispatcher extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/DispatcherExtension.md)
-	- Errors
+	- [Errors](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Error.md)
 - **URLRequest Additions**:
 	- Methods oriented
 	- Headers
