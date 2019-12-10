@@ -27,7 +27,7 @@ class LoginViewPresenter {
 
     func login(user: String, password: String) {
         let request = URLRequest("getimage.com/user=\(user)&password=\(password)")
-        networkRequestFactory.data(urlRequest: request) { result in
+        networkRequestFactory.data(request: request) { result in
         switch result {
             case .success(let response):
                 // show error messsage
