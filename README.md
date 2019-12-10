@@ -10,7 +10,7 @@
 ## Features
 
 - **NetworkRequestFactory protocol**:
-	- QuickHatch implementation
+	- [QuickHatch implementation](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/GettingStarted.md)
 	- Codable extensions
 	- Image extension
 	- Data, String, JSON responses
