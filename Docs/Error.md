@@ -44,4 +44,4 @@ class LoginViewPresenter {
     }
 }	
 ```
-In this sample we are checking wether the error is unauthorized type or not.
+In this sample we are checking whether the error is unauthorized type or not.
