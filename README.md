@@ -19,7 +19,6 @@
 	- [Errors](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Error.md)
 - **URLRequest Additions**:
 	- [Methods oriented](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLRequestExtension.md)
-	- Headers
 - **Parameter Encoding**
 	- URLEncoding
 	- JSONEncoding
