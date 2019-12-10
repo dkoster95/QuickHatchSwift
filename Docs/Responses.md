@@ -54,7 +54,7 @@ class LoginViewPresenter {
 
     func login(user: String, password: String) {
         let request = URLRequest("getimage.com/user=\(user)&password=\(password)")
-        networkRequestFactory.data(urlRequest: request) { result in
+        networkRequestFactory.data(request: request) { result in
         switch result {
             case .success(let response):
                 // show error messsage
@@ -81,7 +81,7 @@ class LoginViewPresenter {
 
     func login(user: String, password: String) {
         let request = URLRequest("getimage.com/user=\(user)&password=\(password)")
-        networkRequestFactory.string(urlRequest: request) { result in
+        networkRequestFactory.string(request: request) { result in
         switch result {
             case .success(let response):
                 // show error messsage
@@ -109,7 +109,7 @@ class LoginViewPresenter {
 
     func login(user: String, password: String) {
         let request = URLRequest("getimage.com/user=\(user)&password=\(password)")
-        networkRequestFactory.json(urlRequest: request) { result in
+        networkRequestFactory.json(request: request) { result in
         switch result {
             case .success(let response):
                 // show error messsage
