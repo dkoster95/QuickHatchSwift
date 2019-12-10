@@ -18,7 +18,7 @@
 	- [Dispatcher extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/DispatcherExtension.md)
 	- [Errors](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Error.md)
 - **URLRequest Additions**:
-	- Methods oriented
+	- [Methods oriented](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLRequestExtension.md)
 	- Headers
 - **Parameter Encoding**
 	- URLEncoding
