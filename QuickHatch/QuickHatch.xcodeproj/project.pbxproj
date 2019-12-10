@@ -255,7 +255,8 @@
 				7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */,
 				7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */,
 				7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */,
-				7F6E7D8322FBBC010083BD1D /* URLSessionNetworking */,
+				7F6E7D8722FBBC010083BD1D /* ParameterEncoding */,
+				7F6E7D8322FBBC010083BD1D /* QuickHatchNetworking */,
 				7F6E7D7D22FBBC010083BD1D /* Utils */,
 			);
 			path = Core;
@@ -403,15 +404,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		7F6E7D8322FBBC010083BD1D /* URLSessionNetworking */ = {
+		7F6E7D8322FBBC010083BD1D /* QuickHatchNetworking */ = {
 			isa = PBXGroup;
 			children = (
 				7F6E7D8622FBBC010083BD1D /* Headers.swift */,
 				7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */,
-				7F6E7D8722FBBC010083BD1D /* ParameterEncoding */,
 				7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */,
 			);
-			path = URLSessionNetworking;
+			path = QuickHatchNetworking;
 			sourceTree = "<group>";
 		};
 		7F6E7D8722FBBC010083BD1D /* ParameterEncoding */ = {
