@@ -62,10 +62,10 @@ public protocol GenericAPI {
          var qa: HostEnvironment { 
              return GenericHostEnvironment(headers: headers, baseURL: "quickhatch-qa.com")
           }
-        var staging: HostEnvironment { 
+         var staging: HostEnvironment { 
             return GenericHostEnvironment(headers: headers, baseURL: "quickhatch-stg.com")
-        }
-        var production: HostEnvironment { 
+         }
+         var production: HostEnvironment { 
             return GenericHostEnvironment(headers: headers, baseURL: "quickhatch-prod.com")
          }
      }
