@@ -20,7 +20,7 @@
 - **URLRequest Additions**:
 	- [Methods oriented](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLRequestExtension.md)
 - **Parameter Encoding**
-	- URLEncoding
+	- [URLEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLEncoding.md)
 	- JSONEncoding
 	- StringEncoding
 - **Host Environment protocol sample**
