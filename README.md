@@ -21,7 +21,7 @@
 	- [Methods oriented](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLRequestExtension.md)
 - **Parameter Encoding**
 	- [URLEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLEncoding.md)
-	- JSONEncoding
+	- [JSONEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/JSONEncoding.md)
 	- StringEncoding
 - **Host Environment protocol sample**
 - **Authentication protocol**
