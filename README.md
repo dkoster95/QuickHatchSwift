@@ -24,6 +24,7 @@
 	- [JSONEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/JSONEncoding.md)
 	- [StringEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/StringEncoding.md)
 - **Host Environment protocol sample**
+	- [Index](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/HostEnvironment.md)
 - **Authentication protocol**
 	- Index
 
