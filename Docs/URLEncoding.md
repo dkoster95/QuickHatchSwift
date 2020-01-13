@@ -1,9 +1,9 @@
-## **Url parameter Encoding**
-- Another important feature of the framework is the **parameter encoding** for a URLRequest
+## **Url Parameter Encoding**
+- Another important feature of the framework is the **parameter encoding** for a URLRequest.
 
 
 Here you see the parameter encoding protocol, simple right ?
-the framework provides 3 implementations for this protocol URL, JSON and String encodings but you can create your own implementation and then inject it into the URLRequest initializer.
+the framework provides 3 implementations for this protocol: URL, JSON and String encoders but you can create your own implementation and then inject it into the URLRequest initializer.
 
 ```swift
 public protocol ParameterEncoding {
@@ -11,7 +11,7 @@ public protocol ParameterEncoding {
 }
 ```
 
-The Url encoding will encode the parameters in the url of the request or in the body depending the destination you choose.
+The **Url encoding** will escape and encode the parameters in the url of the request or in the body depending the destination you choose.
 
 If you choose the body for a post request the property httpBody of the URLRequest will look like this:
 params: name and password
