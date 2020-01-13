@@ -22,10 +22,10 @@
 - **Parameter Encoding**
 	- [URLEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/URLEncoding.md)
 	- [JSONEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/JSONEncoding.md)
-	- StringEncoding
+	- [StringEncoding](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/StringEncoding.md)
 - **Host Environment protocol sample**
 - **Authentication protocol**
-
+	- Index
 
 - **Command Module (functional)**
 	- Build request
