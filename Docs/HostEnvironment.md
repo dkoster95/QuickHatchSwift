@@ -13,7 +13,7 @@ public protocol HostEnvironment {
 
   This is the base protocol for a Host, baseURL and headers.
   
-  For a sofisticated implementation we have the next protocols:
+  For a sophisticated implementation we have the next protocols:
    ```swift
   public protocol ServerEnvironmentConfiguration: Any {
     var headers: [String: String] { get }
