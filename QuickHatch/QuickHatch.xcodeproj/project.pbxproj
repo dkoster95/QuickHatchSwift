@@ -26,99 +26,6 @@
 		7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */; };
 		7F58FAC223D21C160062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
 		7F58FAC423D21F780062CFCD /* TrafficControllerMultiSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC323D21F780062CFCD /* TrafficControllerMultiSetTests.swift */; };
-		7F58FADC23D23A770062CFCD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
-		7F58FADD23D23A770062CFCD /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
-		7F58FADE23D23A770062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
-		7F58FADF23D23A770062CFCD /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
-		7F58FAE023D23A770062CFCD /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
-		7F58FAE123D23A770062CFCD /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
-		7F58FAE223D23A770062CFCD /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
-		7F58FAE323D23A770062CFCD /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
-		7F58FAE423D23A770062CFCD /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
-		7F58FAE523D23A770062CFCD /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
-		7F58FAE623D23A770062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
-		7F58FAE723D23A770062CFCD /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
-		7F58FAE823D23A770062CFCD /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
-		7F58FAE923D23A770062CFCD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
-		7F58FAEA23D23A770062CFCD /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
-		7F58FAEB23D23A770062CFCD /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
-		7F58FAEC23D23A770062CFCD /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
-		7F58FAED23D23A770062CFCD /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
-		7F58FAEE23D23A770062CFCD /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
-		7F58FAEF23D23A770062CFCD /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
-		7F58FAF023D23A770062CFCD /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
-		7F58FAF123D23A770062CFCD /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
-		7F58FAF223D23A770062CFCD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
-		7F58FAF323D23A770062CFCD /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
-		7F58FAF423D23A770062CFCD /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
-		7F58FAF523D23A770062CFCD /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
-		7F58FAF623D23A770062CFCD /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
-		7F58FAF823D23A780062CFCD /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
-		7F58FAF923D23A780062CFCD /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
-		7F58FAFA23D23A780062CFCD /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
-		7F58FAFB23D23A780062CFCD /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
-		7F58FB0923D23AEF0062CFCD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
-		7F58FB0A23D23AEF0062CFCD /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
-		7F58FB0B23D23AEF0062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
-		7F58FB0C23D23AEF0062CFCD /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
-		7F58FB0D23D23AEF0062CFCD /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
-		7F58FB0E23D23AEF0062CFCD /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
-		7F58FB0F23D23AEF0062CFCD /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
-		7F58FB1023D23AEF0062CFCD /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
-		7F58FB1123D23AEF0062CFCD /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
-		7F58FB1223D23AEF0062CFCD /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
-		7F58FB1323D23AF00062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
-		7F58FB1423D23AF00062CFCD /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
-		7F58FB1523D23AF00062CFCD /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
-		7F58FB1623D23AF00062CFCD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
-		7F58FB1723D23AF00062CFCD /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
-		7F58FB1823D23AF00062CFCD /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
-		7F58FB1923D23AF00062CFCD /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
-		7F58FB1A23D23AF00062CFCD /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
-		7F58FB1B23D23AF00062CFCD /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
-		7F58FB1C23D23AF00062CFCD /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
-		7F58FB1D23D23AF00062CFCD /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
-		7F58FB1E23D23AF00062CFCD /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
-		7F58FB1F23D23AF00062CFCD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
-		7F58FB2023D23AF00062CFCD /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
-		7F58FB2123D23AF00062CFCD /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
-		7F58FB2223D23AF00062CFCD /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
-		7F58FB2323D23AF00062CFCD /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
-		7F58FB2423D23AF00062CFCD /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
-		7F58FB2523D23AF00062CFCD /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
-		7F58FB2623D23AF00062CFCD /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
-		7F58FB2723D23AF00062CFCD /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
-		7F58FB3523D23EF40062CFCD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
-		7F58FB3623D23EF40062CFCD /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
-		7F58FB3723D23EF40062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
-		7F58FB3823D23EF40062CFCD /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
-		7F58FB3923D23EF40062CFCD /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
-		7F58FB3A23D23EF40062CFCD /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
-		7F58FB3B23D23EF40062CFCD /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
-		7F58FB3C23D23EF40062CFCD /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
-		7F58FB3D23D23EF40062CFCD /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
-		7F58FB3E23D23EF40062CFCD /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
-		7F58FB3F23D23EF40062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
-		7F58FB4023D23EF40062CFCD /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
-		7F58FB4123D23EF40062CFCD /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
-		7F58FB4223D23EF40062CFCD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
-		7F58FB4323D23EF40062CFCD /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
-		7F58FB4423D23EF40062CFCD /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
-		7F58FB4523D23EF40062CFCD /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
-		7F58FB4623D23EF40062CFCD /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
-		7F58FB4723D23EF40062CFCD /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
-		7F58FB4823D23EF40062CFCD /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
-		7F58FB4923D23EF40062CFCD /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
-		7F58FB4A23D23EF40062CFCD /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
-		7F58FB4B23D23EF40062CFCD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
-		7F58FB4C23D23EF40062CFCD /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
-		7F58FB4D23D23EF40062CFCD /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
-		7F58FB4E23D23EF40062CFCD /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
-		7F58FB4F23D23EF50062CFCD /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
-		7F58FB5023D23EF50062CFCD /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
-		7F58FB5123D23EF50062CFCD /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
-		7F58FB5223D23EF50062CFCD /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
-		7F58FB5323D23EF50062CFCD /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
 		7F65D57222FDBFEB00FA1762 /* QuickHatch_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */; };
 		7F65D57722FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D57622FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift */; };
 		7F65D57922FDBFEB00FA1762 /* QuickHatch_Alamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -156,6 +63,99 @@
 		7F6E7DA622FBBC020083BD1D /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
 		7F6E7DA722FBBC020083BD1D /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
 		7F6E7DA822FBBC020083BD1D /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7FD90EA123D2532A0043B7A2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
+		7FD90EA223D2532A0043B7A2 /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
+		7FD90EA323D2532A0043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
+		7FD90EA423D2532A0043B7A2 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
+		7FD90EA523D2532A0043B7A2 /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
+		7FD90EA623D2532A0043B7A2 /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
+		7FD90EA723D2532A0043B7A2 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
+		7FD90EA823D2532A0043B7A2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
+		7FD90EA923D2532A0043B7A2 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
+		7FD90EAA23D2532A0043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
+		7FD90EAB23D2532A0043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
+		7FD90EAC23D2532A0043B7A2 /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7FD90EAD23D2532A0043B7A2 /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
+		7FD90EAE23D2532A0043B7A2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
+		7FD90EAF23D2532A0043B7A2 /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
+		7FD90EB023D2532A0043B7A2 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
+		7FD90EB123D2532A0043B7A2 /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
+		7FD90EB223D2532B0043B7A2 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
+		7FD90EB323D2532B0043B7A2 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
+		7FD90EB423D2532B0043B7A2 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
+		7FD90EB523D2532B0043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
+		7FD90EB623D2532B0043B7A2 /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
+		7FD90EB723D2532B0043B7A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
+		7FD90EB823D2532B0043B7A2 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
+		7FD90EB923D2532B0043B7A2 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
+		7FD90EBA23D2532B0043B7A2 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
+		7FD90EBB23D2532B0043B7A2 /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
+		7FD90EBC23D2532B0043B7A2 /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
+		7FD90EBD23D2532B0043B7A2 /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
+		7FD90EBE23D2532B0043B7A2 /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
+		7FD90EBF23D2532B0043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
+		7FD90EC023D253360043B7A2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
+		7FD90EC123D253360043B7A2 /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
+		7FD90EC223D253360043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
+		7FD90EC323D253360043B7A2 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
+		7FD90EC423D253360043B7A2 /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
+		7FD90EC523D253360043B7A2 /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
+		7FD90EC623D253360043B7A2 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
+		7FD90EC723D253360043B7A2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
+		7FD90EC823D253360043B7A2 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
+		7FD90EC923D253360043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
+		7FD90ECA23D253360043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
+		7FD90ECB23D253360043B7A2 /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7FD90ECC23D253360043B7A2 /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
+		7FD90ECD23D253360043B7A2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
+		7FD90ECE23D253360043B7A2 /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
+		7FD90ECF23D253360043B7A2 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
+		7FD90ED023D253360043B7A2 /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
+		7FD90ED123D253360043B7A2 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
+		7FD90ED223D253360043B7A2 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
+		7FD90ED323D253360043B7A2 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
+		7FD90ED423D253360043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
+		7FD90ED523D253360043B7A2 /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
+		7FD90ED623D253360043B7A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
+		7FD90ED723D253360043B7A2 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
+		7FD90ED823D253360043B7A2 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
+		7FD90ED923D253360043B7A2 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
+		7FD90EDA23D253360043B7A2 /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
+		7FD90EDB23D253360043B7A2 /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
+		7FD90EDC23D253360043B7A2 /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
+		7FD90EDD23D253360043B7A2 /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
+		7FD90EDE23D253360043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
+		7FD90EEC23D253980043B7A2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
+		7FD90EED23D253980043B7A2 /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
+		7FD90EEE23D253980043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
+		7FD90EEF23D253980043B7A2 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D64022FDE59300FA1762 /* Command.swift */; };
+		7FD90EF023D253980043B7A2 /* HTTPRequestCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7C22FBBC010083BD1D /* HTTPRequestCommand.swift */; };
+		7FD90EF123D253980043B7A2 /* Error+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6F22FBBC010083BD1D /* Error+Additions.swift */; };
+		7FD90EF223D253980043B7A2 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7022FBBC010083BD1D /* HTTPStatusCode.swift */; };
+		7FD90EF323D253980043B7A2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7122FBBC010083BD1D /* RequestError.swift */; };
+		7FD90EF423D253980043B7A2 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D6D22FBBC010083BD1D /* NetworkRequestFactory.swift */; };
+		7FD90EF523D253980043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
+		7FD90EF623D253980043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
+		7FD90EF723D253980043B7A2 /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7FD90EF823D253980043B7A2 /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8822FBBC010083BD1D /* URLRequestProtocol.swift */; };
+		7FD90EF923D253980043B7A2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8922FBBC010083BD1D /* ParameterEncoding.swift */; };
+		7FD90EFA23D253980043B7A2 /* EncodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8A22FBBC010083BD1D /* EncodingError.swift */; };
+		7FD90EFB23D253980043B7A2 /* StringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DB23048E6D00E731FA /* StringEncoding.swift */; };
+		7FD90EFC23D253980043B7A2 /* EncodingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4DE2304934F00E731FA /* EncodingHelpers.swift */; };
+		7FD90EFD23D253980043B7A2 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4EF23071D7000E731FA /* JSONEncoding.swift */; };
+		7FD90EFE23D253980043B7A2 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4F223071D9600E731FA /* URLEncoding.swift */; };
+		7FD90EFF23D253980043B7A2 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8622FBBC010083BD1D /* Headers.swift */; };
+		7FD90F0023D253980043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8522FBBC010083BD1D /* NetworkRequestFactoryHelper.swift */; };
+		7FD90F0123D253980043B7A2 /* QuickHatchRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8422FBBC010083BD1D /* QuickHatchRequestFactory.swift */; };
+		7FD90F0223D253980043B7A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8022FBBC010083BD1D /* Logger.swift */; };
+		7FD90F0323D253980043B7A2 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7E22FBBC010083BD1D /* GenericAPI.swift */; };
+		7FD90F0423D253980043B7A2 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8222FBBC010083BD1D /* URLRequest+Additions.swift */; };
+		7FD90F0523D253980043B7A2 /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
+		7FD90F0623D253980043B7A2 /* URLSessionDataTask+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7F22FBBC010083BD1D /* URLSessionDataTask+Additions.swift */; };
+		7FD90F0723D253980043B7A2 /* LoosyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7722FBBC010083BD1D /* LoosyMapper.swift */; };
+		7FD90F0823D253990043B7A2 /* ObjectRelationalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7822FBBC010083BD1D /* ObjectRelationalMapper.swift */; };
+		7FD90F0923D253990043B7A2 /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
+		7FD90F0A23D253990043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
 		7FFCD4B822FDEF7700E731FA /* NetworkRequestFactory+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */; };
 		7FFCD4BA22FDF34D00E731FA /* URLRequest+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */; };
 		7FFCD4BC22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */; };
@@ -211,9 +211,6 @@
 		7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationRefresher.swift; sourceTree = "<group>"; };
 		7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTrafficControllerMultiSet.swift; sourceTree = "<group>"; };
 		7F58FAC323D21F780062CFCD /* TrafficControllerMultiSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficControllerMultiSetTests.swift; sourceTree = "<group>"; };
-		7F58FAD423D23A490062CFCD /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F58FB0123D23AE10062CFCD /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F58FB2D23D23EAF0062CFCD /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch_Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickHatch_Alamofire.h; sourceTree = "<group>"; };
 		7F65D56C22FDBFEB00FA1762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,6 +257,9 @@
 		7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEnvironment.swift; sourceTree = "<group>"; };
 		7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Image.swift"; sourceTree = "<group>"; };
+		7FD90E8C23D252130043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD90E9923D252D90043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD90EE423D253540043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFCD4B722FDEF7700E731FA /* NetworkRequestFactory+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Codable.swift"; sourceTree = "<group>"; };
 		7FFCD4B922FDF34D00E731FA /* URLRequest+Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Methods.swift"; sourceTree = "<group>"; };
 		7FFCD4BB22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Dispatch.swift"; sourceTree = "<group>"; };
@@ -283,27 +283,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7F58FAD123D23A490062CFCD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FAFE23D23AE10062CFCD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FB2A23D23EAF0062CFCD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7F65D56622FDBFEB00FA1762 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +312,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6E7CD822FBB81B0083BD1D /* QuickHatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E8923D252130043B7A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E9623D252D90043B7A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90EE123D253540043B7A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,9 +411,9 @@
 				7F6E7CD722FBB81B0083BD1D /* QuickHatchTests.xctest */,
 				7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */,
 				7F65D57122FDBFEB00FA1762 /* QuickHatch+AlamofireTests.xctest */,
-				7F58FAD423D23A490062CFCD /* QuickHatch.framework */,
-				7F58FB0123D23AE10062CFCD /* QuickHatch.framework */,
-				7F58FB2D23D23EAF0062CFCD /* QuickHatch.framework */,
+				7FD90E8C23D252130043B7A2 /* QuickHatch.framework */,
+				7FD90E9923D252D90043B7A2 /* QuickHatch.framework */,
+				7FD90EE423D253540043B7A2 /* QuickHatch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -618,27 +618,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7F58FACF23D23A490062CFCD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FAFC23D23AE10062CFCD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FB2823D23EAF0062CFCD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7F65D56422FDBFEB00FA1762 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,63 +634,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FD90E8723D252130043B7A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E9423D252D90043B7A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90EDF23D253540043B7A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7F58FAD323D23A490062CFCD /* QuickHatch OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch OSX" */;
-			buildPhases = (
-				7F58FACF23D23A490062CFCD /* Headers */,
-				7F58FAD023D23A490062CFCD /* Sources */,
-				7F58FAD123D23A490062CFCD /* Frameworks */,
-				7F58FAD223D23A490062CFCD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuickHatch OSX";
-			productName = "QuickHatch-OSX";
-			productReference = 7F58FAD423D23A490062CFCD /* QuickHatch.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7F58FB0023D23AE10062CFCD /* QuickHatch WatchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */;
-			buildPhases = (
-				7F58FAFC23D23AE10062CFCD /* Headers */,
-				7F58FAFD23D23AE10062CFCD /* Sources */,
-				7F58FAFE23D23AE10062CFCD /* Frameworks */,
-				7F58FAFF23D23AE10062CFCD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuickHatch WatchOS";
-			productName = "QuickHatch-WatchOS";
-			productReference = 7F58FB0123D23AE10062CFCD /* QuickHatch.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7F58FB2C23D23EAF0062CFCD /* QuickHatch TvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */;
-			buildPhases = (
-				7F58FB2823D23EAF0062CFCD /* Headers */,
-				7F58FB2923D23EAF0062CFCD /* Sources */,
-				7F58FB2A23D23EAF0062CFCD /* Frameworks */,
-				7F58FB2B23D23EAF0062CFCD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuickHatch TvOS";
-			productName = "QuickHatch-TvOS";
-			productReference = 7F58FB2D23D23EAF0062CFCD /* QuickHatch.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		7F65D56822FDBFEB00FA1762 /* QuickHatch+Alamofire */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F65D57A22FDBFEB00FA1762 /* Build configuration list for PBXNativeTarget "QuickHatch+Alamofire" */;
@@ -787,6 +733,60 @@
 			productReference = 7F6E7CD722FBB81B0083BD1D /* QuickHatchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7FD90E8B23D252130043B7A2 /* QuickHatch MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FD90E9123D252130043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch MacOS" */;
+			buildPhases = (
+				7FD90E8723D252130043B7A2 /* Headers */,
+				7FD90E8823D252130043B7A2 /* Sources */,
+				7FD90E8923D252130043B7A2 /* Frameworks */,
+				7FD90E8A23D252130043B7A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QuickHatch MacOS";
+			productName = "QuickHatch MacOS";
+			productReference = 7FD90E8C23D252130043B7A2 /* QuickHatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7FD90E9823D252D90043B7A2 /* QuickHatch WatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FD90E9E23D252DA0043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */;
+			buildPhases = (
+				7FD90E9423D252D90043B7A2 /* Headers */,
+				7FD90E9523D252D90043B7A2 /* Sources */,
+				7FD90E9623D252D90043B7A2 /* Frameworks */,
+				7FD90E9723D252D90043B7A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QuickHatch WatchOS";
+			productName = "QuickHatch WatchOS";
+			productReference = 7FD90E9923D252D90043B7A2 /* QuickHatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7FD90EE323D253540043B7A2 /* QuickHatch TvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FD90EE923D253540043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */;
+			buildPhases = (
+				7FD90EDF23D253540043B7A2 /* Headers */,
+				7FD90EE023D253540043B7A2 /* Sources */,
+				7FD90EE123D253540043B7A2 /* Frameworks */,
+				7FD90EE223D253540043B7A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QuickHatch TvOS";
+			productName = "QuickHatch TvOS";
+			productReference = 7FD90EE423D253540043B7A2 /* QuickHatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -797,15 +797,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "DaVinci Labs";
 				TargetAttributes = {
-					7F58FAD323D23A490062CFCD = {
-						CreatedOnToolsVersion = 11.1;
-					};
-					7F58FB0023D23AE10062CFCD = {
-						CreatedOnToolsVersion = 11.1;
-					};
-					7F58FB2C23D23EAF0062CFCD = {
-						CreatedOnToolsVersion = 11.1;
-					};
 					7F65D56822FDBFEB00FA1762 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -819,6 +810,15 @@
 					};
 					7F6E7CD622FBB81B0083BD1D = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					7FD90E8B23D252130043B7A2 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					7FD90E9823D252D90043B7A2 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					7FD90EE323D253540043B7A2 = {
+						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
@@ -838,35 +838,14 @@
 				7F6E7CD622FBB81B0083BD1D /* QuickHatchTests */,
 				7F65D56822FDBFEB00FA1762 /* QuickHatch+Alamofire */,
 				7F65D57022FDBFEB00FA1762 /* QuickHatch+AlamofireTests */,
-				7F58FAD323D23A490062CFCD /* QuickHatch OSX */,
-				7F58FB0023D23AE10062CFCD /* QuickHatch WatchOS */,
-				7F58FB2C23D23EAF0062CFCD /* QuickHatch TvOS */,
+				7FD90E8B23D252130043B7A2 /* QuickHatch MacOS */,
+				7FD90E9823D252D90043B7A2 /* QuickHatch WatchOS */,
+				7FD90EE323D253540043B7A2 /* QuickHatch TvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7F58FAD223D23A490062CFCD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FAFF23D23AE10062CFCD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FB2B23D23EAF0062CFCD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7F65D56722FDBFEB00FA1762 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -893,6 +872,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6E7D3322FBB84B0083BD1D /* swifticon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E8A23D252130043B7A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E9723D252D90043B7A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90EE223D253540043B7A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,120 +939,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7F58FAD023D23A490062CFCD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F58FADC23D23A770062CFCD /* Authentication.swift in Sources */,
-				7F58FADD23D23A770062CFCD /* CommandTrafficController.swift in Sources */,
-				7F58FADE23D23A770062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */,
-				7F58FADF23D23A770062CFCD /* Command.swift in Sources */,
-				7F58FAE023D23A770062CFCD /* HTTPRequestCommand.swift in Sources */,
-				7F58FAE123D23A770062CFCD /* Error+Additions.swift in Sources */,
-				7F58FAE223D23A770062CFCD /* HTTPStatusCode.swift in Sources */,
-				7F58FAE323D23A770062CFCD /* RequestError.swift in Sources */,
-				7F58FAE423D23A770062CFCD /* NetworkRequestFactory.swift in Sources */,
-				7F58FAE523D23A770062CFCD /* NetworkRequestFactory+Codable.swift in Sources */,
-				7F58FAE623D23A770062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */,
-				7F58FAE723D23A770062CFCD /* NetworkRequestFactory+Image.swift in Sources */,
-				7F58FAE823D23A770062CFCD /* URLRequestProtocol.swift in Sources */,
-				7F58FAE923D23A770062CFCD /* ParameterEncoding.swift in Sources */,
-				7F58FAEA23D23A770062CFCD /* EncodingError.swift in Sources */,
-				7F58FAEB23D23A770062CFCD /* StringEncoding.swift in Sources */,
-				7F58FAEC23D23A770062CFCD /* EncodingHelpers.swift in Sources */,
-				7F58FAED23D23A770062CFCD /* JSONEncoding.swift in Sources */,
-				7F58FAEE23D23A770062CFCD /* URLEncoding.swift in Sources */,
-				7F58FAEF23D23A770062CFCD /* Headers.swift in Sources */,
-				7F58FAF023D23A770062CFCD /* NetworkRequestFactoryHelper.swift in Sources */,
-				7F58FAF123D23A770062CFCD /* QuickHatchRequestFactory.swift in Sources */,
-				7F58FAF223D23A770062CFCD /* Logger.swift in Sources */,
-				7F58FAF323D23A770062CFCD /* GenericAPI.swift in Sources */,
-				7F58FAF423D23A770062CFCD /* URLRequest+Additions.swift in Sources */,
-				7F58FAF523D23A770062CFCD /* URLRequest+Methods.swift in Sources */,
-				7F58FAF623D23A770062CFCD /* URLSessionDataTask+Additions.swift in Sources */,
-				7F58FAF823D23A780062CFCD /* LoosyMapper.swift in Sources */,
-				7F58FAF923D23A780062CFCD /* ObjectRelationalMapper.swift in Sources */,
-				7F58FAFA23D23A780062CFCD /* HostEnvironment.swift in Sources */,
-				7F58FAFB23D23A780062CFCD /* ServerEnvironmentConfiguration.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FAFD23D23AE10062CFCD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F58FB0923D23AEF0062CFCD /* Authentication.swift in Sources */,
-				7F58FB0A23D23AEF0062CFCD /* CommandTrafficController.swift in Sources */,
-				7F58FB0B23D23AEF0062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */,
-				7F58FB0C23D23AEF0062CFCD /* Command.swift in Sources */,
-				7F58FB0D23D23AEF0062CFCD /* HTTPRequestCommand.swift in Sources */,
-				7F58FB0E23D23AEF0062CFCD /* Error+Additions.swift in Sources */,
-				7F58FB0F23D23AEF0062CFCD /* HTTPStatusCode.swift in Sources */,
-				7F58FB1023D23AEF0062CFCD /* RequestError.swift in Sources */,
-				7F58FB1123D23AEF0062CFCD /* NetworkRequestFactory.swift in Sources */,
-				7F58FB1223D23AEF0062CFCD /* NetworkRequestFactory+Codable.swift in Sources */,
-				7F58FB1323D23AF00062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */,
-				7F58FB1423D23AF00062CFCD /* NetworkRequestFactory+Image.swift in Sources */,
-				7F58FB1523D23AF00062CFCD /* URLRequestProtocol.swift in Sources */,
-				7F58FB1623D23AF00062CFCD /* ParameterEncoding.swift in Sources */,
-				7F58FB1723D23AF00062CFCD /* EncodingError.swift in Sources */,
-				7F58FB1823D23AF00062CFCD /* StringEncoding.swift in Sources */,
-				7F58FB1923D23AF00062CFCD /* EncodingHelpers.swift in Sources */,
-				7F58FB1A23D23AF00062CFCD /* JSONEncoding.swift in Sources */,
-				7F58FB1B23D23AF00062CFCD /* URLEncoding.swift in Sources */,
-				7F58FB1C23D23AF00062CFCD /* Headers.swift in Sources */,
-				7F58FB1D23D23AF00062CFCD /* NetworkRequestFactoryHelper.swift in Sources */,
-				7F58FB1E23D23AF00062CFCD /* QuickHatchRequestFactory.swift in Sources */,
-				7F58FB1F23D23AF00062CFCD /* Logger.swift in Sources */,
-				7F58FB2023D23AF00062CFCD /* GenericAPI.swift in Sources */,
-				7F58FB2123D23AF00062CFCD /* URLRequest+Additions.swift in Sources */,
-				7F58FB2223D23AF00062CFCD /* URLRequest+Methods.swift in Sources */,
-				7F58FB2323D23AF00062CFCD /* URLSessionDataTask+Additions.swift in Sources */,
-				7F58FB2423D23AF00062CFCD /* LoosyMapper.swift in Sources */,
-				7F58FB2523D23AF00062CFCD /* ObjectRelationalMapper.swift in Sources */,
-				7F58FB2623D23AF00062CFCD /* HostEnvironment.swift in Sources */,
-				7F58FB2723D23AF00062CFCD /* ServerEnvironmentConfiguration.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F58FB2923D23EAF0062CFCD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F58FB3523D23EF40062CFCD /* Authentication.swift in Sources */,
-				7F58FB3623D23EF40062CFCD /* CommandTrafficController.swift in Sources */,
-				7F58FB3723D23EF40062CFCD /* CommandTrafficControllerMultiSet.swift in Sources */,
-				7F58FB3823D23EF40062CFCD /* Command.swift in Sources */,
-				7F58FB3923D23EF40062CFCD /* HTTPRequestCommand.swift in Sources */,
-				7F58FB3A23D23EF40062CFCD /* Error+Additions.swift in Sources */,
-				7F58FB3B23D23EF40062CFCD /* HTTPStatusCode.swift in Sources */,
-				7F58FB3C23D23EF40062CFCD /* RequestError.swift in Sources */,
-				7F58FB3D23D23EF40062CFCD /* NetworkRequestFactory.swift in Sources */,
-				7F58FB3E23D23EF40062CFCD /* NetworkRequestFactory+Codable.swift in Sources */,
-				7F58FB3F23D23EF40062CFCD /* NetworkRequestFactory+Dispatch.swift in Sources */,
-				7F58FB4023D23EF40062CFCD /* NetworkRequestFactory+Image.swift in Sources */,
-				7F58FB4123D23EF40062CFCD /* URLRequestProtocol.swift in Sources */,
-				7F58FB4223D23EF40062CFCD /* ParameterEncoding.swift in Sources */,
-				7F58FB4323D23EF40062CFCD /* EncodingError.swift in Sources */,
-				7F58FB4423D23EF40062CFCD /* StringEncoding.swift in Sources */,
-				7F58FB4523D23EF40062CFCD /* EncodingHelpers.swift in Sources */,
-				7F58FB4623D23EF40062CFCD /* JSONEncoding.swift in Sources */,
-				7F58FB4723D23EF40062CFCD /* URLEncoding.swift in Sources */,
-				7F58FB4823D23EF40062CFCD /* Headers.swift in Sources */,
-				7F58FB4923D23EF40062CFCD /* NetworkRequestFactoryHelper.swift in Sources */,
-				7F58FB4A23D23EF40062CFCD /* QuickHatchRequestFactory.swift in Sources */,
-				7F58FB4B23D23EF40062CFCD /* Logger.swift in Sources */,
-				7F58FB4C23D23EF40062CFCD /* GenericAPI.swift in Sources */,
-				7F58FB4D23D23EF40062CFCD /* URLRequest+Additions.swift in Sources */,
-				7F58FB4E23D23EF40062CFCD /* URLRequest+Methods.swift in Sources */,
-				7F58FB4F23D23EF50062CFCD /* URLSessionDataTask+Additions.swift in Sources */,
-				7F58FB5023D23EF50062CFCD /* LoosyMapper.swift in Sources */,
-				7F58FB5123D23EF50062CFCD /* ObjectRelationalMapper.swift in Sources */,
-				7F58FB5223D23EF50062CFCD /* HostEnvironment.swift in Sources */,
-				7F58FB5323D23EF50062CFCD /* ServerEnvironmentConfiguration.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7F65D56522FDBFEB00FA1762 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1149,6 +1035,120 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FD90E8823D252130043B7A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD90EA123D2532A0043B7A2 /* Authentication.swift in Sources */,
+				7FD90EA223D2532A0043B7A2 /* CommandTrafficController.swift in Sources */,
+				7FD90EA323D2532A0043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */,
+				7FD90EA423D2532A0043B7A2 /* Command.swift in Sources */,
+				7FD90EA523D2532A0043B7A2 /* HTTPRequestCommand.swift in Sources */,
+				7FD90EA623D2532A0043B7A2 /* Error+Additions.swift in Sources */,
+				7FD90EA723D2532A0043B7A2 /* HTTPStatusCode.swift in Sources */,
+				7FD90EA823D2532A0043B7A2 /* RequestError.swift in Sources */,
+				7FD90EA923D2532A0043B7A2 /* NetworkRequestFactory.swift in Sources */,
+				7FD90EAA23D2532A0043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
+				7FD90EAB23D2532A0043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7FD90EAC23D2532A0043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
+				7FD90EAD23D2532A0043B7A2 /* URLRequestProtocol.swift in Sources */,
+				7FD90EAE23D2532A0043B7A2 /* ParameterEncoding.swift in Sources */,
+				7FD90EAF23D2532A0043B7A2 /* EncodingError.swift in Sources */,
+				7FD90EB023D2532A0043B7A2 /* StringEncoding.swift in Sources */,
+				7FD90EB123D2532A0043B7A2 /* EncodingHelpers.swift in Sources */,
+				7FD90EB223D2532B0043B7A2 /* JSONEncoding.swift in Sources */,
+				7FD90EB323D2532B0043B7A2 /* URLEncoding.swift in Sources */,
+				7FD90EB423D2532B0043B7A2 /* Headers.swift in Sources */,
+				7FD90EB523D2532B0043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */,
+				7FD90EB623D2532B0043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
+				7FD90EB723D2532B0043B7A2 /* Logger.swift in Sources */,
+				7FD90EB823D2532B0043B7A2 /* GenericAPI.swift in Sources */,
+				7FD90EB923D2532B0043B7A2 /* URLRequest+Additions.swift in Sources */,
+				7FD90EBA23D2532B0043B7A2 /* URLRequest+Methods.swift in Sources */,
+				7FD90EBB23D2532B0043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
+				7FD90EBC23D2532B0043B7A2 /* LoosyMapper.swift in Sources */,
+				7FD90EBD23D2532B0043B7A2 /* ObjectRelationalMapper.swift in Sources */,
+				7FD90EBE23D2532B0043B7A2 /* HostEnvironment.swift in Sources */,
+				7FD90EBF23D2532B0043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90E9523D252D90043B7A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD90EC023D253360043B7A2 /* Authentication.swift in Sources */,
+				7FD90EC123D253360043B7A2 /* CommandTrafficController.swift in Sources */,
+				7FD90EC223D253360043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */,
+				7FD90EC323D253360043B7A2 /* Command.swift in Sources */,
+				7FD90EC423D253360043B7A2 /* HTTPRequestCommand.swift in Sources */,
+				7FD90EC523D253360043B7A2 /* Error+Additions.swift in Sources */,
+				7FD90EC623D253360043B7A2 /* HTTPStatusCode.swift in Sources */,
+				7FD90EC723D253360043B7A2 /* RequestError.swift in Sources */,
+				7FD90EC823D253360043B7A2 /* NetworkRequestFactory.swift in Sources */,
+				7FD90EC923D253360043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
+				7FD90ECA23D253360043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7FD90ECB23D253360043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
+				7FD90ECC23D253360043B7A2 /* URLRequestProtocol.swift in Sources */,
+				7FD90ECD23D253360043B7A2 /* ParameterEncoding.swift in Sources */,
+				7FD90ECE23D253360043B7A2 /* EncodingError.swift in Sources */,
+				7FD90ECF23D253360043B7A2 /* StringEncoding.swift in Sources */,
+				7FD90ED023D253360043B7A2 /* EncodingHelpers.swift in Sources */,
+				7FD90ED123D253360043B7A2 /* JSONEncoding.swift in Sources */,
+				7FD90ED223D253360043B7A2 /* URLEncoding.swift in Sources */,
+				7FD90ED323D253360043B7A2 /* Headers.swift in Sources */,
+				7FD90ED423D253360043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */,
+				7FD90ED523D253360043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
+				7FD90ED623D253360043B7A2 /* Logger.swift in Sources */,
+				7FD90ED723D253360043B7A2 /* GenericAPI.swift in Sources */,
+				7FD90ED823D253360043B7A2 /* URLRequest+Additions.swift in Sources */,
+				7FD90ED923D253360043B7A2 /* URLRequest+Methods.swift in Sources */,
+				7FD90EDA23D253360043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
+				7FD90EDB23D253360043B7A2 /* LoosyMapper.swift in Sources */,
+				7FD90EDC23D253360043B7A2 /* ObjectRelationalMapper.swift in Sources */,
+				7FD90EDD23D253360043B7A2 /* HostEnvironment.swift in Sources */,
+				7FD90EDE23D253360043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FD90EE023D253540043B7A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD90EEC23D253980043B7A2 /* Authentication.swift in Sources */,
+				7FD90EED23D253980043B7A2 /* CommandTrafficController.swift in Sources */,
+				7FD90EEE23D253980043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */,
+				7FD90EEF23D253980043B7A2 /* Command.swift in Sources */,
+				7FD90EF023D253980043B7A2 /* HTTPRequestCommand.swift in Sources */,
+				7FD90EF123D253980043B7A2 /* Error+Additions.swift in Sources */,
+				7FD90EF223D253980043B7A2 /* HTTPStatusCode.swift in Sources */,
+				7FD90EF323D253980043B7A2 /* RequestError.swift in Sources */,
+				7FD90EF423D253980043B7A2 /* NetworkRequestFactory.swift in Sources */,
+				7FD90EF523D253980043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
+				7FD90EF623D253980043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7FD90EF723D253980043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
+				7FD90EF823D253980043B7A2 /* URLRequestProtocol.swift in Sources */,
+				7FD90EF923D253980043B7A2 /* ParameterEncoding.swift in Sources */,
+				7FD90EFA23D253980043B7A2 /* EncodingError.swift in Sources */,
+				7FD90EFB23D253980043B7A2 /* StringEncoding.swift in Sources */,
+				7FD90EFC23D253980043B7A2 /* EncodingHelpers.swift in Sources */,
+				7FD90EFD23D253980043B7A2 /* JSONEncoding.swift in Sources */,
+				7FD90EFE23D253980043B7A2 /* URLEncoding.swift in Sources */,
+				7FD90EFF23D253980043B7A2 /* Headers.swift in Sources */,
+				7FD90F0023D253980043B7A2 /* NetworkRequestFactoryHelper.swift in Sources */,
+				7FD90F0123D253980043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
+				7FD90F0223D253980043B7A2 /* Logger.swift in Sources */,
+				7FD90F0323D253980043B7A2 /* GenericAPI.swift in Sources */,
+				7FD90F0423D253980043B7A2 /* URLRequest+Additions.swift in Sources */,
+				7FD90F0523D253980043B7A2 /* URLRequest+Methods.swift in Sources */,
+				7FD90F0623D253980043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
+				7FD90F0723D253980043B7A2 /* LoosyMapper.swift in Sources */,
+				7FD90F0823D253990043B7A2 /* ObjectRelationalMapper.swift in Sources */,
+				7FD90F0923D253990043B7A2 /* HostEnvironment.swift in Sources */,
+				7FD90F0A23D253990043B7A2 /* ServerEnvironmentConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1170,164 +1170,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		7F58FADA23D23A4A0062CFCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-OSX";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		7F58FADB23D23A4A0062CFCD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-OSX";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		7F58FB0723D23AE10062CFCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-WatchOS";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Debug;
-		};
-		7F58FB0823D23AE10062CFCD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-WatchOS";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
-			};
-			name = Release;
-		};
-		7F58FB3323D23EAF0062CFCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-TvOS";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Debug;
-		};
-		7F58FB3423D23EAF0062CFCD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6PEDY2NQHX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-TvOS";
-				PRODUCT_NAME = QuickHatch;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Release;
-		};
 		7F65D57B22FDBFEB00FA1762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1658,36 +1500,167 @@
 			};
 			name = Release;
 		};
+		7FD90E9223D252130043B7A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-MacOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7FD90E9323D252130043B7A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-MacOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7FD90E9F23D252DA0043B7A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-WatchOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		7FD90EA023D252DA0043B7A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-WatchOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		7FD90EEA23D253540043B7A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-TvOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Debug;
+		};
+		7FD90EEB23D253540043B7A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6PEDY2NQHX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-TvOS";
+				PRODUCT_NAME = QuickHatch;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F58FADA23D23A4A0062CFCD /* Debug */,
-				7F58FADB23D23A4A0062CFCD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F58FB0723D23AE10062CFCD /* Debug */,
-				7F58FB0823D23AE10062CFCD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F58FB3323D23EAF0062CFCD /* Debug */,
-				7F58FB3423D23EAF0062CFCD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7F65D57A22FDBFEB00FA1762 /* Build configuration list for PBXNativeTarget "QuickHatch+Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1729,6 +1702,33 @@
 			buildConfigurations = (
 				7F6E7CE622FBB81B0083BD1D /* Debug */,
 				7F6E7CE722FBB81B0083BD1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FD90E9123D252130043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD90E9223D252130043B7A2 /* Debug */,
+				7FD90E9323D252130043B7A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FD90E9E23D252DA0043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD90E9F23D252DA0043B7A2 /* Debug */,
+				7FD90EA023D252DA0043B7A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FD90EE923D253540043B7A2 /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD90EEA23D253540043B7A2 /* Debug */,
+				7FD90EEB23D253540043B7A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

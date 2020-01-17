@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F58FAD323D23A490062CFCD"
+               BlueprintIdentifier = "7FD90E9823D252D90043B7A2"
                BuildableName = "QuickHatch.framework"
-               BlueprintName = "QuickHatch OSX"
+               BlueprintName = "QuickHatch WatchOS"
                ReferencedContainer = "container:QuickHatch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F58FAD323D23A490062CFCD"
+            BlueprintIdentifier = "7FD90E9823D252D90043B7A2"
             BuildableName = "QuickHatch.framework"
-            BlueprintName = "QuickHatch OSX"
+            BlueprintName = "QuickHatch WatchOS"
             ReferencedContainer = "container:QuickHatch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
