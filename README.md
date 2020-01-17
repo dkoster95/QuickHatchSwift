@@ -3,7 +3,7 @@
 ## 🌐 QuickHatch 🌐
 - **Use an abstract networking layer**
 - **Use a functional module for your requests**
-- **91.3 % Test coverage**
+- **94.3 % Test coverage**
 - **Keep networking simple**
 ---
 
@@ -42,6 +42,9 @@
 ## Requirements
 
 - iOS 11.0+ 
+- WatchOS 5.0+
+- TvOS 12.0+
+- MacOS 10.10+
 - Xcode 10.2+
 - Swift 5+
 
@@ -53,7 +56,7 @@
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate QuickHatch into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-git "https://github.com/dkoster95/QuickHatchSwift.git" "1.0"
+git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.1"
 ```
 
 ### Manually
