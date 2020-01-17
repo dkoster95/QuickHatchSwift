@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1110"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F6E7CCD22FBB81B0083BD1D"
+               BlueprintIdentifier = "7F58FB2C23D23EAF0062CFCD"
                BuildableName = "QuickHatch.framework"
-               BlueprintName = "QuickHatch"
+               BlueprintName = "QuickHatch TvOS"
                ReferencedContainer = "container:QuickHatch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,28 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F6E7CCD22FBB81B0083BD1D"
-            BuildableName = "QuickHatch.framework"
-            BlueprintName = "QuickHatch"
-            ReferencedContainer = "container:QuickHatch.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F6E7CD622FBB81B0083BD1D"
-               BuildableName = "QuickHatchTests.xctest"
-               BlueprintName = "QuickHatchTests"
-               ReferencedContainer = "container:QuickHatch.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -60,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F6E7CCD22FBB81B0083BD1D"
-            BuildableName = "QuickHatch.framework"
-            BlueprintName = "QuickHatch"
-            ReferencedContainer = "container:QuickHatch.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F6E7CCD22FBB81B0083BD1D"
+            BlueprintIdentifier = "7F58FB2C23D23EAF0062CFCD"
             BuildableName = "QuickHatch.framework"
-            BlueprintName = "QuickHatch"
+            BlueprintName = "QuickHatch TvOS"
             ReferencedContainer = "container:QuickHatch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
