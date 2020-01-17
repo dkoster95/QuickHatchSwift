@@ -13,34 +13,36 @@ class TrafficControllerTests: XCTestCase {
 
     func testIsCommandRunning() {
         let command = Command<DataModel>()
-        let trafficController = StaticTrafficController()
-        trafficController.setCurrentCommand(for: "test", command: command)
-        XCTAssertTrue(trafficController.isCommandRunning(key: "test"))
+        let trafficController = TrafficControllerSet()
+        trafficController.append(for: "test", command: command)
+        XCTAssertTrue(trafficController.isCommandRunning(key: "test", command: command))
     }
     
     func testResetTrafficForCommand() {
         let command = Command<DataModel>()
-        let trafficController = StaticTrafficController()
-        trafficController.setCurrentCommand(for: "test", command: command)
-        XCTAssertTrue(trafficController.isCommandRunning(key: "test"))
-        trafficController.resetCurrentCommand(key: "test")
-        XCTAssertTrue(!trafficController.isCommandRunning(key: "test"))
+        let trafficController = TrafficControllerSet()
+        trafficController.append(for: "test", command: command)
+        trafficController.printTrace()
+        XCTAssertTrue(trafficController.isCommandRunning(key: "test", command: command))
+        trafficController.resetFlow(key: "test")
+        XCTAssertTrue(!trafficController.isCommandRunning(key: "test", command: command))
+        
     }
     
     func testResetTraffic() {
         let command = Command<DataModel>()
         let command2 = Command<DataModel>()
-        let trafficController = StaticTrafficController()
-        trafficController.setCurrentCommand(for: "test", command: command)
-        trafficController.setCurrentCommand(for: "test", command: command2)
-        trafficController.setCurrentCommand(for: "test2", command: command2)
+        let trafficController = TrafficControllerSet()
+        trafficController.append(for: "test", command: command)
+        trafficController.append(for: "test", command: command2)
+        trafficController.append(for: "test2", command: command2)
         log.warning("commands running")
-        XCTAssertTrue(trafficController.isCommandRunning(key: "test"))
-        XCTAssertTrue(trafficController.isCommandRunning(key: "test2"))
+        XCTAssertTrue(trafficController.isCommandRunning(key: "test", command: command))
+        XCTAssertTrue(trafficController.isCommandRunning(key: "test2", command: command2))
         trafficController.resetTraffic()
         log.severe("traffic resetted")
-        XCTAssertTrue(!trafficController.isCommandRunning(key: "test"))
-        XCTAssertTrue(!trafficController.isCommandRunning(key: "test2"))
+        XCTAssertTrue(!trafficController.isCommandRunning(key: "test", command: command))
+        XCTAssertTrue(!trafficController.isCommandRunning(key: "test2", command: command))
     }
 
 }

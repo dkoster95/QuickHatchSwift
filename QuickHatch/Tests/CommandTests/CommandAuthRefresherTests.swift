@@ -13,7 +13,7 @@ class CommandAuthRefresherTests: CommandTestBase {
 
     let successRefresher = MockAuthenticationRefresher(data: ["value": "success"])
     let failureRefresher = MockAuthenticationRefresher(error: RequestError.noResponse)
-    let trafficController = StaticTrafficController()
+    let trafficController = TrafficControllerSet()
 
 //    func testSuccessRefresher() {
 //        let urlSession = URLSessionMock(data: getDataModelSample, urlResponse: getResponse(statusCode: 401))

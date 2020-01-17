@@ -31,7 +31,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
 //                               httpVersion: "1.1",
 //                               headerFields: nil)!
 //    }
-    let trafficController = StaticTrafficController()
+    let trafficController = TrafficControllerSet()
     
 //    private func buildRequest() -> URLRequest {
 //        return try! URLRequest.get(url: URL(fileURLWithPath: ""),
@@ -51,16 +51,15 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
     
     func testSuccessCaseWithArrayAndCompletionHandler() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
-        _ = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
+        let command = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .dataResponse { dataArray in
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
                 XCTAssert(dataArray.count == 2)
                 XCTAssert(dataArray[0].name! == "dan")
-
-                
-            }.execute()
+            }
+        XCTAssert(!self.trafficController.isCommandRunning(key: "key", command: command))
+        command.execute()
     }
     
     func testSuccessCaseWithArrayAndResults() {
@@ -74,8 +73,8 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
             .dataResponse { dataModels in
                 XCTAssert(dataModels.count == 2)
                 XCTAssert(dataModels[0].name! == "dan")
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
             }.execute()
+        
     }
     
     func testSuccessCaseWithObjectAndResult() {
@@ -85,7 +84,6 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
             .manageTraffic(with: trafficController, and: "key")
             .dataResponse { dataModel in
                 XCTAssert(dataModel.name! == "dan")
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
             }.execute()
     }
     

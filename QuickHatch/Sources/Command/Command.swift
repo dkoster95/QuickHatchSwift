@@ -9,9 +9,11 @@
 import Foundation
 
 public protocol CommandType {
+    var id: UUID { get }
     func execute()
     func cancel()
 }
+
 
 public class Command<T>: CommandType {
     
@@ -22,6 +24,16 @@ public class Command<T>: CommandType {
     private(set) var trafficController: CommandTrafficController?
     private(set) var key: String?
     private(set) var resultsQueue: DispatchQueue = .main
+    private var identifier: UUID?
+    
+    public var id: UUID {
+        if let id = self.identifier {
+            return id
+        }
+        let newId = UUID()
+        identifier = newId
+        return newId
+    }
     
     public func log(with logger: Logger) -> Command<T> {
         self.log = logger
@@ -32,11 +44,7 @@ public class Command<T>: CommandType {
         return self
     }
     
-    //    public func refresh(authenticationRefresher: RefreshableAuthentication) -> Command<T> {
-    //        return self
-    //    }
-    
-    public func manageTraffic(with: CommandTrafficController, and key: String) -> Command<T> {
+    public func manageTraffic<Traffic: CommandTrafficController>(with: Traffic, and key: String) -> Command<T> {
         self.trafficController = with
         self.key = key
         return self
@@ -69,5 +77,9 @@ public class Command<T>: CommandType {
     public func cancel() {
         
     }
+    
+//    static public func == (lhs: Command<T>, rhs: Command<T>) -> Bool {
+//        return lhs.id == rhs.id
+//    }
     
 }

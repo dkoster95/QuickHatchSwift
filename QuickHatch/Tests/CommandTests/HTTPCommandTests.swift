@@ -11,7 +11,7 @@ import QuickHatch
 
 class HTTPCommandTests: CommandTestBase {
     
-    let trafficController = StaticTrafficController()
+    let trafficController = TrafficControllerSet()
     
 //    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
 //        return HTTPURLResponse(url: URL(string:"www.google.com")!,

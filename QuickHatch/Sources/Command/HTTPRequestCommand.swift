@@ -34,12 +34,6 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
         return self
     }
     
-//    public override func refresh(authenticationRefresher: RefreshableAuthentication) -> Command<T> {
-//        self.authenticationRefresher = authenticationRefresher
-//        log?.info("AuthenticationRefresher set")
-//        return self
-//    }
-    
     public override func execute() {
         setupTrafficController()
         setupHandler()
@@ -49,14 +43,14 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
     private func setupTrafficController() {
         if let trafficController = self.trafficController,
             let key = self.key {
-            trafficController.setCurrentCommand(for: key,
-                                                command: self)
+            trafficController.append(for: key,
+                                     command: self)
         }
     }
     
     private func resetTraffic() {
         if let trafficController = self.trafficController, let key = self.key {
-            trafficController.resetCurrentCommand(key: key)
+            trafficController.resetFlow(key: key)
         }
         request = nil
     }
@@ -78,19 +72,6 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
             }
         }
     }
-    
-//    private func refreshAuthenticationHandler(error: Error) {
-//        if error.isUnauthorized, let refresher = authenticationRefresher {
-//            refresher.refresh(params: [:]) { result in
-//                switch result {
-//                case .success(_ ):
-//                    self.execute()
-//                case .failure(let error):
-//                    self.log?.error("Refresh AuthenticationFailed with error \(error)")
-//                }
-//            }
-//        }
-//    }
     
     public override func cancel() {
         request?.cancel()
