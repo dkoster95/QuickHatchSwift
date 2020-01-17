@@ -658,9 +658,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7F58FAD323D23A490062CFCD /* QuickHatch-OSX */ = {
+		7F58FAD323D23A490062CFCD /* QuickHatch OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-OSX" */;
+			buildConfigurationList = 7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch OSX" */;
 			buildPhases = (
 				7F58FACF23D23A490062CFCD /* Headers */,
 				7F58FAD023D23A490062CFCD /* Sources */,
@@ -671,14 +671,14 @@
 			);
 			dependencies = (
 			);
-			name = "QuickHatch-OSX";
+			name = "QuickHatch OSX";
 			productName = "QuickHatch-OSX";
 			productReference = 7F58FAD423D23A490062CFCD /* QuickHatch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7F58FB0023D23AE10062CFCD /* QuickHatch-WatchOS */ = {
+		7F58FB0023D23AE10062CFCD /* QuickHatch WatchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-WatchOS" */;
+			buildConfigurationList = 7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */;
 			buildPhases = (
 				7F58FAFC23D23AE10062CFCD /* Headers */,
 				7F58FAFD23D23AE10062CFCD /* Sources */,
@@ -689,14 +689,14 @@
 			);
 			dependencies = (
 			);
-			name = "QuickHatch-WatchOS";
+			name = "QuickHatch WatchOS";
 			productName = "QuickHatch-WatchOS";
 			productReference = 7F58FB0123D23AE10062CFCD /* QuickHatch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7F58FB2C23D23EAF0062CFCD /* QuickHatch-TvOS */ = {
+		7F58FB2C23D23EAF0062CFCD /* QuickHatch TvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-TvOS" */;
+			buildConfigurationList = 7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */;
 			buildPhases = (
 				7F58FB2823D23EAF0062CFCD /* Headers */,
 				7F58FB2923D23EAF0062CFCD /* Sources */,
@@ -707,7 +707,7 @@
 			);
 			dependencies = (
 			);
-			name = "QuickHatch-TvOS";
+			name = "QuickHatch TvOS";
 			productName = "QuickHatch-TvOS";
 			productReference = 7F58FB2D23D23EAF0062CFCD /* QuickHatch.framework */;
 			productType = "com.apple.product-type.framework";
@@ -838,9 +838,9 @@
 				7F6E7CD622FBB81B0083BD1D /* QuickHatchTests */,
 				7F65D56822FDBFEB00FA1762 /* QuickHatch+Alamofire */,
 				7F65D57022FDBFEB00FA1762 /* QuickHatch+AlamofireTests */,
-				7F58FAD323D23A490062CFCD /* QuickHatch-OSX */,
-				7F58FB0023D23AE10062CFCD /* QuickHatch-WatchOS */,
-				7F58FB2C23D23EAF0062CFCD /* QuickHatch-TvOS */,
+				7F58FAD323D23A490062CFCD /* QuickHatch OSX */,
+				7F58FB0023D23AE10062CFCD /* QuickHatch WatchOS */,
+				7F58FB2C23D23EAF0062CFCD /* QuickHatch TvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1661,7 +1661,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-OSX" */ = {
+		7F58FAD923D23A4A0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F58FADA23D23A4A0062CFCD /* Debug */,
@@ -1670,7 +1670,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-WatchOS" */ = {
+		7F58FB0623D23AE10062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch WatchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F58FB0723D23AE10062CFCD /* Debug */,
@@ -1679,7 +1679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch-TvOS" */ = {
+		7F58FB3223D23EAF0062CFCD /* Build configuration list for PBXNativeTarget "QuickHatch TvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F58FB3323D23EAF0062CFCD /* Debug */,
