@@ -43,15 +43,14 @@ class HTTPCommandTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler { (result: Result<Response<DataModel>, Error>) in
-            switch result {
-            case .success( _):
-                XCTAssert(false)
-            case .failure(let error):
+            .handleError{ error in
                 if let requestError = error as? RequestError {
-                    XCTAssertTrue(requestError == RequestError.unauthorized)
+                    XCTAssertEqual(requestError, RequestError.unauthorized)
                 }
-            }
+        }
+        .dataResponse { data in
+            XCTAssert(false)
+            
         }.execute()
     }
     
@@ -62,8 +61,8 @@ class HTTPCommandTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .resultsOn(queue: dispatch)
-            .onResult { result in
+            .asyncOn(queue: dispatch)
+            .dataResponse { result in
                 XCTAssert(false)
             }.handleError { error in
                 XCTAssertTrue(!Thread.isMainThread)
@@ -80,16 +79,14 @@ class HTTPCommandTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler {
-            (result: Result<Response<DataModel>, Error>) in
-            switch result {
-            case .success( _):
-                XCTAssert(false)
-            case .failure(let error):
-                if let requestError = error as? RequestError {
-                    XCTAssertTrue(requestError == RequestError.requestWithError(statusCode: .InternalServerError))
-                }
+            .handleError{ error in
+                    if let requestError = error as? RequestError {
+                        XCTAssertEqual(requestError, RequestError.requestWithError(statusCode: .InternalServerError))
+                    }
             }
+            .dataResponse { data in
+                XCTAssert(false)
+                
             }.execute()
     }
     
@@ -99,16 +96,14 @@ class HTTPCommandTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler {
-                (result: Result<Response<DataModel>, Error>) in
-            switch result {
-            case .success( _):
-                XCTAssert(false)
-            case .failure(let error):
-                if let requestError = error as? RequestError {
-                    XCTAssertTrue(requestError == RequestError.unknownError(statusCode: 566))
-                }
+            .handleError{ error in
+                    if let requestError = error as? RequestError {
+                        XCTAssertEqual(requestError, RequestError.unknownError(statusCode: 566))
+                    }
             }
+            .dataResponse { data in
+                XCTAssert(false)
+                
             }.execute()
     }
     
@@ -118,16 +113,14 @@ class HTTPCommandTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler {
-            (result: Result<Response<DataModel>, Error>) in
-            switch result {
-            case .success( _):
-                XCTAssert(false)
-            case .failure(let error):
-                if let requestError = error as? RequestError {
-                    XCTAssertTrue(requestError == RequestError.noResponse)
-                }
+            .handleError{ error in
+                    if let requestError = error as? RequestError {
+                        XCTAssertEqual(requestError, RequestError.noResponse)
+                    }
             }
+            .dataResponse { data in
+                XCTAssert(false)
+                
             }.execute()
     }
 

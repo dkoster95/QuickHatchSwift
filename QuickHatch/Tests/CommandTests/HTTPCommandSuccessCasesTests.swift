@@ -43,42 +43,35 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler { (result: Result<Response<DataModel>, Error>) in
-                switch result {
-                case .success(let value):
-                    print(value.data.nick)
-                    XCTAssertTrue(value.data.nick == "sp")
-                case .failure( _):
-                    XCTAssertTrue(false)
-                }
+            .dataResponse { data in
+                XCTAssertTrue(data.nick == "sp")
                 
         }.execute()
     }
     
     func testSuccessCaseWithArrayAndCompletionHandler() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
-        _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
+        _ = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler { (result: Result<Response<Array<DataModel>>, Error>) in
+            .dataResponse { dataArray in
                 XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
-                switch result {
-                case .success(let array):
-                    XCTAssert(array.data.count == 2)
-                    XCTAssert(array.data[0].name! == "dan")
-                case .failure( _):
-                    XCTAssertTrue(false)
-                }
+                XCTAssert(dataArray.count == 2)
+                XCTAssert(dataArray[0].name! == "dan")
+
                 
             }.execute()
     }
     
     func testSuccessCaseWithArrayAndResults() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
-        _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
+        _ = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .onResults { dataModels in
+            .responseHeaders{ headers in
+                XCTAssert(headers.url!.absoluteString == "www.quickhatch.com")
+            }
+            .dataResponse { dataModels in
                 XCTAssert(dataModels.count == 2)
                 XCTAssert(dataModels[0].name! == "dan")
                 XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
@@ -90,7 +83,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .onResult { dataModel in
+            .dataResponse { dataModel in
                 XCTAssert(dataModel.name! == "dan")
                 XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
             }.execute()
@@ -113,7 +106,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .authenticate(authentication: authentication)
-            .onResult { dataModel in
+            .dataResponse { dataModel in
                 XCTAssert(false)
             }.handleError { error in
                 if let reqError = error as? RequestError {

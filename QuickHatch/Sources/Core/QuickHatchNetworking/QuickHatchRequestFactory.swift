@@ -44,7 +44,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 do {
-                    let json:Any =  try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
+                    let json:Any = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
                     completion(.success(Response(data:json, httpResponse: response.httpResponse)))
                 }
                 catch _ {
