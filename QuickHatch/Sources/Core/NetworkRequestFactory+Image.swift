@@ -6,7 +6,9 @@
 //  Copyright © 2019 DaVinci Labs. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+    
+import UIKit
 
 public extension NetworkRequestFactory {
     func image(urlRequest: URLRequest, quality: CGFloat = 1, dispatchQueue: DispatchQueue = .main, completion completionHandler: @escaping (Result<UIImage,Error>) -> Void) -> Request {
@@ -25,3 +27,4 @@ public extension NetworkRequestFactory {
         }
     }
 }
+#endif

@@ -31,7 +31,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
 //                               httpVersion: "1.1",
 //                               headerFields: nil)!
 //    }
-    let trafficController = StaticTrafficController()
+    let trafficController = TrafficControllerSet()
     
 //    private func buildRequest() -> URLRequest {
 //        return try! URLRequest.get(url: URL(fileURLWithPath: ""),
@@ -43,46 +43,38 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler { (result: Result<Response<DataModel>, Error>) in
-                switch result {
-                case .success(let value):
-                    print(value.data.nick)
-                    XCTAssertTrue(value.data.nick == "sp")
-                case .failure( _):
-                    XCTAssertTrue(false)
-                }
+            .dataResponse { data in
+                XCTAssertTrue(data.nick == "sp")
                 
         }.execute()
     }
     
     func testSuccessCaseWithArrayAndCompletionHandler() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
-        _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
+        let command = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .completionHandler { (result: Result<Response<Array<DataModel>>, Error>) in
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
-                switch result {
-                case .success(let array):
-                    XCTAssert(array.data.count == 2)
-                    XCTAssert(array.data[0].name! == "dan")
-                case .failure( _):
-                    XCTAssertTrue(false)
-                }
-                
-            }.execute()
+            .dataResponse { dataArray in
+                XCTAssert(dataArray.count == 2)
+                XCTAssert(dataArray[0].name! == "dan")
+            }
+        XCTAssert(!self.trafficController.isCommandRunning(key: "key", command: command))
+        command.execute()
     }
     
     func testSuccessCaseWithArrayAndResults() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
-        _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
+        _ = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .onResults { dataModels in
+            .responseHeaders{ headers in
+                XCTAssert(headers.url!.absoluteString == "www.quickhatch.com")
+            }
+            .dataResponse { dataModels in
                 XCTAssert(dataModels.count == 2)
                 XCTAssert(dataModels[0].name! == "dan")
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
             }.execute()
+        
     }
     
     func testSuccessCaseWithObjectAndResult() {
@@ -90,9 +82,8 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QuickHatchRequestFactory(urlSession: urlSession))
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
-            .onResult { dataModel in
+            .dataResponse { dataModel in
                 XCTAssert(dataModel.name! == "dan")
-                XCTAssert(!self.trafficController.isCommandRunning(key: "key"))
             }.execute()
     }
     
@@ -113,7 +104,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
             .log(with: log)
             .manageTraffic(with: trafficController, and: "key")
             .authenticate(authentication: authentication)
-            .onResult { dataModel in
+            .dataResponse { dataModel in
                 XCTAssert(false)
             }.handleError { error in
                 if let reqError = error as? RequestError {

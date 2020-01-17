@@ -24,7 +24,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     }
     
     fileprivate func execIn(dispatch: DispatchQueue, handler:@escaping () -> Void) {
-        log?.debug("🌐QuickHatch🌐 - Switching to \(dispatch)")
+        log?.debug("Switching to \(dispatch)")
         dispatch.async {
             handler()
         }
@@ -32,7 +32,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     
     fileprivate func logRequestData(urlRequest: URLRequest) {
         guard let method = urlRequest.httpMethod, let url = urlRequest.url else { return }
-        log?.debug("🌐QuickHatch🌐 - \(method.uppercased()) \(url.absoluteString)")
+        log?.debug("\(method.uppercased()) \(url.absoluteString)")
     }
     
     public func json(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping (Result<Response<Any>, Error>) -> Void) -> Request{
@@ -44,7 +44,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 do {
-                    let json:Any =  try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
+                    let json:Any = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
                     completion(.success(Response(data:json, httpResponse: response.httpResponse)))
                 }
                 catch _ {
@@ -91,6 +91,6 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     }
     
     deinit {
-        log?.info("🌐QuickHatch🌐 - Network factory destroyed")
+        log?.info("Network factory destroyed")
     }
 }

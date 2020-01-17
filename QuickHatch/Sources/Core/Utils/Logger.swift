@@ -8,7 +8,13 @@
 
 import Foundation
 
-public let log = Log()
+public let log = Log("🌐QuickHatch🌐 -")
+
+public struct LogsShortcuts {
+    static let quickhatch = "🌐QuickHatch🌐 - "
+    static let commandModule = "\(LogsShortcuts.quickhatch)Command -> "
+    static let requestFactory = "\(LogsShortcuts.quickhatch)RequestFactory -> "
+}
 
 public protocol Logger {
     func verbose(_ msg: String)
@@ -20,44 +26,45 @@ public protocol Logger {
 }
 
 public class Log: Logger {
+    private let shortcutId: String
     
-    public init() {
-        
+    public init(_ shortcutId: String) {
+        self.shortcutId = shortcutId
     }
     
     public func severe(_ msg: String) {
         #if DEBUG
-        NSLog("Log: \(thread) 🆘 SEVERE -- \(msg)")
+        NSLog("\(shortcutId) Log: \(thread) 🆘 SEVERE -- \(msg)")
         #endif
     }
     
     public func warning(_ msg: String) {
         #if DEBUG
-        NSLog("Log: \(thread) ⚠️ WARNING -- \(msg)")
+        NSLog("\(shortcutId) Log: \(thread) ⚠️ WARNING -- \(msg)")
         #endif
     }
     
     public func verbose(_ msg: String) {
         #if DEBUG
-        NSLog("Log: \(thread) VERBOSE -- \(msg)")
+        NSLog("\(shortcutId) Log: \(thread) VERBOSE -- \(msg)")
         #endif
     }
     
     public func debug(_ msg: String) {
         #if DEBUG
-        NSLog("Log: \(thread) ✅ DEBUG -- \(msg)")
+        NSLog("\(shortcutId) Log: \(thread) ✅ DEBUG -- \(msg)")
         #endif
     }
 
     public func error(_ msg: String) {
         #if DEBUG
-            NSLog("Log: \(thread) ❌ ERROR -- \(msg)")
+            NSLog("\(shortcutId) Log: \(thread) ❌ ERROR -- \(msg)")
         #endif
     }
     
     public func info(_ msg: String) {
         #if DEBUG
-            NSLog("Log: \(thread) ℹ️ INFO -- \(msg)")
+            NSLog("\(shortcutId) Log: \(thread) ℹ️ INFO -- \(msg)")
         #endif
     }
     
