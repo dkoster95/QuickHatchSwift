@@ -58,7 +58,7 @@
 ```ogdl
 git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.1"
 ```
-
+Run `carthage update` to build the framework (you can specify the platform) and then drag the executable `QuickHatch.framework` into your Xcode project.
 ### Manually
 
 No Package manager? no problem, you can use QuickHatch as a git submodule
