@@ -8,7 +8,7 @@
 
 ![](https://github.com/dkoster95/QuickHatchSwift/blob/master/diagram.png)
 
-
+The name of this networkLayer interface in QuickHatch is NetworkRequestFactory :).
 ```swift
 
 public protocol NetworkRequestFactory {
