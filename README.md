@@ -1,6 +1,6 @@
 
 
-## 🌐 QuickHatch 🌐
+![](https://github.com/dkoster95/QuickHatchSwift/blob/master/logo.png)
 - **Use an abstract networking layer**
 - **Use a functional module for your requests**
 - **94.3 % Test coverage**
