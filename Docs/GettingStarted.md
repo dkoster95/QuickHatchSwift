@@ -6,6 +6,8 @@
 - What QuickHatch provides is a set of protocols that allows you to follow clean code standards, SOLID principles and allows you to be flexible when it comes to Networking.
 - First of all, your app will use a NetworkClient (this can be Alamofire, etc), and QuickHatch provides a protocol called NetworkRequestFactory that sets what a network client should respond when making a request.
 
+![](https://github.com/dkoster95/QuickHatchSwift/blob/master/diagram.png)
+
 
 ```swift
 
