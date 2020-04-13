@@ -262,7 +262,7 @@
 		7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEnvironment.swift; sourceTree = "<group>"; };
 		7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Image.swift"; sourceTree = "<group>"; };
-		7F86176724450CBE00FD9993 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7F8617962445101F00FD9993 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		7FD4DFED2432A86400307999 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		7FD4DFF32432A8E400307999 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
 		7FD90E8C23D252130043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -404,7 +404,7 @@
 		7F6E7CC422FBB81B0083BD1D = {
 			isa = PBXGroup;
 			children = (
-				7F86176724450CBE00FD9993 /* Package.swift */,
+				7F8617962445101F00FD9993 /* Package.swift */,
 				7F6E7CD022FBB81B0083BD1D /* Sources */,
 				7F6E7CDB22FBB81B0083BD1D /* Tests */,
 				7F65D56A22FDBFEB00FA1762 /* QuickHatch+Alamofire */,
