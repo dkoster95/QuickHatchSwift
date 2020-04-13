@@ -21,10 +21,10 @@ let package = Package(
         .target(
             name: "QuickHatch",
             dependencies: [],
-            path: "Sources"),
+            path: "QuickHatch/Sources"),
         .testTarget(
             name: "QuickHatchTests",
             dependencies: ["QuickHatch"],
-        path: "Tests"),
+            path: "QuickHatch/Tests"),
     ]
 )
