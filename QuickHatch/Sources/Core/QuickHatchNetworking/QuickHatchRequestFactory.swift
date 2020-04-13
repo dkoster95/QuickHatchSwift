@@ -45,7 +45,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 do {
-                    let json:Any = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
+                    let json = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))
                     completion(.success(Response(data:json, httpResponse: response.httpResponse)))
                 }
                 catch let decodingError {
@@ -57,8 +57,9 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     
     public func data(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping DataCompletionHandler) -> Request {
         logRequestData(urlRequest: request)
-        return session.dataTask(with: request){
+        return session.dataTask(with: request) { [weak self]
             (data:Data?,response:URLResponse?,error:Error?) in
+            guard let self = self else { return }
             self.execIn(dispatch: dispatchQueue) {
                 if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: data, response: response, error: error, unauthorizedCode: self.unauthorizedCode) {
                     completion(Result.failure(requestError))

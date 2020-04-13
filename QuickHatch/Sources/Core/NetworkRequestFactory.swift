@@ -8,12 +8,6 @@
 
 import Foundation
 
-public protocol Request {
-    func resume()
-    func suspend()
-    func cancel()
-}
-
 public typealias DataCompletionHandler = (Result<Response<Data>, Error>) -> Void
 public typealias StringCompletionHandler = (Result<Response<String>, Error>) -> Void
 public typealias AnyCompletionHandler = (Result<Response<Any>, Error>) -> Void
@@ -21,8 +15,8 @@ public typealias AnyCompletionHandler = (Result<Response<Any>, Error>) -> Void
 
 public protocol NetworkRequestFactory {
     func log(with logger: Logger) 
-    func json(request: URLRequest,dispatchQueue: DispatchQueue, completionHandler completion: @escaping AnyCompletionHandler) -> Request
-    func string(request: URLRequest,dispatchQueue: DispatchQueue, completionHandler completion: @escaping StringCompletionHandler) -> Request
+    func json(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping AnyCompletionHandler) -> Request
+    func string(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping StringCompletionHandler) -> Request
     func data(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping DataCompletionHandler) -> Request
 }
 

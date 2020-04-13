@@ -63,6 +63,9 @@
 		7F6E7DA622FBBC020083BD1D /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
 		7F6E7DA722FBBC020083BD1D /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
 		7F6E7DA822FBBC020083BD1D /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7F86179D244517E100FD9993 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F86179B244517C800FD9993 /* MockRequest.swift */; };
+		7F86179F24451B0100FD9993 /* RequestMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F86179E24451B0100FD9993 /* RequestMonitorTests.swift */; };
+		7F8617A124451CCF00FD9993 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8617A024451CCF00FD9993 /* Request.swift */; };
 		7FD4DFEE2432A86400307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
 		7FD4DFF02432A89100307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
 		7FD4DFF12432A89100307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
@@ -263,6 +266,9 @@
 		7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Image.swift"; sourceTree = "<group>"; };
 		7F8617962445101F00FD9993 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		7F86179B244517C800FD9993 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		7F86179E24451B0100FD9993 /* RequestMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMonitorTests.swift; sourceTree = "<group>"; };
+		7F8617A024451CCF00FD9993 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7FD4DFED2432A86400307999 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		7FD4DFF32432A8E400307999 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
 		7FD90E8C23D252130043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +403,7 @@
 				7F6E7D8322FBBC010083BD1D /* QuickHatchNetworking */,
 				7F6E7D7D22FBBC010083BD1D /* Utils */,
 				7FD4DFED2432A86400307999 /* Response.swift */,
+				7F8617A024451CCF00FD9993 /* Request.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -445,6 +452,7 @@
 		7F6E7CDB22FBB81B0083BD1D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				7F86179A244517B400FD9993 /* RequestMonitorTests */,
 				7FFCD50323072D7B00E731FA /* Helpers */,
 				7FFCD4E82305F5C700E731FA /* Object Mapper Tests */,
 				7FFCD4E12304961700E731FA /* Parameter Encoding Tests */,
@@ -580,6 +588,15 @@
 				7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */,
 			);
 			path = "Network Settings";
+			sourceTree = "<group>";
+		};
+		7F86179A244517B400FD9993 /* RequestMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F86179B244517C800FD9993 /* MockRequest.swift */,
+				7F86179E24451B0100FD9993 /* RequestMonitorTests.swift */,
+			);
+			path = RequestMonitorTests;
 			sourceTree = "<group>";
 		};
 		7FFCD4C323030EBD00E731FA /* URLRequestTests */ = {
@@ -982,6 +999,7 @@
 				7FFCD4BA22FDF34D00E731FA /* URLRequest+Methods.swift in Sources */,
 				7F6E7D9D22FBBC020083BD1D /* Logger.swift in Sources */,
 				7F6E7D9722FBBC020083BD1D /* ObjectRelationalMapper.swift in Sources */,
+				7F8617A124451CCF00FD9993 /* Request.swift in Sources */,
 				7F6E7DA022FBBC020083BD1D /* QuickHatchRequestFactory.swift in Sources */,
 				7F6E7DA722FBBC020083BD1D /* ServerEnvironmentConfiguration.swift in Sources */,
 				7F65D64122FDE59300FA1762 /* Command.swift in Sources */,
@@ -1025,6 +1043,7 @@
 				7F0C92D423072F15002E103E /* MockAuthentication.swift in Sources */,
 				7F6E7D3422FBB84B0083BD1D /* URLSessionLayer+ImageTests.swift in Sources */,
 				7F0C92D123072F15002E103E /* MockDataModel.swift in Sources */,
+				7F86179F24451B0100FD9993 /* RequestMonitorTests.swift in Sources */,
 				7FFCD4EE2305FA5A00E731FA /* URLSessionDataTasksTests.swift in Sources */,
 				7F0C92D523072F15002E103E /* MockServerEnvironmentConfiguration.swift in Sources */,
 				7F6E7D3222FBB84B0083BD1D /* URLSessionLayerTests.swift in Sources */,
@@ -1040,6 +1059,7 @@
 				7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */,
 				7FFCD4EA2305F5DB00E731FA /* DataTest.swift in Sources */,
 				7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */,
+				7F86179D244517E100FD9993 /* MockRequest.swift in Sources */,
 				7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */,
 				7FFCD4CE230349E300E731FA /* NetworkSettingsTests.swift in Sources */,
 				7F58FAC423D21F780062CFCD /* TrafficControllerMultiSetTests.swift in Sources */,
