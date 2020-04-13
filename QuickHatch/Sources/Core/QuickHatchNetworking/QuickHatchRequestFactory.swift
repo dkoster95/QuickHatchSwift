@@ -11,9 +11,10 @@ import Foundation
 
 public class QuickHatchRequestFactory : NetworkRequestFactory {
     
-    private var session: URLSession
+    private let session: URLSession
     private var log: Logger?
-    private var unauthorizedCode: Int = 401
+    private let unauthorizedCode: Int
+    
     public init(urlSession: URLSession, unauthorizedCode: Int = 401) {
         self.session = urlSession
         self.unauthorizedCode = unauthorizedCode
@@ -47,8 +48,8 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                     let json:Any = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
                     completion(.success(Response(data:json, httpResponse: response.httpResponse)))
                 }
-                catch _ {
-                    completion(Result.failure(RequestError.serializationError))
+                catch let decodingError {
+                    completion(Result.failure(RequestError.serializationError(error: decodingError)))
                 }
             }
         }
@@ -81,7 +82,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 guard let stringData = String(data: response.data, encoding: .utf8) else {
-                    completion(.failure(RequestError.serializationError))
+                    completion(.failure(RequestError.serializationError(error: RequestError.malformedRequest)))
                     return
                 }
                 let response = Response(data: stringData, httpResponse: response.httpResponse)

@@ -57,7 +57,7 @@ class URLSessionLayerTests: URLSessionLayerBase {
             switch result {
             case .failure(let error):
                 if let reqError = error as? RequestError {
-                    XCTAssert(reqError == RequestError.serializationError)
+                    XCTAssert(reqError == RequestError.serializationError(error: RequestError.unauthorized))
                 }
             case .success( _):
                 XCTAssert(false)

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FD90EE323D253540043B7A2"
-               BuildableName = "QuickHatch_TvOS.framework"
+               BuildableName = "QuickHatch.framework"
                BlueprintName = "QuickHatch TvOS"
                ReferencedContainer = "container:QuickHatch.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FD90EE323D253540043B7A2"
-            BuildableName = "QuickHatch_TvOS.framework"
+            BuildableName = "QuickHatch.framework"
             BlueprintName = "QuickHatch TvOS"
             ReferencedContainer = "container:QuickHatch.xcodeproj">
          </BuildableReference>

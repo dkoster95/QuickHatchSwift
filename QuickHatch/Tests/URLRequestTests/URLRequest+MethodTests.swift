@@ -29,6 +29,16 @@ class URLRequest_MethodTests: XCTestCase {
         XCTAssertTrue(request.httpMethod == "GET")
     }
     
+    func testGetRequestWithString() {
+        let request = try! URLRequest.get(url: "www.quickhatch.com", encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "GET")
+    }
+    
+    func testGetRequestWithStringError() {
+        XCTAssertThrowsError(try URLRequest.get(url: "@#$%^||||???", encoding: URLEncoding.default))
+    }
+    
     func testGetRequestWithParams() {
         let request = try! URLRequest.get(url: commonURl, params: ["age":12], encoding: URLEncoding.queryString, headers: [:])
         print("\(commonURl.absoluteString)?age=12")
@@ -67,6 +77,12 @@ class URLRequest_MethodTests: XCTestCase {
         XCTAssertTrue(request.httpMethod == "POST")
     }
     
+    func testPostRequestWithURLString() {
+        let request = try! URLRequest.post(url: "www.quickhatch.com", encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "POST")
+    }
+    
     func testPostRequestWithParams() {
         let request = try! URLRequest.post(url: commonURl, params: ["age":12], encoding: URLEncoding.httpBody, headers: [:])
         XCTAssertTrue(request.httpMethod == "POST")
@@ -94,6 +110,12 @@ class URLRequest_MethodTests: XCTestCase {
     
     func testPutRequest() {
         let request = try! URLRequest.put(url: commonURl, encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "PUT")
+    }
+    
+    func testPutRequestWithURLString() {
+        let request = try! URLRequest.put(url: "www.quickhatch.com", encoding: URLEncoding.default)
         XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
         XCTAssertTrue(request.httpMethod == "PUT")
     }
@@ -129,6 +151,12 @@ class URLRequest_MethodTests: XCTestCase {
         XCTAssertTrue(request.httpMethod == "PATCH")
     }
     
+    func testPatchRequestWithURLString() {
+        let request = try! URLRequest.patch(url: "www.quickhatch.com", encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "PATCH")
+    }
+    
     func testPatchRequestWithParams() {
         let request = try! URLRequest.patch(url: commonURl, params: ["age":12], encoding: URLEncoding.default, headers: [:])
         XCTAssertTrue(request.httpMethod == "PATCH")
@@ -156,6 +184,12 @@ class URLRequest_MethodTests: XCTestCase {
     
     func testDeleteRequest() {
         let request = try! URLRequest.delete(url: commonURl, encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "DELETE")
+    }
+    
+    func testDeleteRequestWithURLString() {
+        let request = try! URLRequest.delete(url: "www.quickhatch.com", encoding: URLEncoding.default)
         XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
         XCTAssertTrue(request.httpMethod == "DELETE")
     }
@@ -192,6 +226,12 @@ class URLRequest_MethodTests: XCTestCase {
         XCTAssertTrue(request.httpMethod == "HEAD")
     }
     
+    func testHeadRequestWithURLString() {
+        let request = try! URLRequest.head(url: "www.quickhatch.com", encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "HEAD")
+    }
+    
     func testHeadRequestWithParams() {
         let request = try! URLRequest.head(url: commonURl, params: ["age":12], encoding: URLEncoding.default, headers: [:])
         XCTAssertTrue(request.httpMethod == "HEAD")
@@ -220,6 +260,12 @@ class URLRequest_MethodTests: XCTestCase {
     
     func testConnectRequest() {
         let request = try! URLRequest.connect(url: commonURl, encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "CONNECT")
+    }
+    
+    func testConnectRequestWithURLString() {
+        let request = try! URLRequest.connect(url: "www.quickhatch.com", encoding: URLEncoding.default)
         XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
         XCTAssertTrue(request.httpMethod == "CONNECT")
     }
@@ -256,6 +302,12 @@ class URLRequest_MethodTests: XCTestCase {
         XCTAssertTrue(request.httpMethod == "TRACE")
     }
     
+    func testTraceRequestWithURLString() {
+        let request = try! URLRequest.trace(url: "www.quickhatch.com", encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "TRACE")
+    }
+    
     func testTraceRequestWithParams() {
         let request = try! URLRequest.trace(url: commonURl, params: ["age":12], encoding: URLEncoding.default, headers: [:])
         XCTAssertTrue(request.httpMethod == "TRACE")
@@ -284,6 +336,12 @@ class URLRequest_MethodTests: XCTestCase {
     
     func testOptionsRequest() {
         let request = try! URLRequest.options(url: commonURl, encoding: URLEncoding.default)
+        XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
+        XCTAssertTrue(request.httpMethod == "OPTIONS")
+    }
+    
+    func testOptionsRequestWithURLString() {
+        let request = try! URLRequest.options(url: "www.quickhatch.com", encoding: URLEncoding.default)
         XCTAssertTrue(request.url!.absoluteString == commonURl.absoluteString)
         XCTAssertTrue(request.httpMethod == "OPTIONS")
     }

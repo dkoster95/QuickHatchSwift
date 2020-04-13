@@ -78,8 +78,4 @@ public class Command<T>: CommandType {
         
     }
     
-//    static public func == (lhs: Command<T>, rhs: Command<T>) -> Bool {
-//        return lhs.id == rhs.id
-//    }
-    
 }

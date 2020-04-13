@@ -10,20 +10,6 @@ import XCTest
 import QuickHatch
 
 class URLSessionLayer_ImageTests: URLSessionLayerBase {
-
-    
-//    fileprivate func getResponse(statusCode: Int) -> HTTPURLResponse {
-//        return HTTPURLResponse(url: URL(string:"www.google.com")!,
-//                               statusCode: statusCode,
-//                               httpVersion: "1.1",
-//                               headerFields: nil)!
-//    }
-    
-//    fileprivate var getDataModelSample: Data {
-//        let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
-//        return try! JSONEncoder().encode(dataModel)
-//    }
-    
     fileprivate var imageData: Data {
         let bundle = Bundle.init(for: URLSessionLayer_ImageTests.self)
         let image = UIImage(named: "swifticon", in: bundle, compatibleWith: nil)
@@ -44,7 +30,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
-                    XCTAssert(requestError == .serializationError)
+                    XCTAssert(requestError == .serializationError(error: ImageError.malformedError))
                 } else {
                     
                 }

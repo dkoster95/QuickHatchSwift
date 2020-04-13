@@ -23,7 +23,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
-                    XCTAssert(requestError == .serializationError)
+                    XCTAssert(requestError == .serializationError(error: RequestError.unauthorized))
                 }
                 else {
                     XCTAssert(false)
@@ -40,7 +40,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
             switch result {
             case .failure(let error):
                 if let reqError = error as? RequestError {
-                    XCTAssert(reqError == RequestError.serializationError)
+                    XCTAssert(reqError == RequestError.serializationError(error: RequestError.unauthorized))
                 }
             case .success( _):
                 XCTAssert(false)

@@ -20,8 +20,8 @@ public extension NetworkRequestFactory {
                     completion(.success(Response<T>(data: objectDecoded,
                                                     httpResponse: dataJson.httpResponse)))
                 }
-                catch _ {
-                    completion(Result.failure(RequestError.serializationError))
+                catch let decoderError {
+                    completion(Result.failure(RequestError.serializationError(error: decoderError)))
                 }
             }
         }
@@ -37,8 +37,8 @@ public extension NetworkRequestFactory {
                     completion(.success(Response<[T]>(data: arrayDecoded,
                                                       httpResponse: dataArray.httpResponse)))
                 }
-                catch _ {
-                    completion(Result.failure(RequestError.serializationError))
+                catch let decoderError {
+                    completion(Result.failure(RequestError.serializationError(error: decoderError)))
                 }
             }
         }

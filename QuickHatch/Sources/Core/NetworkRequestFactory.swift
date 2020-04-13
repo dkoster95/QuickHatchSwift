@@ -14,11 +14,6 @@ public protocol Request {
     func cancel()
 }
 
-public struct Response<Value> {
-    public var data: Value
-    public var httpResponse: URLResponse
-}
-
 public typealias DataCompletionHandler = (Result<Response<Data>, Error>) -> Void
 public typealias StringCompletionHandler = (Result<Response<String>, Error>) -> Void
 public typealias AnyCompletionHandler = (Result<Response<Any>, Error>) -> Void

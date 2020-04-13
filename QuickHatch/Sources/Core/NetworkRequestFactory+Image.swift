@@ -10,6 +10,10 @@
     
 import UIKit
 
+public enum ImageError: Error {
+    case malformedError
+}
+
 public extension NetworkRequestFactory {
     func image(urlRequest: URLRequest, quality: CGFloat = 1, dispatchQueue: DispatchQueue = .main, completion completionHandler: @escaping (Result<UIImage,Error>) -> Void) -> Request {
         return data(request: urlRequest, dispatchQueue: dispatchQueue) {
@@ -19,7 +23,7 @@ public extension NetworkRequestFactory {
                 if let image = UIImage(data: data.data, scale: quality) {
                     completionHandler(.success(image))
                 } else {
-                    completionHandler(.failure(RequestError.serializationError))
+                    completionHandler(.failure(RequestError.serializationError(error: ImageError.malformedError)))
                 }
             case .failure(let error):
                 completionHandler(.failure(error))

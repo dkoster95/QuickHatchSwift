@@ -10,11 +10,11 @@ import Foundation
 
 public class HTTPRequestCommand<T: Codable>: Command<T> {
     
-    private var urlRequest: URLRequest
+    private let urlRequest: URLRequest
     private var networkFactory: NetworkRequestFactory
-    private var authentication: Authentication?
+   // private var authentication: Authentication?
     private var request: Request?
-    private var authenticationRefresher: RefreshableAuthentication?
+    //private var authenticationRefresher: RefreshableAuthentication?
     
     
     public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QuickHatchRequestFactory(urlSession: URLSession.shared)) {
@@ -23,15 +23,17 @@ public class HTTPRequestCommand<T: Codable>: Command<T> {
     }
     
     public override func log(with logger: Logger) -> Command<T> {
+        
         networkFactory.log(with: logger)
-        return super.log(with: logger)
+        return HTTPRequestCommand(urlRequest: urlRequest, networkFactory: networkFactory)
+//        return super.log(with: logger)
     }
     
     public override func authenticate(authentication: Authentication) -> Command<T> {
         log?.info("Authenticate Method called with \(authentication)")
-        self.authentication = authentication
-        urlRequest = authentication.authorize(request: urlRequest) 
-        return self
+        //self.authentication = authentication
+        let authenticatedRequest = authentication.authorize(request: urlRequest)
+        return HTTPRequestCommand(urlRequest: authenticatedRequest, networkFactory: networkFactory)
     }
     
     public override func execute() {

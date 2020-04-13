@@ -63,6 +63,11 @@
 		7F6E7DA622FBBC020083BD1D /* HostEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */; };
 		7F6E7DA722FBBC020083BD1D /* ServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */; };
 		7F6E7DA822FBBC020083BD1D /* NetworkRequestFactory+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */; };
+		7FD4DFEE2432A86400307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
+		7FD4DFF02432A89100307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
+		7FD4DFF12432A89100307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
+		7FD4DFF22432A89200307999 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFED2432A86400307999 /* Response.swift */; };
+		7FD4DFF42432A8E400307999 /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4DFF32432A8E400307999 /* ResponseTests.swift */; };
 		7FD90EA123D2532A0043B7A2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7322FBBC010083BD1D /* Authentication.swift */; };
 		7FD90EA223D2532A0043B7A2 /* CommandTrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D7B22FBBC010083BD1D /* CommandTrafficController.swift */; };
 		7FD90EA323D2532A0043B7A2 /* CommandTrafficControllerMultiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58FAC123D21C160062CFCD /* CommandTrafficControllerMultiSet.swift */; };
@@ -257,6 +262,9 @@
 		7F6E7D8C22FBBC010083BD1D /* HostEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEnvironment.swift; sourceTree = "<group>"; };
 		7F6E7D8D22FBBC010083BD1D /* ServerEnvironmentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		7F6E7D8E22FBBC010083BD1D /* NetworkRequestFactory+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkRequestFactory+Image.swift"; sourceTree = "<group>"; };
+		7F86176724450CBE00FD9993 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7FD4DFED2432A86400307999 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		7FD4DFF32432A8E400307999 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
 		7FD90E8C23D252130043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD90E9923D252D90043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD90EE423D253540043B7A2 /* QuickHatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +396,7 @@
 				7F6E7D8722FBBC010083BD1D /* ParameterEncoding */,
 				7F6E7D8322FBBC010083BD1D /* QuickHatchNetworking */,
 				7F6E7D7D22FBBC010083BD1D /* Utils */,
+				7FD4DFED2432A86400307999 /* Response.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -395,6 +404,7 @@
 		7F6E7CC422FBB81B0083BD1D = {
 			isa = PBXGroup;
 			children = (
+				7F86176724450CBE00FD9993 /* Package.swift */,
 				7F6E7CD022FBB81B0083BD1D /* Sources */,
 				7F6E7CDB22FBB81B0083BD1D /* Tests */,
 				7F65D56A22FDBFEB00FA1762 /* QuickHatch+Alamofire */,
@@ -444,6 +454,7 @@
 				7F6E7D2822FBB84B0083BD1D /* URLSessionLayerTests */,
 				7F6E7CDC22FBB81B0083BD1D /* QuickHatchTests.swift */,
 				7F6E7CDE22FBB81B0083BD1D /* Info.plist */,
+				7FD4DFF32432A8E400307999 /* ResponseTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -828,6 +839,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7F6E7CC422FBB81B0083BD1D;
 			productRefGroup = 7F6E7CCF22FBB81B0083BD1D /* Products */;
@@ -990,6 +1002,7 @@
 				7F6E7D9922FBBC020083BD1D /* CommandTrafficController.swift in Sources */,
 				7F6E7D9A22FBBC020083BD1D /* HTTPRequestCommand.swift in Sources */,
 				7FFCD4F123071D7300E731FA /* JSONEncoding.swift in Sources */,
+				7FD4DFEE2432A86400307999 /* Response.swift in Sources */,
 				7FFCD4BC22FDFB5E00E731FA /* NetworkRequestFactory+Dispatch.swift in Sources */,
 				7F6E7DA422FBBC020083BD1D /* ParameterEncoding.swift in Sources */,
 				7F6E7D8F22FBBC010083BD1D /* NetworkRequestFactory.swift in Sources */,
@@ -1020,6 +1033,7 @@
 				7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */,
 				7F698C5A235A406F00978721 /* URLSessionLayer+ObjectTests.swift in Sources */,
 				7FFCD4D22303524000E731FA /* TrafficControllerTests.swift in Sources */,
+				7FD4DFF42432A8E400307999 /* ResponseTests.swift in Sources */,
 				7FFCD4E32304962B00E731FA /* StringEncodingTests.swift in Sources */,
 				7F6E7CDD22FBB81B0083BD1D /* QuickHatchTests.swift in Sources */,
 				7FFCD4E52304A16300E731FA /* EncodingHelpersTests.swift in Sources */,
@@ -1063,6 +1077,7 @@
 				7FD90EB623D2532B0043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
 				7FD90EB723D2532B0043B7A2 /* Logger.swift in Sources */,
 				7FD90EB823D2532B0043B7A2 /* GenericAPI.swift in Sources */,
+				7FD4DFF02432A89100307999 /* Response.swift in Sources */,
 				7FD90EB923D2532B0043B7A2 /* URLRequest+Additions.swift in Sources */,
 				7FD90EBA23D2532B0043B7A2 /* URLRequest+Methods.swift in Sources */,
 				7FD90EBB23D2532B0043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
@@ -1101,6 +1116,7 @@
 				7FD90ED523D253360043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
 				7FD90ED623D253360043B7A2 /* Logger.swift in Sources */,
 				7FD90ED723D253360043B7A2 /* GenericAPI.swift in Sources */,
+				7FD4DFF12432A89100307999 /* Response.swift in Sources */,
 				7FD90ED823D253360043B7A2 /* URLRequest+Additions.swift in Sources */,
 				7FD90ED923D253360043B7A2 /* URLRequest+Methods.swift in Sources */,
 				7FD90EDA23D253360043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
@@ -1139,6 +1155,7 @@
 				7FD90F0123D253980043B7A2 /* QuickHatchRequestFactory.swift in Sources */,
 				7FD90F0223D253980043B7A2 /* Logger.swift in Sources */,
 				7FD90F0323D253980043B7A2 /* GenericAPI.swift in Sources */,
+				7FD4DFF22432A89200307999 /* Response.swift in Sources */,
 				7FD90F0423D253980043B7A2 /* URLRequest+Additions.swift in Sources */,
 				7FD90F0523D253980043B7A2 /* URLRequest+Methods.swift in Sources */,
 				7FD90F0623D253980043B7A2 /* URLSessionDataTask+Additions.swift in Sources */,
