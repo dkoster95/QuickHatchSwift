@@ -26,4 +26,18 @@ public extension NetworkRequestFactory {
             }
         }
     }
+    
+    func response<T:Codable>(request: URLRequest, dispatchQueue: DispatchQueue = .main, jsonDecoder: JSONDecoder = JSONDecoder() ,completionHandler completion: @escaping (Result<Response<T>, Error>) -> Void, numberOfAttempts: Int, stopCondition: @escaping (Result<Response<T>, Error>) -> Bool) -> Request {
+        return response(request: request, dispatchQueue: dispatchQueue, jsonDecoder: jsonDecoder) { (result: Result<Response<T>,Error>) in
+            guard !stopCondition(result) else {
+                completion(result)
+                return
+            }
+            guard numberOfAttempts > 0 else {
+                completion(.failure(RequestPollingError.attemptsOverflow))
+                return
+            }
+            self.response(request: request, dispatchQueue: dispatchQueue, jsonDecoder: jsonDecoder, completionHandler: completion, numberOfAttempts: numberOfAttempts - 1, stopCondition: stopCondition).resume()
+        }
+    }
 }

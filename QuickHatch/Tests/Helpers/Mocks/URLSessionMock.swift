@@ -41,6 +41,21 @@ class URLSessionMock: URLSession {
     }
 }
 
+class URLSessionMockResponses: URLSession {
+    private var responses: [(Data?,Error?,URLResponse?)] = []
+    
+    init(responses: [(Data?,Error?,URLResponse?)]) {
+        self.responses = responses
+    }
+    
+    override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        let firstResponse = responses.popLast()
+        return URLSessionDataTaskMock {
+            completionHandler(firstResponse?.0, firstResponse?.2, firstResponse?.1)
+        }
+    }
+}
+
 class URLSessionMockWithDelay: URLSessionMock {
     private var delay: Double
     

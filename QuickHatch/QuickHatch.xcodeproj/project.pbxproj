@@ -12,7 +12,6 @@
 		7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2722FBB84B0083BD1D /* URLSessionDataTaskMock.swift */; };
 		7F0C92D423072F15002E103E /* MockAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4C62303324400E731FA /* MockAuthentication.swift */; };
 		7F0C92D523072F15002E103E /* MockServerEnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4CF23034B0D00E731FA /* MockServerEnvironmentConfiguration.swift */; };
-		7F0C92D623072F16002E103E /* MockDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2522FBB84B0083BD1D /* MockDataModel.swift */; };
 		7F0C92D723072F16002E103E /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2622FBB84B0083BD1D /* URLSessionMock.swift */; };
 		7F0C92D823072F16002E103E /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2722FBB84B0083BD1D /* URLSessionDataTaskMock.swift */; };
 		7F0C92D923072F16002E103E /* MockAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFCD4C62303324400E731FA /* MockAuthentication.swift */; };
@@ -24,6 +23,8 @@
 		7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */; };
 		7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F63235796DC00175CB8 /* CommandTestBase.swift */; };
 		7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */; };
+		7F518D042445F99200E57BE3 /* PollingRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F518D032445F99200E57BE3 /* PollingRequestTests.swift */; };
+		7F518D072445FFF700E57BE3 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F518D052445FA0E00E57BE3 /* DataMock.json */; };
 		7F65D57222FDBFEB00FA1762 /* QuickHatch_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */; };
 		7F65D57722FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D57622FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift */; };
 		7F65D57922FDBFEB00FA1762 /* QuickHatch_Alamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -206,6 +207,8 @@
 		7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandAuthRefresherTests.swift; sourceTree = "<group>"; };
 		7F473F63235796DC00175CB8 /* CommandTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTestBase.swift; sourceTree = "<group>"; };
 		7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationRefresher.swift; sourceTree = "<group>"; };
+		7F518D032445F99200E57BE3 /* PollingRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingRequestTests.swift; sourceTree = "<group>"; };
+		7F518D052445FA0E00E57BE3 /* DataMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DataMock.json; sourceTree = "<group>"; };
 		7F65D56922FDBFEB00FA1762 /* QuickHatch_Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickHatch_Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F65D56B22FDBFEB00FA1762 /* QuickHatch_Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickHatch_Alamofire.h; sourceTree = "<group>"; };
 		7F65D56C22FDBFEB00FA1762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -451,6 +454,7 @@
 				7FFCD4C62303324400E731FA /* MockAuthentication.swift */,
 				7FFCD4CF23034B0D00E731FA /* MockServerEnvironmentConfiguration.swift */,
 				7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */,
+				7F518D052445FA0E00E57BE3 /* DataMock.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -466,6 +470,7 @@
 				7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */,
 				7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */,
 				7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */,
+				7F518D032445F99200E57BE3 /* PollingRequestTests.swift */,
 			);
 			path = URLSessionLayerTests;
 			sourceTree = "<group>";
@@ -872,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6E7D3322FBB84B0083BD1D /* swifticon.png in Resources */,
+				7F518D072445FFF700E57BE3 /* DataMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,7 +959,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0C92D723072F16002E103E /* URLSessionMock.swift in Sources */,
-				7F0C92D623072F16002E103E /* MockDataModel.swift in Sources */,
 				7FFCD4FC2307235400E731FA /* MockAlamofireSession.swift in Sources */,
 				7F0C92D923072F16002E103E /* MockAuthentication.swift in Sources */,
 				7F65D57722FDBFEB00FA1762 /* QuickHatch_AlamofireTests.swift in Sources */,
@@ -1028,6 +1033,7 @@
 				7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */,
 				7F86179D244517E100FD9993 /* MockRequest.swift in Sources */,
 				7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */,
+				7F518D042445F99200E57BE3 /* PollingRequestTests.swift in Sources */,
 				7FFCD4CE230349E300E731FA /* NetworkSettingsTests.swift in Sources */,
 				7FFCD4EC2305F6B000E731FA /* LoosyMapperTests.swift in Sources */,
 				7FFCD4CB230344B200E731FA /* URLRequest+AdditionTests.swift in Sources */,

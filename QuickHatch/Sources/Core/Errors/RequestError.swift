@@ -8,6 +8,15 @@
 
 import Foundation
 
+
+public enum RequestPollingError: Error {
+    case attemptsOverflow
+}
+
+public enum ImageError: Error {
+    case malformedError
+}
+
 public enum RequestError: Error, Equatable {
     
     public static func == (lhs: RequestError, rhs: RequestError) -> Bool {
