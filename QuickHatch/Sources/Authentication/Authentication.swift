@@ -11,7 +11,7 @@ import Foundation
 public protocol Authentication {
     var isAuthenticated: Bool { get }
     func autenticate(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void)
-    func authorize(request: URLRequest) -> URLRequest
+    func authorize(request: URLRequest) throws -> URLRequest
     func clearCredentials()
 }
 

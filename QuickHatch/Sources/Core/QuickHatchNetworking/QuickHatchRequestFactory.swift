@@ -11,9 +11,10 @@ import Foundation
 
 public class QuickHatchRequestFactory : NetworkRequestFactory {
     
-    private var session: URLSession
+    private let session: URLSession
     private var log: Logger?
-    private var unauthorizedCode: Int = 401
+    private let unauthorizedCode: Int
+    
     public init(urlSession: URLSession, unauthorizedCode: Int = 401) {
         self.session = urlSession
         self.unauthorizedCode = unauthorizedCode
@@ -44,11 +45,11 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 do {
-                    let json:Any = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as Any
+                    let json = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))
                     completion(.success(Response(data:json, httpResponse: response.httpResponse)))
                 }
-                catch _ {
-                    completion(Result.failure(RequestError.serializationError))
+                catch let decodingError {
+                    completion(Result.failure(RequestError.serializationError(error: decodingError)))
                 }
             }
         }
@@ -56,8 +57,9 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     
     public func data(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping DataCompletionHandler) -> Request {
         logRequestData(urlRequest: request)
-        return session.dataTask(with: request){
+        return session.dataTask(with: request) { [weak self]
             (data:Data?,response:URLResponse?,error:Error?) in
+            guard let self = self else { return }
             self.execIn(dispatch: dispatchQueue) {
                 if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: data, response: response, error: error, unauthorizedCode: self.unauthorizedCode) {
                     completion(Result.failure(requestError))
@@ -81,7 +83,7 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
                 completion(.failure(error))
             case .success(let response):
                 guard let stringData = String(data: response.data, encoding: .utf8) else {
-                    completion(.failure(RequestError.serializationError))
+                    completion(.failure(RequestError.serializationError(error: RequestError.malformedRequest)))
                     return
                 }
                 let response = Response(data: stringData, httpResponse: response.httpResponse)

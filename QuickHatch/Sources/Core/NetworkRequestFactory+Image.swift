@@ -19,7 +19,7 @@ public extension NetworkRequestFactory {
                 if let image = UIImage(data: data.data, scale: quality) {
                     completionHandler(.success(image))
                 } else {
-                    completionHandler(.failure(RequestError.serializationError))
+                    completionHandler(.failure(RequestError.serializationError(error: ImageError.malformedError)))
                 }
             case .failure(let error):
                 completionHandler(.failure(error))

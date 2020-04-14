@@ -19,3 +19,12 @@ class DataModel: Codable {
         self.age = age
     }
 }
+
+extension DataModel {
+    static func getMock() -> DataModel {
+        let path = Bundle(for: self).path(forResource: "DataMock", ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .dataReadingMapped)
+        let dataModel = try! JSONDecoder().decode(DataModel.self, from: data)
+        return dataModel
+    }
+}
