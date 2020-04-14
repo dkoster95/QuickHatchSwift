@@ -60,7 +60,7 @@ git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.2"
 ```
 Run `carthage update` to build the framework (you can specify the platform) and then drag the executable `QuickHatch.framework` into your Xcode project.
 ## Swift Package Manager
-QuickHatch has support for SPM, you just need to go to Xcode in the menu File/Swift Packages/ Package Add dependency
+QuickHatch has support for SPM, you just need to go to Xcode in the menu File/Swift Packages/Add package dependency
 and you select the version of QuickHatch.
 	
 ### Manually
