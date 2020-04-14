@@ -56,9 +56,13 @@
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate QuickHatch into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.1"
+git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.2"
 ```
 Run `carthage update` to build the framework (you can specify the platform) and then drag the executable `QuickHatch.framework` into your Xcode project.
+## Swift Package Manager
+QuickHatch has support for SPM, you just need to go to Xcode in the menu File/Swift Packages/ Package Add dependency
+and you select the version of QuickHatch.
+	
 ### Manually
 
 No Package manager? no problem, you can use QuickHatch as a git submodule
