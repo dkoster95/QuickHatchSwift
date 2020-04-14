@@ -3,7 +3,7 @@
 Codable (Encodable & Decodable) is a protocol launched by Apple to encode and decode JSONs very easily, 
 QuickHatch provides an extension for mapping responses to an object or an array.
 
-This is a sample for an **object** mapping using QuickHatch:
+This is a sample for a **response** mapping using QuickHatch:
 
 ```swift
 	struct User: Codable {
@@ -11,7 +11,7 @@ This is a sample for an **object** mapping using QuickHatch:
 		var age: Int
 	}
 	
-	let request = networkRequestFactory.object(request: yourRequest) { (result: Result<Response<User>, Error>) in 
+	let request = networkRequestFactory.response(request: yourRequest) { (result: Result<Response<User>, Error>) in 
 		switch result {
 			case .success(let response):
 				//do something
@@ -22,17 +22,5 @@ This is a sample for an **object** mapping using QuickHatch:
 	request.resume()
 ```
 
-And for an **array**...
-```swift
-	let request = networkRequestFactory.array(request: yourRequest) { (result: Result<Response<[User]>, Error>) in 
-		switch result {
-			case .success(let response):
-				//do something
-			case .failure(let error):
-				//handle error
-		}
-	}
-	request.resume()
-```
 
 ---
