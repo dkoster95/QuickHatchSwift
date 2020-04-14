@@ -8,78 +8,66 @@
 
 import Foundation
 
-public class HTTPRequestCommand<T: Codable>: Command<T> {
+public class HTTPRequestCommand<T: Codable> {
     
     private let urlRequest: URLRequest
     private var networkFactory: NetworkRequestFactory
-   // private var authentication: Authentication?
-    private var request: Request?
-    //private var authenticationRefresher: RefreshableAuthentication?
+    private var responseHeaders: ((URLResponse) -> Void)?
+    private var dispatchQueue: DispatchQueue = .main
+    private let logger: Logger
+    private var discardIfCancelledFlag: Bool = false
     
     
-    public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QuickHatchRequestFactory(urlSession: URLSession.shared)) {
+    public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QuickHatchRequestFactory(urlSession: URLSession.shared), logger: Logger = log) {
         self.urlRequest = urlRequest
         self.networkFactory = networkFactory
+        self.logger = log
     }
     
-    public override func log(with logger: Logger) -> Command<T> {
-        
-        networkFactory.log(with: logger)
-        return HTTPRequestCommand(urlRequest: urlRequest, networkFactory: networkFactory)
-//        return super.log(with: logger)
+    public func authenticate(authentication: Authentication) -> HTTPRequestCommand<T> {
+        logger.info("Authenticate Method called with \(authentication)")
+        let authenticatedRequest = try! authentication.authorize(request: urlRequest)
+        let request = HTTPRequestCommand(urlRequest: authenticatedRequest, networkFactory: networkFactory, logger: logger)
+        request.responseHeaders = self.responseHeaders
+        request.dispatchQueue = dispatchQueue
+        return request
     }
     
-    public override func authenticate(authentication: Authentication) -> Command<T> {
-        log?.info("Authenticate Method called with \(authentication)")
-        //self.authentication = authentication
-        let authenticatedRequest = authentication.authorize(request: urlRequest)
-        return HTTPRequestCommand(urlRequest: authenticatedRequest, networkFactory: networkFactory)
+    public func asyncOn(queue: DispatchQueue) -> HTTPRequestCommand<T> {
+        let commandCopy = self
+        commandCopy.dispatchQueue = queue
+        return commandCopy
     }
     
-    public override func execute() {
-        setupTrafficController()
-        setupHandler()
-        request?.resume()
+    public func responseHeaders(responseHeaders: @escaping (URLResponse) -> Void) -> HTTPRequestCommand<T>{
+        let commandCopy = self
+        commandCopy.responseHeaders = responseHeaders
+        return commandCopy
     }
     
-    private func setupTrafficController() {
-        if let trafficController = self.trafficController,
-            let key = self.key {
-            trafficController.append(for: key,
-                                     command: self)
-        }
+    public func discardIfCancelled() -> HTTPRequestCommand<T> {
+        let commandCopy = self
+        commandCopy.discardIfCancelledFlag = true
+        return commandCopy
     }
     
-    private func resetTraffic() {
-        if let trafficController = self.trafficController, let key = self.key {
-            trafficController.resetFlow(key: key)
-        }
-        request = nil
-    }
-    
-    private func setupHandler() {
-        if let handleResult = self.result {
-            request = networkFactory.object(request: urlRequest, dispatchQueue: resultsQueue) { [weak self] (result: Result<Response<T>, Error>) in
-                guard let self = self else { return }
-                self.resetTraffic()
-                switch result {
-                case .success(let object):
-                    handleResult(object.data)
-                    if let responseHeaders = self.responseHeaders {
-                        responseHeaders(object.httpResponse)
-                    }
-                case .failure(let error):
-                    self.handleError?(error)
+    public func dataResponse(resultHandler: @escaping (T) -> Void, errorHandler: ((Error) -> Void)? = nil) -> Request {
+        return networkFactory.response(request: urlRequest, dispatchQueue: dispatchQueue) { (result: Result<Response<T>,Error>) in
+            switch result {
+            case .success(let response):
+                self.responseHeaders?(response.httpResponse)
+                resultHandler(response.data)
+            case .failure(let error):
+                if let error = error as? RequestError, error == .cancelled, self.discardIfCancelledFlag {
+                    self.logger.error("Cancelled error message")
+                } else {
+                    errorHandler?(error)
                 }
             }
         }
     }
     
-    public override func cancel() {
-        request?.cancel()
-    }
-    
     deinit {
-        log?.info("Deiniting Command")
+        logger.info("Deiniting Command")
     }
 }

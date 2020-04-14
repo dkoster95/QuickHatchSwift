@@ -14,7 +14,7 @@ class URLSessionLayerTests: URLSessionLayerBase {
     func testUnauthorizedResponseUsingCodableObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
@@ -53,7 +53,7 @@ class URLSessionLayerTests: URLSessionLayerBase {
         let data = try! JSONSerialization.data(withJSONObject: ["name": "hey"], options: .prettyPrinted)
         let dataURLSession = URLSessionMock(data: data, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: dataURLSession)
-        urlSessionLayer.array(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<[DataModel]>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<[DataModel]>, Error>) in
             switch result {
             case .failure(let error):
                 if let reqError = error as? RequestError {
@@ -68,7 +68,7 @@ class URLSessionLayerTests: URLSessionLayerBase {
     func testSuccessFullDataUsingArray() {
         let fakeUrlSession = URLSessionMock(data: self.getArrayModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.array(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<Array<DataModel>>, Error>) in
             switch result {
             case .success(let dataModel):
@@ -83,7 +83,7 @@ class URLSessionLayerTests: URLSessionLayerBase {
     func testUnauthorizedResponseUsingDataArray() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.array(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<[DataModel]>, Error>) in
             switch result {
             case .success( _):

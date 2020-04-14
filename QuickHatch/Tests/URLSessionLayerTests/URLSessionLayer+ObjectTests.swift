@@ -16,7 +16,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testFailureSerializationDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getArrayModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success(_):
@@ -36,7 +36,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
         let data = try! JSONSerialization.data(withJSONObject: ["name": "hey"], options: .prettyPrinted)
         let dataURLSession = URLSessionMock(data: data, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: dataURLSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<DataModel>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .failure(let error):
                 if let reqError = error as? RequestError {
@@ -51,7 +51,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testSuccessFullDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success(let dataModel):
@@ -64,7 +64,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testUnknownErrorUsingStringObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 524))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
             (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success( _):
@@ -83,7 +83,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testCancelledError() {
         let dataURLSession = URLSessionMock(error: NSError(domain: "", code: -999, userInfo: nil), urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: dataURLSession)
-        urlSessionLayer.object(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<DataModel>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .failure(let error):
                 if let reqError = error as? RequestError {

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NetworkRequestFactory {
-    func object<T:Codable>(request: URLRequest, dispatchQueue: DispatchQueue = .main, jsonDecoder: JSONDecoder = JSONDecoder() ,completionHandler completion: @escaping (Result<Response<T>, Error>) -> Void) -> Request {
+    func response<T:Codable>(request: URLRequest, dispatchQueue: DispatchQueue = .main, jsonDecoder: JSONDecoder = JSONDecoder() ,completionHandler completion: @escaping (Result<Response<T>, Error>) -> Void) -> Request {
         return data(request: request, dispatchQueue: dispatchQueue) { result in
             switch result {
             case .failure(let error):
@@ -19,23 +19,6 @@ public extension NetworkRequestFactory {
                     let objectDecoded = try jsonDecoder.decode(T.self, from: dataJson.data)
                     completion(.success(Response<T>(data: objectDecoded,
                                                     httpResponse: dataJson.httpResponse)))
-                }
-                catch let decoderError {
-                    completion(Result.failure(RequestError.serializationError(error: decoderError)))
-                }
-            }
-        }
-    }
-    func array<T:Codable>(request: URLRequest, dispatchQueue: DispatchQueue = .main ,jsonDecoder: JSONDecoder = JSONDecoder(), completionHandler completion: @escaping (Result<Response<[T]>, Error>) -> Void) -> Request {
-        return data(request: request, dispatchQueue: dispatchQueue) { result in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let dataArray):
-                do {
-                    let arrayDecoded = try jsonDecoder.decode([T].self, from: dataArray.data)
-                    completion(.success(Response<[T]>(data: arrayDecoded,
-                                                      httpResponse: dataArray.httpResponse)))
                 }
                 catch let decoderError {
                     completion(Result.failure(RequestError.serializationError(error: decoderError)))
