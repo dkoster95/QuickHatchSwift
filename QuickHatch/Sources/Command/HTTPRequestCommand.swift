@@ -18,7 +18,7 @@ public class HTTPRequestCommand<T: Codable> {
     private var discardIfCancelledFlag: Bool = false
     
     
-    public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QuickHatchRequestFactory(urlSession: URLSession.shared), logger: Logger = log) {
+    public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QHRequestFactory(urlSession: URLSession.shared), logger: Logger = log) {
         self.urlRequest = urlRequest
         self.networkFactory = networkFactory
         self.logger = log

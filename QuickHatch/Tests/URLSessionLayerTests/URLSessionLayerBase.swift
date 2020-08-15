@@ -30,8 +30,8 @@ class URLSessionLayerBase: XCTestCase {
         return try! JSONEncoder().encode(array)
     }
     
-    func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QuickHatchRequestFactory{
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode)
+    func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory{
+        let urlSessionLayer = QHRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode)
         urlSessionLayer.log(with: log)
         return urlSessionLayer
     }

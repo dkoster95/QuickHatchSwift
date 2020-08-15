@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class QuickHatchRequestFactory : NetworkRequestFactory {
+public class QHRequestFactory : NetworkRequestFactory {
     
     private let session: URLSession
     private var log: Logger?
@@ -93,6 +93,6 @@ public class QuickHatchRequestFactory : NetworkRequestFactory {
     }
     
     deinit {
-        log?.info("Network factory destroyed")
+        log?.info("Network factory deallocated")
     }
 }

@@ -14,7 +14,7 @@ class HTTPCommandTests: CommandTestBase {
     
     func testCommandFailureUnauthorized() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: unauthorizedUrlSession)
+        let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: urlSessionLayer)
             .dataResponse (resultHandler: { data in
                 XCTAssert(false)
@@ -28,7 +28,7 @@ class HTTPCommandTests: CommandTestBase {
     
     func testCommandFailureUnauthorizedOnResult() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: unauthorizedUrlSession)
+        let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         let dispatch = DispatchQueue(label: "test")
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .asyncOn(queue: dispatch)
@@ -45,7 +45,7 @@ class HTTPCommandTests: CommandTestBase {
     
     func testCommandFailureInternalServerError() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 500))
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: unauthorizedUrlSession)
+        let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .dataResponse(resultHandler: { data in
                 XCTAssert(false)
@@ -59,7 +59,7 @@ class HTTPCommandTests: CommandTestBase {
     
     func testCommandFailureUnknownHTTPStatusCode() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 566))
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: unauthorizedUrlSession)
+        let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .dataResponse(resultHandler: { data in
                 XCTAssert(false)
@@ -73,7 +73,7 @@ class HTTPCommandTests: CommandTestBase {
     
     func testCommandFailureNoResponse() {
         let unauthorizedUrlSession = URLSessionMock()
-        let urlSessionLayer = QuickHatchRequestFactory(urlSession: unauthorizedUrlSession)
+        let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .dataResponse(resultHandler: { data in
                 XCTAssert(false)
