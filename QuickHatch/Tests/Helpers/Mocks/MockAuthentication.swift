@@ -15,8 +15,10 @@ class MockAuthentication: Authentication {
         return isAuth
     }
     
-    func autenticate(params: [String : Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void) {
+    func autenticate<AuthenticationModel>(params: [String : Any], completionHandler completion: @escaping (Result<AuthenticationModel, Error>) -> Void) where AuthenticationModel : Decodable, AuthenticationModel : Encodable {
+        
     }
+    
     public var urlRequestResult: URLRequest?
     func authorize(request: URLRequest) -> URLRequest {
         log.verbose("authorizing")

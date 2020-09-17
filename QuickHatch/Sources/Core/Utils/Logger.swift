@@ -14,6 +14,7 @@ public struct LogsShortcuts {
     static let quickhatch = "🌐QuickHatch🌐 - "
     static let commandModule = "\(LogsShortcuts.quickhatch)Command -> "
     static let requestFactory = "\(LogsShortcuts.quickhatch)RequestFactory -> "
+    static let certificatePinner = "\(LogsShortcuts.quickhatch)CertificatePinner ->"
 }
 
 public protocol Logger {

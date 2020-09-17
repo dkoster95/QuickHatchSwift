@@ -10,15 +10,15 @@ import Foundation
 
 public protocol Authentication {
     var isAuthenticated: Bool { get }
-    func autenticate(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void)
+    func autenticate<AuthenticationModel: Codable>(params: [String: Any], completionHandler completion: @escaping (Result<AuthenticationModel, Error>) -> Void)
     func authorize(request: URLRequest) throws -> URLRequest
     func clearCredentials()
 }
 
 public protocol RefreshableAuthentication {
-    func refresh(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void)
+    func refresh<RefreshableAuthenticationModel: Codable>(params: [String: Any], completionHandler completion: @escaping (Result<RefreshableAuthenticationModel, Error>) -> Void)
 }
 
 public protocol RevokableAuthentication {
-    func revoke(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void)
+    func revoke<RevokableAuthenticationModel: Codable>(params: [String: Any], completionHandler completion: @escaping (Result<RevokableAuthenticationModel, Error>) -> Void)
 }

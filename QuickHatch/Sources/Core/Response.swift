@@ -12,6 +12,11 @@ public struct Response<Value> {
     public var data: Value
     public var httpResponse: URLResponse
     
+    public init(data: Value, httpResponse: URLResponse) {
+        self.data = data
+        self.httpResponse = httpResponse
+    }
+    
     public func map<NewValue>(transform: (Value) -> NewValue) -> Response<NewValue> {
         return Response<NewValue>(data: transform(data), httpResponse: httpResponse)
     }

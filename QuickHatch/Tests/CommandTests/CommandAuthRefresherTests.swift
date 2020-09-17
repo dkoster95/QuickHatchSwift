@@ -11,8 +11,8 @@ import QuickHatch
 
 class CommandAuthRefresherTests: CommandTestBase {
 
-    let successRefresher = MockAuthenticationRefresher(data: ["value": "success"])
-    let failureRefresher = MockAuthenticationRefresher(error: RequestError.noResponse)
+    //let successRefresher = MockAuthenticationRefresher(data: ["value": "success"])
+    //let failureRefresher = MockAuthenticationRefresher(error: RequestError.noResponse)
 
 //    func testSuccessRefresher() {
 //        let urlSession = URLSessionMock(data: getDataModelSample, urlResponse: getResponse(statusCode: 401))
