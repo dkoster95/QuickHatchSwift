@@ -62,7 +62,7 @@ class StringEncodingTests: XCTestCase {
     }
     
     func testStringEncodingError() {
-        var urlRequest = URLRequest(url: URL(string:"www.quickhatch.com")!)
+        var urlRequest = URLRequest(url: URL(string: "www.quickhatch.com")!)
         urlRequest.url = nil
         let stringEncoding = StringEncoding()
         do {
@@ -82,7 +82,7 @@ class StringEncodingTests: XCTestCase {
         let stringEncoding = StringEncoding.bodyEncoding
         let requestResult = try! stringEncoding.encode(urlRequest,
                                                        with: ["name": "dani","age": 13])
-        let body = String(data:requestResult.httpBody!, encoding: .utf8)
+        let body = String(data: requestResult.httpBody!, encoding: .utf8)
         let split = body!.split(separator: "&")
         XCTAssertTrue(split.count == 2)
         XCTAssertTrue(split.contains("dani"))
@@ -98,7 +98,7 @@ class StringEncodingTests: XCTestCase {
         let stringEncoding = StringEncoding.bodyEncoding
         let requestResult = try! stringEncoding.encode(urlRequest,
                                                        with: ["age": 13])
-        let body = String(data:requestResult.httpBody!, encoding: .utf8)
+        let body = String(data: requestResult.httpBody!, encoding: .utf8)
         let split = body!.split(separator: "&")
         XCTAssertTrue(split.count == 1)
         XCTAssertTrue(split.contains("13"))

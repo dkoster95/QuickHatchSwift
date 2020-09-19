@@ -14,16 +14,15 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testUnauthorizedResponseUsingStringObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 404))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<String>, Error>) in
+        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                   method: .get)) { (result: Result<Response<String>, Error>) in
             switch result {
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
-                    XCTAssert(requestError == .requestWithError(statusCode: .NotFound))
-                }
-                else {
+                    XCTAssert(requestError == .requestWithError(statusCode: .notFound))
+                } else {
                     XCTAssert(false)
                 }
             }
@@ -33,16 +32,15 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testNoResponseUsingStringObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: nil)
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<String>, Error>) in
+        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                   method: .get)) { (result: Result<Response<String>, Error>) in
             switch result {
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
                     XCTAssert(requestError == .noResponse)
-                }
-                else {
+                } else {
                     XCTAssert(false)
                 }
             }
@@ -58,7 +56,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
                 if let reqError = error as? RequestError {
                     XCTAssert(reqError == RequestError.cancelled)
                 }
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             }
             }.resume()
@@ -67,16 +65,15 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testUnknownErrorUsingStringObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 524))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<String>, Error>) in
+        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                   method: .get)) { (result: Result<Response<String>, Error>) in
             switch result {
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
                     XCTAssert(requestError == .unknownError(statusCode: 524))
-                }
-                else {
+                } else {
                     XCTAssert(false)
                 }
             }
@@ -86,16 +83,15 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testEmptyDataUsingStringObject() {
            let fakeUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 200))
            let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-           urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-               (result: Result<Response<String>, Error>) in
+           urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                      method: .get)) { (result: Result<Response<String>, Error>) in
                switch result {
-               case .success( _):
+               case .success:
                    XCTAssert(false)
                case .failure(let error):
                    if let requestError = error as? RequestError {
                        XCTAssert(requestError == .noResponse)
-                   }
-                   else {
+                   } else {
                        XCTAssert(false)
                    }
                }
@@ -105,13 +101,12 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testSuccessFullDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<String>, Error>) in
+        urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,  method: .get)) { (result: Result<Response<String>, Error>) in
             switch result {
             case .success(let dataModel):
                 print(dataModel.data)
                 XCTAssert(true)
-            case .failure(_):
+            case .failure:
                     XCTAssert(false)
             }
             }.resume()

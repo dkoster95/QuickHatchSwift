@@ -8,14 +8,13 @@
 
 import Foundation
 
-
 public enum ParameterEncodingFailureReason {
     case missingURL
     case jsonEncodingFailed(error: Error)
     case propertyListEncodingFailed(error: Error)
 }
 
-public enum EncodingError : Error {
+public enum EncodingError: Error {
     case parameterEncodingFailed(reason: ParameterEncodingFailureReason)
     case invalidURL(url: URLConvertible)
 }

@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-
 //class MockAlamofireSession: Alamofire.Session {
 //    init(urlSessionMock: URLSessionMock) {
 //        

@@ -12,7 +12,7 @@ import QuickHatch
 class URLSessionLayerBase: XCTestCase {
 
     func getResponse(statusCode: Int) -> HTTPURLResponse {
-        return HTTPURLResponse(url: URL(string:"www.google.com")!,
+        return HTTPURLResponse(url: URL(string: "www.google.com")!,
                                                    statusCode: statusCode,
                                                    httpVersion: "1.1",
                                                    headerFields: nil)!
@@ -30,7 +30,7 @@ class URLSessionLayerBase: XCTestCase {
         return try! JSONEncoder().encode(array)
     }
     
-    func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory{
+    func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory {
         let urlSessionLayer = QHRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode)
         urlSessionLayer.log(with: log)
         return urlSessionLayer

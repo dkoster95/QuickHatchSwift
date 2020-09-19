@@ -13,7 +13,7 @@ class LoosyMapperTests: XCTestCase {
 
     let object: [String: Any] = ["name": "dan",
                   "age": 12]
-    var array:[Any] { return [object,object] }
+    var array: [Any] { return [object,object] }
     
     func testGenericObjectRelationalMapper() {
         let obj = ObjectRelationalMapper(JSON: [:])

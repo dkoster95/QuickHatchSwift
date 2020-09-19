@@ -10,7 +10,7 @@ import Foundation
 import QuickHatch
 
 class MockServer: ServerEnvironmentConfiguration {
-    var headers: [String : String] = ["Framework": "quickhatch"]
+    var headers: [String: String] = ["Framework": "quickhatch"]
     
     var qa: HostEnvironment {
         return GenericHostEnvironment(headers: headers, baseURL: "www.quickhatch.com/qa")
@@ -23,6 +23,5 @@ class MockServer: ServerEnvironmentConfiguration {
     var production: HostEnvironment {
         return GenericHostEnvironment(headers: headers, baseURL: "www.quickhatch.com/prod")
     }
-    
     
 }

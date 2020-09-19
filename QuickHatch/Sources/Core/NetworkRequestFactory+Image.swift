@@ -11,9 +11,11 @@
 import UIKit
 
 public extension NetworkRequestFactory {
-    func image(urlRequest: URLRequest, quality: CGFloat = 1, dispatchQueue: DispatchQueue = .main, completion completionHandler: @escaping (Result<UIImage,Error>) -> Void) -> Request {
-        return data(request: urlRequest, dispatchQueue: dispatchQueue) {
-            result in
+    func image(urlRequest: URLRequest,
+               quality: CGFloat = 1,
+               dispatchQueue: DispatchQueue = .main,
+               completion completionHandler: @escaping (Result<UIImage,Error>) -> Void) -> Request {
+        return data(request: urlRequest, dispatchQueue: dispatchQueue) { result in
             switch result {
             case .success(let data):
                 if let image = UIImage(data: data.data, scale: quality) {

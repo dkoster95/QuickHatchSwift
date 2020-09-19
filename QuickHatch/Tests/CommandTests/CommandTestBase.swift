@@ -12,7 +12,7 @@ import QuickHatch
 
 class CommandTestBase: XCTestCase {
     func getResponse(statusCode: Int) -> HTTPURLResponse {
-        return HTTPURLResponse(url: URL(string:"www.quickhatch.com")!,
+        return HTTPURLResponse(url: URL(string: "www.quickhatch.com")!,
                                statusCode: statusCode,
                                httpVersion: "1.1",
                                headerFields: nil)!

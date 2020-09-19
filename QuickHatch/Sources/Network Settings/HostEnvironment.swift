@@ -8,14 +8,13 @@
 
 import Foundation
 
-
 public protocol HostEnvironment {
     var baseURL: String { get }
     var headers: [String: String] { get }
 }
 
 public class GenericHostEnvironment: HostEnvironment {
-    public var headers: [String : String]
+    public var headers: [String: String]
     public var baseURL: String
     
     public init(headers: [String: String], baseURL: String) {

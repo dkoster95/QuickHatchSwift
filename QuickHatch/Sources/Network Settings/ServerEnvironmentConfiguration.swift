@@ -8,15 +8,12 @@
 
 import Foundation
 
-
-
 public protocol ServerEnvironmentConfiguration: Any {
     var headers: [String: String] { get }
     var qa: HostEnvironment { get }
     var staging: HostEnvironment { get }
     var production: HostEnvironment { get }
 }
-
 
 public enum Environment: String {
     case qa = "QA"

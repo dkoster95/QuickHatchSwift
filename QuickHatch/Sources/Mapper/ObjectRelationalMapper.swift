@@ -10,7 +10,6 @@ import Foundation
 
 open class ObjectRelationalMapper: NSObject {
     
-    
     public required init(JSON: [String: Any]) {
     }
     

@@ -11,7 +11,6 @@ import QuickHatch
 
 class RequestMonitorTests: XCTestCase {
     var subject = RequestMonitor()
-    
 
     func testAddRequest() {
         let request = MockRequest()

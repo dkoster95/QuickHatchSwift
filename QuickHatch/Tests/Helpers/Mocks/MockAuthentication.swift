@@ -15,7 +15,7 @@ class MockAuthentication: Authentication {
         return isAuth
     }
     
-    func autenticate(params: [String : Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void) {
+    func autenticate(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void) {
         
     }
     
@@ -31,6 +31,5 @@ class MockAuthentication: Authentication {
     func clearCredentials() {
         
     }
-    
     
 }

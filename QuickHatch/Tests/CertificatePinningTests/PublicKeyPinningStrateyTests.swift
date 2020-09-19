@@ -24,6 +24,5 @@ class PublicKeyPinningStrateyTests: XCTestCase {
         subject = PublicKeyPinningStrategy(publicKeys: ["publicKey"])
         XCTAssertFalse(subject.validate(serverTrust: CertificatePinnerTestHelpers.fakeChallenge(with: certificate!).protectionSpace.serverTrust!))
     }
- 
 
 }

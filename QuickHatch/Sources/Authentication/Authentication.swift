@@ -7,7 +7,6 @@
 //
 import Foundation
 
-
 public protocol Authentication {
     var isAuthenticated: Bool { get }
     func autenticate(params: [String: Any], completionHandler completion: @escaping (Result<Any, Error>) -> Void)

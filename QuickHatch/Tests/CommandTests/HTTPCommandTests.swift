@@ -10,13 +10,12 @@ import XCTest
 import QuickHatch
 
 class HTTPCommandTests: CommandTestBase {
-
     
     func testCommandFailureUnauthorized() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 401))
         let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: urlSessionLayer)
-            .dataResponse (resultHandler: { data in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
                 
             }, errorHandler: { error in
@@ -32,9 +31,9 @@ class HTTPCommandTests: CommandTestBase {
         let dispatch = DispatchQueue(label: "test")
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
             .asyncOn(queue: dispatch)
-            .dataResponse(resultHandler: { result in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
-            },errorHandler:  { error in
+            },errorHandler: { error in
                 XCTAssertTrue(!Thread.isMainThread)
                 log.error(error.localizedDescription)
                 if let requestError = error as? RequestError {
@@ -47,12 +46,12 @@ class HTTPCommandTests: CommandTestBase {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 500))
         let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
-            .dataResponse(resultHandler: { data in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
                 
             }, errorHandler: { error in
                     if let requestError = error as? RequestError {
-                        XCTAssertEqual(requestError, RequestError.requestWithError(statusCode: .InternalServerError))
+                        XCTAssertEqual(requestError, RequestError.requestWithError(statusCode: .internalServerError))
                     }
             }).resume()
     }
@@ -61,7 +60,7 @@ class HTTPCommandTests: CommandTestBase {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 566))
         let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
-            .dataResponse(resultHandler: { data in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
                 
             }, errorHandler: { error in
@@ -75,7 +74,7 @@ class HTTPCommandTests: CommandTestBase {
         let unauthorizedUrlSession = URLSessionMock()
         let urlSessionLayer = QHRequestFactory(urlSession: unauthorizedUrlSession)
         _ = HTTPRequestCommand<DataModel>(urlRequest: URLRequest(url: URL(fileURLWithPath: "")), networkFactory: urlSessionLayer)
-            .dataResponse(resultHandler: { data in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
                 
             }, errorHandler: { error in

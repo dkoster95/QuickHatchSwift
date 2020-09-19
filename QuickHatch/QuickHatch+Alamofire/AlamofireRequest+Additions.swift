@@ -23,5 +23,4 @@ extension Alamofire.Request: QuickHatch.Request {
         let _: Alamofire.Request = self.cancel()
     }
     
-    
 }

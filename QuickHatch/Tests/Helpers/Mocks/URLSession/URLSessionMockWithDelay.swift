@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class URLSessionMockWithDelay: URLSessionMock {
     private var delay: Double
     

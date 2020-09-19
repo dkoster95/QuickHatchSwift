@@ -10,15 +10,13 @@ import XCTest
 import QuickHatch
 
 class HTTPCommandSuccessCasesTests: CommandTestBase {
-    
 
     let authentication = MockAuthentication()
-
     
     func testSuccessCaseWithObjectAndCompletionHandler() {
         let urlSession = URLSessionMock(data: getDataModelSample, urlResponse: getResponse(statusCode: 200))
         _ = HTTPRequestCommand<DataModel>(urlRequest: buildRequest(), networkFactory: QHRequestFactory(urlSession: urlSession))
-            .dataResponse (resultHandler: { data in
+            .dataResponse(resultHandler: { data in
                 XCTAssertTrue(data.nick == "sp")
                 
             }).resume()
@@ -27,7 +25,7 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
     func testSuccessCaseWithArrayAndCompletionHandler() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
         let command = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QHRequestFactory(urlSession: urlSession))
-            .dataResponse (resultHandler:{ dataArray in
+            .dataResponse(resultHandler: { dataArray in
                 XCTAssert(dataArray.count == 2)
                 XCTAssert(dataArray[0].name! == "dan")
             })
@@ -37,10 +35,10 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
     func testSuccessCaseWithArrayAndResults() {
         let urlSession = URLSessionMock(data: getArrayModelSample, urlResponse: getResponse(statusCode: 200))
         _ = HTTPRequestCommand<[DataModel]>(urlRequest: buildRequest(), networkFactory: QHRequestFactory(urlSession: urlSession))
-            .responseHeaders{ headers in
+            .responseHeaders { headers in
                 XCTAssert(headers.url!.absoluteString == "www.quickhatch.com")
             }
-            .dataResponse (resultHandler:{ dataModels in
+            .dataResponse(resultHandler: { dataModels in
                 XCTAssert(dataModels.count == 2)
                 XCTAssert(dataModels[0].name! == "dan")
             }).resume()
@@ -65,10 +63,11 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
     
     func testCancelAction() {
         let urlRequest = buildRequest()
-        let urlSession = URLSessionMockWithDelay(error: NSError(domain: "", code: -999, userInfo: nil), urlResponse: getResponse(statusCode: 200),delay: 2)
+        let urlSession = URLSessionMockWithDelay(error: NSError(domain: "", code: -999, userInfo: nil),
+                                                 urlResponse: getResponse(statusCode: 200),delay: 2)
         let command = HTTPRequestCommand<DataModel>(urlRequest: urlRequest, networkFactory: QHRequestFactory(urlSession: urlSession))
             .authenticate(authentication: authentication)
-            .dataResponse(resultHandler: { dataModel in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
             },errorHandler: { error in
                 if let reqError = error as? RequestError {
@@ -81,13 +80,14 @@ class HTTPCommandSuccessCasesTests: CommandTestBase {
     
     func testCancelActionWhenDiscarded() {
         let urlRequest = buildRequest()
-        let urlSession = URLSessionMockWithDelay(error: NSError(domain: "", code: -999, userInfo: nil), urlResponse: getResponse(statusCode: 200),delay: 2)
+        let urlSession = URLSessionMockWithDelay(error: NSError(domain: "", code: -999, userInfo: nil),
+                                                 urlResponse: getResponse(statusCode: 200),delay: 2)
         let command = HTTPRequestCommand<DataModel>(urlRequest: urlRequest, networkFactory: QHRequestFactory(urlSession: urlSession))
             .authenticate(authentication: authentication)
             .discardIfCancelled()
-            .dataResponse(resultHandler: { dataModel in
+            .dataResponse(resultHandler: { _ in
                 XCTAssert(false)
-            },errorHandler: { error in
+            },errorHandler: { _ in
                 XCTAssert(false)
             })
         command.resume()

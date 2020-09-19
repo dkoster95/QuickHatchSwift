@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-public class QHRequestFactory : NetworkRequestFactory {
+public class QHRequestFactory: NetworkRequestFactory {
     
     private let session: URLSession
     private var log: Logger?
@@ -36,19 +35,19 @@ public class QHRequestFactory : NetworkRequestFactory {
         log?.debug("\(method.uppercased()) \(url.absoluteString)")
     }
     
-    public func json(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping (Result<Response<Any>, Error>) -> Void) -> Request{
+    public func json(request: URLRequest,
+                     dispatchQueue: DispatchQueue,
+                     completionHandler completion: @escaping (Result<Response<Any>, Error>) -> Void) -> Request {
         logRequestData(urlRequest: request)
-        return data(request: request, dispatchQueue: dispatchQueue) {
-            (result: Result<Response<Data>,Error>) in
+        return data(request: request, dispatchQueue: dispatchQueue) { (result: Result<Response<Data>,Error>) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let response):
                 do {
                     let json = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))
-                    completion(.success(Response(data:json, httpResponse: response.httpResponse)))
-                }
-                catch let decodingError {
+                    completion(.success(Response(data: json, httpResponse: response.httpResponse)))
+                } catch let decodingError {
                     completion(Result.failure(RequestError.serializationError(error: decodingError)))
                 }
             }
@@ -57,11 +56,13 @@ public class QHRequestFactory : NetworkRequestFactory {
     
     public func data(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping DataCompletionHandler) -> Request {
         logRequestData(urlRequest: request)
-        return session.dataTask(with: request) { [weak self]
-            (data:Data?,response:URLResponse?,error:Error?) in
+        return session.dataTask(with: request) { [weak self] (data: Data?,response: URLResponse?,error: Error?) in
             guard let self = self else { return }
             self.execIn(dispatch: dispatchQueue) {
-                if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: data, response: response, error: error, unauthorizedCode: self.unauthorizedCode) {
+                if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: data,
+                                                                                       response: response,
+                                                                                       error: error,
+                                                                                       unauthorizedCode: self.unauthorizedCode) {
                     completion(Result.failure(requestError))
                     return
                 }
@@ -69,15 +70,16 @@ public class QHRequestFactory : NetworkRequestFactory {
                     completion(Result.failure(RequestError.noResponse))
                     return
                 }
-                completion(.success(Response<Data>(data:data,httpResponse: urlResponse)))
+                completion(.success(Response<Data>(data: data,httpResponse: urlResponse)))
             }
         }
     }
     
-    public func string(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping (Result<Response<String>, Error>) -> Void) -> Request {
+    public func string(request: URLRequest,
+                       dispatchQueue: DispatchQueue,
+                       completionHandler completion: @escaping (Result<Response<String>, Error>) -> Void) -> Request {
         logRequestData(urlRequest: request)
-        return data(request: request, dispatchQueue: dispatchQueue) {
-            (result: Result<Response<Data>,Error>) in
+        return data(request: request, dispatchQueue: dispatchQueue) { (result: Result<Response<Data>,Error>) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

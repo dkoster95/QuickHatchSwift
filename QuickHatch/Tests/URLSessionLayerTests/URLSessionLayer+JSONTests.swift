@@ -20,7 +20,7 @@ class URLSessionLayer_JSONTests: URLSessionLayerBase {
                 if let reqError = error as? RequestError {
                     XCTAssert(reqError == RequestError.noResponse)
                 }
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             }
             }.resume()

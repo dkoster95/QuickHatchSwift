@@ -14,7 +14,9 @@ public extension NetworkRequestFactory {
                     dispatchQueue: dispatchQueue,
                     completionHandler: completion)
     }
-    func string(request: URLRequest,dispatchQueue: DispatchQueue = .main, completionHandler completion: @escaping StringCompletionHandler) -> Request {
+    func string(request: URLRequest,
+                dispatchQueue: DispatchQueue = .main,
+                completionHandler completion: @escaping StringCompletionHandler) -> Request {
         return string(request: request,
                       dispatchQueue: dispatchQueue,
                       completionHandler: completion)
