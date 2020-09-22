@@ -28,6 +28,8 @@ public enum RequestError: Error, Equatable {
         case (.noResponse, .noResponse):return true
         case (.requestWithError(let statusCodeA), .requestWithError(let statusCodeB)):
             return statusCodeA.rawValue == statusCodeB.rawValue
+        case (.invalidParameters, .invalidParameters): return true
+        case (.malformedRequest, .malformedRequest): return true
         default: return false
         }
     }
