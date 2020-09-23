@@ -12,7 +12,7 @@
 
 - **NetworkRequestFactory protocol**:
 	- [Getting started](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/GettingStarted.md)
-	- [Codable extensions](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CodableExtensions.md)
+	- [Codable extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CodableExtensions.md)
 	- [Image extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/ImageExtension.md)
 	- [Data, String, JSON responses](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Responses.md)
 	- [Dispatcher extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/DispatcherExtension.md)
