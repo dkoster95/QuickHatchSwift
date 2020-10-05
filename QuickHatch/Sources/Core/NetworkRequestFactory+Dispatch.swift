@@ -13,8 +13,17 @@ public extension NetworkRequestFactory {
     func string(request: URLRequest,
                 dispatchQueue: DispatchQueue = .main,
                 completionHandler completion: @escaping StringCompletionHandler) -> Request {
-        return response(request: request, dispatchQueue: dispatchQueue) { (result: Result<Response<String>,Error>) in
-            completion(result)
+        return data(request: request, dispatchQueue: dispatchQueue) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let response):
+                if let stringDecoded = String(bytes: response.data, encoding: .utf8) {
+                    completion(.success(Response(data: stringDecoded, httpResponse: response.httpResponse)))
+                } else {
+                    completion(.failure(RequestError.serializationError(error: EncodingError.stringDecodingFailed)))
+                }
+            }
         }
     }
     

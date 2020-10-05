@@ -15,6 +15,7 @@ public enum ParameterEncodingFailureReason {
 }
 
 public enum EncodingError: Error {
+    case stringDecodingFailed
     case parameterEncodingFailed(reason: ParameterEncodingFailureReason)
     case invalidURL(url: URLConvertible)
 }

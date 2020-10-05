@@ -101,15 +101,19 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     func testSuccessFullDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
+        let expectation = XCTestExpectation()
         urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,  method: .get)) { (result: Result<Response<String>, Error>) in
             switch result {
             case .success(let dataModel):
                 print(dataModel.data)
+                expectation.fulfill()
                 XCTAssert(true)
             case .failure:
-                    XCTAssert(false)
+                expectation.fulfill()
+                XCTAssert(false)
             }
             }.resume()
+        wait(for: [expectation], timeout: 1.0)
     }
 
 }
