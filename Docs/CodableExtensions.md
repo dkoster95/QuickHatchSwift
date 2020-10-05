@@ -1,4 +1,4 @@
-## **Using Codable extensions**
+## **Using Codable extension**
 
 Codable (Encodable & Decodable) is a protocol launched by Apple to encode and decode JSONs very easily, 
 QuickHatch provides an extension for mapping responses to an object or an array.
