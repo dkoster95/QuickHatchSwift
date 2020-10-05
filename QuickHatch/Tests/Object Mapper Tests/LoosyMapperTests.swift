@@ -13,7 +13,7 @@ class LoosyMapperTests: XCTestCase {
 
     let object: [String: Any] = ["name": "dan",
                   "age": 12]
-    var array:[Any] { return [object,object] }
+    var array: [Any] { return [object,object] }
     
     func testGenericObjectRelationalMapper() {
         let obj = ObjectRelationalMapper(JSON: [:])
@@ -28,8 +28,8 @@ class LoosyMapperTests: XCTestCase {
     func testToJSONMapping() {
         let objectMapped = LoosyMapper<DataTest>().mapObject(dict: object)
         let toJSON = objectMapped!.toJSON
-        XCTAssert((toJSON["name"] as! String) == "dan")
-        XCTAssert((toJSON["age"] as! Int) == 12)
+        XCTAssert((toJSON["name"] as? String) == "dan")
+        XCTAssert((toJSON["age"] as? Int) == 12)
     }
     
     func testObjectMappingError() {

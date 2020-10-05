@@ -9,8 +9,6 @@
 import Foundation
 import QuickHatch
 
-
-
 struct MockDownloadRequestConfiguration: DownloadRequestConfiguration {
     private let url: URL?
     private let error: Error?

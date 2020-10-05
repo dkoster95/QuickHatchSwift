@@ -51,6 +51,4 @@ class CommandAuthRefresherTests: CommandTestBase {
 //        }.execute()
 //    }
 
-    
-
 }

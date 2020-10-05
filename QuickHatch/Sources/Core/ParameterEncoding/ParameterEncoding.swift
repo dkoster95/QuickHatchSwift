@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public enum HTTPMethod: String {
     case options = "OPTIONS"
     case get     = "GET"
@@ -20,7 +19,6 @@ public enum HTTPMethod: String {
     case trace   = "TRACE"
     case connect = "CONNECT"
 }
-
 
 public typealias Parameters = [String: Any]
 
@@ -46,4 +44,3 @@ public extension Bool {
         return self ? 1 : 0
     }
 }
-

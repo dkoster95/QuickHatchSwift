@@ -12,7 +12,7 @@ class URLSessionDownloadMock: URLSession {
     private let downloadingURL: URL?
     private let error: Error?
     private let urlResponse: URLResponse?
-    internal let downloadDelegate: URLSessionDownloadDelegate?
+    internal weak var downloadDelegate: URLSessionDownloadDelegate?
     
     init(url: URL?, error: Error? = nil, urlResponse: URLResponse? = nil, delegate: URLSessionDownloadDelegate? = nil) {
         self.downloadingURL = url
@@ -21,7 +21,8 @@ class URLSessionDownloadMock: URLSession {
         self.downloadDelegate = delegate
     }
     
-    override func downloadTask(with request: URLRequest, completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask {
+    override func downloadTask(with request: URLRequest,
+                               completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask {
         let url = downloadingURL
         let response = urlResponse
         let error = self.error

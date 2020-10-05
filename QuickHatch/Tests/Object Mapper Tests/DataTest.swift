@@ -14,13 +14,13 @@ class DataTest: ObjectRelationalMapper {
     var name: String?
     var age: Int?
     
-    required init(JSON: [String : Any]) {
+    required init(JSON: [String: Any]) {
         name = JSON["name"] as? String
         age = JSON["age"] as? Int
         super.init(JSON: JSON)
     }
     
-    override var toJSON: [String : Any] {
+    override var toJSON: [String: Any] {
         return ["name": name!, "age": age!]
     }
 }

@@ -17,8 +17,9 @@ public class HTTPRequestCommand<T: Codable> {
     private let logger: Logger
     private var discardIfCancelledFlag: Bool = false
     
-    
-    public init(urlRequest: URLRequest, networkFactory: NetworkRequestFactory = QHRequestFactory(urlSession: URLSession.shared), logger: Logger = log) {
+    public init(urlRequest: URLRequest,
+                networkFactory: NetworkRequestFactory = QHRequestFactory(urlSession: URLSession.shared),
+                logger: Logger = log) {
         self.urlRequest = urlRequest
         self.networkFactory = networkFactory
         self.logger = log
@@ -26,8 +27,11 @@ public class HTTPRequestCommand<T: Codable> {
     
     public func authenticate(authentication: Authentication) -> HTTPRequestCommand<T> {
         logger.info("Authenticate Method called with \(authentication)")
-        let authenticatedRequest = try! authentication.authorize(request: urlRequest)
-        let request = HTTPRequestCommand(urlRequest: authenticatedRequest, networkFactory: networkFactory, logger: logger)
+        var newRequest = urlRequest
+        if let authenticatedRequest = try? authentication.authorize(request: urlRequest) {
+            newRequest = authenticatedRequest
+        }
+        let request = HTTPRequestCommand(urlRequest: newRequest, networkFactory: networkFactory, logger: logger)
         request.responseHeaders = self.responseHeaders
         request.dispatchQueue = dispatchQueue
         return request
@@ -39,7 +43,7 @@ public class HTTPRequestCommand<T: Codable> {
         return commandCopy
     }
     
-    public func responseHeaders(responseHeaders: @escaping (URLResponse) -> Void) -> HTTPRequestCommand<T>{
+    public func responseHeaders(responseHeaders: @escaping (URLResponse) -> Void) -> HTTPRequestCommand<T> {
         let commandCopy = self
         commandCopy.responseHeaders = responseHeaders
         return commandCopy

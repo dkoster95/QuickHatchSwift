@@ -45,7 +45,6 @@ public struct EncodingHelpers {
         allowedCharacterSet.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
         return string.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? string
         
-        
 //        if #available(iOS 8.3, *) {
 //            escaped = string.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? string
 //        } else {

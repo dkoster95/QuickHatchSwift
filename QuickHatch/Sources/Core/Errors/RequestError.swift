@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public enum RequestPollingError: Error {
     case attemptsOverflow
 }
@@ -22,8 +21,7 @@ public enum RequestError: Error, Equatable {
     public static func == (lhs: RequestError, rhs: RequestError) -> Bool {
         switch (lhs, rhs) {
         case (.unauthorized, .unauthorized): return true
-        case (.serializationError( _), .serializationError( _)): return true
-        case (.noInternetConnection, .noInternetConnection): return true
+        case (.serializationError, .serializationError): return true
         case (.unknownError(let statusCodeA), .unknownError(let statusCodeB)): return statusCodeA == statusCodeB
         case (.cancelled, .cancelled): return true
         case (.noResponse, .noResponse):return true
@@ -31,17 +29,23 @@ public enum RequestError: Error, Equatable {
             return statusCodeA.rawValue == statusCodeB.rawValue
         case (.invalidParameters, .invalidParameters): return true
         case (.malformedRequest, .malformedRequest): return true
+        case (.other, .other): return true
         default: return false
         }
+    }
+    
+    public static func map(error: Error) -> RequestError {
+        if error.requestWasCancelled { return .cancelled }
+        return (error as? RequestError) ?? .other(error: error)
     }
     
     case unauthorized
     case unknownError(statusCode: Int)
     case cancelled
     case noResponse
-    case requestWithError(statusCode:HTTPStatusCode)
+    case requestWithError(statusCode: HTTPStatusCode)
     case serializationError(error: Error)
     case invalidParameters
-    case noInternetConnection
     case malformedRequest
+    case other(error: Error)
 }

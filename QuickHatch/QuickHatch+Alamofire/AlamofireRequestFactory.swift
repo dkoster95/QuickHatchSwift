@@ -16,11 +16,8 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
     private var unauthorizedError: Int = 401
     private var log: Logger?
     
-    public init(alamofireSession: Session) {
+    public init(alamofireSession: Session, logger: Logger? = nil) {
         self.alamofireSession = alamofireSession
-    }
-    
-    public func log(with logger: Logger) {
         self.log = logger
     }
     
@@ -31,7 +28,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
                 completion(Result.failure(RequestError.cancelled))
                 return
             }
-            guard let urlResponse = dataResponse.response else{
+            guard let urlResponse = dataResponse.response else {
                 completion(Result.failure(RequestError.noResponse))
                 return
             }
@@ -42,7 +39,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
             switch dataResponse.result {
             case .success(let json):
                 completion(.success(json))
-            case .failure(_):
+            case .failure:
                 var error = RequestError.unknownError(statusCode: urlResponse.statusCode)
                 if let httpStatusCode = HTTPStatusCode(rawValue: urlResponse.statusCode) {
                     error = RequestError.requestWithError(statusCode: httpStatusCode)
@@ -59,7 +56,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
                 completion(Result.failure(RequestError.cancelled))
                 return
             }
-            guard let urlResponse = dataResponse.response else{
+            guard let urlResponse = dataResponse.response else {
                 completion(Result.failure(RequestError.noResponse))
                 return
             }
@@ -70,7 +67,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
             switch dataResponse.result {
             case .success(let string):
                 completion(.success(string))
-            case .failure(_):
+            case .failure:
                 var error = RequestError.unknownError(statusCode: urlResponse.statusCode)
                 if let httpStatusCode = HTTPStatusCode(rawValue: urlResponse.statusCode) {
                     error = RequestError.requestWithError(statusCode: httpStatusCode)
@@ -87,7 +84,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
                 completion(Result.failure(RequestError.cancelled))
                 return
             }
-            guard let urlResponse = dataResponse.response else{
+            guard let urlResponse = dataResponse.response else {
                 completion(Result.failure(RequestError.noResponse))
                 return
             }
@@ -98,7 +95,7 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
             switch dataResponse.result {
             case .success(let data):
                 completion(.success(data))
-            case .failure(_):
+            case .failure:
                 var error = RequestError.unknownError(statusCode: urlResponse.statusCode)
                 if let httpStatusCode = HTTPStatusCode(rawValue: urlResponse.statusCode) {
                     error = RequestError.requestWithError(statusCode: httpStatusCode)

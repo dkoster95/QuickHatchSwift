@@ -39,7 +39,8 @@ class ResponseTests: XCTestCase {
     }
     
     func testFlatMapResponse() {
-        let response = Response<Int>(data: 2, httpResponse: defaultResponse).flatMap { return Response<(String,Int)>(data: ($0.description, $0), httpResponse: defaultResponse) }
+        let response = Response<Int>(data: 2, httpResponse: defaultResponse)
+            .flatMap { return Response<(String,Int)>(data: ($0.description, $0), httpResponse: defaultResponse) }
         XCTAssert(response.data.0 == "2")
         XCTAssert(response.data.1 == 2)
     }

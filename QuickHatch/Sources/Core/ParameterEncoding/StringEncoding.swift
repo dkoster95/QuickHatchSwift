@@ -23,7 +23,6 @@ public class StringEncoding: ParameterEncoding {
         return StringEncoding()
     }
     
-    
     public func encode(_ urlRequest: URLRequestProtocol, with parameters: Parameters?) throws -> URLRequest {
         var request: URLRequest = try urlRequest.asURLRequest()
         guard let url = request.url else {
@@ -56,6 +55,5 @@ public class StringEncoding: ParameterEncoding {
         paramsEncoded.removeLast()
         urlRequest.httpBody = paramsEncoded.data(using: .utf8, allowLossyConversion: false)
     }
-    
     
 }

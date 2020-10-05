@@ -17,7 +17,7 @@ public protocol DownloadRequestConfiguration {
     func urlSession(with delegate: URLSessionDownloadDelegate) -> URLSession
 }
 
-public protocol DownloadRequestDelegate {
+public protocol DownloadRequestDelegate: class {
     func didUpdateProgress(value: Double)
     func didFinishDownloading(url: URL)
 }

@@ -44,7 +44,6 @@ extension URLComponents: URLConvertible {
     }
 }
 
-
 public protocol URLRequestProtocol {
     func asURLRequest() throws -> URLRequest
 }
@@ -56,8 +55,6 @@ extension URLRequestProtocol {
 extension URLRequest: URLRequestProtocol {
     public func asURLRequest() throws -> URLRequest { return self }
 }
-
-
 
 extension URLRequest {
     public init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws {

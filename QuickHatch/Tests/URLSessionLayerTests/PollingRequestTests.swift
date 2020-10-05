@@ -8,7 +8,8 @@
 
 import XCTest
 import QuickHatch
-
+// swiftlint:disable force_try
+// swiftlint:disable force_cast
 class PollingRequestTests: URLSessionLayerBase {
     
     private var responsesForPolling: [(Data?,Error?,URLResponse?)] {
@@ -24,7 +25,7 @@ class PollingRequestTests: URLSessionLayerBase {
                 (dataEncoded,nil,response)]
     }
     
-    private var mock: Data  {
+    private var mock: Data {
         let mock = DataModel.getMock()
         return try! JSONEncoder().encode(mock)
     }
@@ -32,7 +33,12 @@ class PollingRequestTests: URLSessionLayerBase {
     func testAttemptsOverflow() {
         let expectation = XCTestExpectation()
         let dataEncoded = mock
-        let factory = getURLSessionLayer(urlSession: URLSessionMock(data: dataEncoded, error: nil, urlResponse: HTTPURLResponse(url: URL(string: "quickhatch.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)))
+        let factory = getURLSessionLayer(urlSession: URLSessionMock(data: dataEncoded,
+                                                                    error: nil,
+                                                                    urlResponse: HTTPURLResponse(url: URL(string: "quickhatch.com")!,
+                                                                                                 statusCode: 200,
+                                                                                                 httpVersion: nil,
+                                                                                                 headerFields: nil)))
         factory.response(request: try! URLRequest.get(url: "quickhatch.com", encoding: URLEncoding.default),
                          completionHandler: { (result: Result<Response<DataModel>,Error>) in
                             let resultFlatted = result.flatMapError { error in
@@ -41,7 +47,7 @@ class PollingRequestTests: URLSessionLayerBase {
                             switch resultFlatted {
                             case .failure(let pollingError):
                                 XCTAssertEqual(pollingError, .attemptsOverflow)
-                            case .success(_ ):
+                            case .success:
                                 XCTAssert(false)
                             }
                             expectation.fulfill()
@@ -56,14 +62,19 @@ class PollingRequestTests: URLSessionLayerBase {
     func testPollingSucceeded() {
         let expectation = XCTestExpectation()
         let dataEncoded = mock
-        let factory = getURLSessionLayer(urlSession: URLSessionMock(data: dataEncoded, error: nil, urlResponse: HTTPURLResponse(url: URL(string: "quickhatch.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)))
+        let factory = getURLSessionLayer(urlSession: URLSessionMock(data: dataEncoded,
+                                                                    error: nil,
+                                                                    urlResponse: HTTPURLResponse(url: URL(string: "quickhatch.com")!,
+                                                                                                 statusCode: 200,
+                                                                                                 httpVersion: nil,
+                                                                                                 headerFields: nil)))
         factory.response(request: try! URLRequest.get(url: "quickhatch.com", encoding: URLEncoding.default),
                          completionHandler: { (result: Result<Response<DataModel>,Error>) in
                             let resultFlatted = result.flatMapError { error in
                                 return .failure(error as! RequestPollingError)
                             }
                             switch resultFlatted {
-                            case .failure(_ ):
+                            case .failure:
                                 XCTAssert(false)
                             case .success(let response):
                                 XCTAssert(response.data.age == 21)
@@ -86,7 +97,7 @@ class PollingRequestTests: URLSessionLayerBase {
                                 return .failure(error as! RequestPollingError)
                             }
                             switch resultFlatted {
-                            case .failure(_ ):
+                            case .failure:
                                 XCTAssert(false)
                             case .success(let response):
                                 XCTAssert(response.data.age == 17)

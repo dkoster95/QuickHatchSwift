@@ -9,23 +9,21 @@
 import Foundation
 import QuickHatch
 import XCTest
-
-
+// swiftlint:disable force_try
 class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     
     func testFailureSerializationDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getArrayModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<DataModel>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                     method: .get)) { (result: Result<Response<DataModel>, Error>) in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
                     XCTAssert(requestError == .serializationError(error: RequestError.unauthorized))
-                }
-                else {
+                } else {
                     XCTAssert(false)
                 }
             }
@@ -42,7 +40,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
                 if let reqError = error as? RequestError {
                     XCTAssert(reqError == RequestError.serializationError(error: RequestError.unauthorized))
                 }
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             }
         }.resume()
@@ -51,12 +49,12 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testSuccessFullDataUsingObject() {
         let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
-        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<DataModel>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                     method: .get)) { (result: Result<Response<DataModel>, Error>) in
             switch result {
             case .success(let dataModel):
                 XCTAssert(dataModel.data.age! == 12)
-            case .failure(_):
+            case .failure:
                     XCTAssert(false)
             }
             }.resume()
@@ -64,16 +62,15 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     func testUnknownErrorUsingStringObject() {
         let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 524))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
-        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!, method: .get)){
-            (result: Result<Response<DataModel>, Error>) in
+        urlSessionLayer.response(request: URLRequest(url: URL(string: "www.google.com")!,
+                                                     method: .get)) { (result: Result<Response<DataModel>, Error>) in
             switch result {
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
                     XCTAssert(requestError == .unknownError(statusCode: 524))
-                }
-                else {
+                } else {
                     XCTAssert(false)
                 }
             }
@@ -89,7 +86,7 @@ class URLSessionLayer_ObjectTests: URLSessionLayerBase {
                 if let reqError = error as? RequestError {
                     XCTAssert(reqError == RequestError.cancelled)
                 }
-            case .success( _):
+            case .success:
                 XCTAssert(false)
             }
             }.resume()

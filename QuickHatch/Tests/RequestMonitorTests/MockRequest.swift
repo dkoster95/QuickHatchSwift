@@ -24,5 +24,4 @@ class MockRequest: NSObject, Request {
         requestCancelled = true
     }
     
-    
 }

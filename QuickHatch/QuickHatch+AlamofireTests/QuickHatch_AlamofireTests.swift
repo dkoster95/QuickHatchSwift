@@ -13,7 +13,4 @@ import QuickHatch
 
 class URLSessionLayerTests: XCTestCase {
     
-
-    
-    
 }

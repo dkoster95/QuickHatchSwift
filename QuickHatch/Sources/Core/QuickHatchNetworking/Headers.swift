@@ -50,7 +50,6 @@ struct Headers {
                     return "QuickHatch \(osName) \(versionString)"
                 }()
                 
-                
                 return "QuickHatch \(executable)/\(appVersion) (\(bundle); build:\(appBuild); \(osNameVersion))"
             }
             

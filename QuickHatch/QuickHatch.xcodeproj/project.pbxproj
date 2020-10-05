@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F092B4B2513D86800232DE1 /* OptionsMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B4A2513D86800232DE1 /* OptionsMethodTests.swift */; };
+		7F092B4D2513D8CC00232DE1 /* TraceMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B4C2513D8CC00232DE1 /* TraceMethodTests.swift */; };
+		7F092B4F2513D92200232DE1 /* ConnectMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B4E2513D92200232DE1 /* ConnectMethodTests.swift */; };
+		7F092B512513D95A00232DE1 /* HeadMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B502513D95A00232DE1 /* HeadMethodTests.swift */; };
+		7F092B532513D99900232DE1 /* DeleteMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B522513D99900232DE1 /* DeleteMethodTests.swift */; };
+		7F092B552513D9C800232DE1 /* PatchMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B542513D9C800232DE1 /* PatchMethodTests.swift */; };
+		7F092B572513DA0200232DE1 /* PutMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B562513DA0200232DE1 /* PutMethodTests.swift */; };
+		7F092B592513DA4700232DE1 /* PostMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B582513DA4700232DE1 /* PostMethodTests.swift */; };
+		7F092B5B2513DA7A00232DE1 /* GetMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F092B5A2513DA7A00232DE1 /* GetMethodTests.swift */; };
 		7F0C92D123072F15002E103E /* MockDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2522FBB84B0083BD1D /* MockDataModel.swift */; };
 		7F0C92D223072F15002E103E /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2622FBB84B0083BD1D /* URLSessionMock.swift */; };
 		7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E7D2722FBB84B0083BD1D /* URLSessionDataTaskMock.swift */; };
@@ -24,10 +33,12 @@
 		7F473F452350FCF400175CB8 /* ErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F442350FCF400175CB8 /* ErrorsTests.swift */; };
 		7F473F47235101EB00175CB8 /* URLSessionLayer+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */; };
 		7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */; };
-		7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */; };
+		7F473F4B2351143000175CB8 /* URLSessionLayer+DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */; };
 		7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */; };
 		7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F63235796DC00175CB8 /* CommandTestBase.swift */; };
-		7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */; };
+		7F4DEE93252AC49000C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
+		7F4DEE9B252AC49100C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
+		7F4DEE9C252AC49100C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
 		7F518D042445F99200E57BE3 /* PollingRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F518D032445F99200E57BE3 /* PollingRequestTests.swift */; };
 		7F518D072445FFF700E57BE3 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F518D052445FA0E00E57BE3 /* DataMock.json */; };
 		7F60037F24DB2E2D00581A43 /* cacert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7F60037E24DB2E2D00581A43 /* cacert.pem */; };
@@ -244,15 +255,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F092B4A2513D86800232DE1 /* OptionsMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMethodTests.swift; sourceTree = "<group>"; };
+		7F092B4C2513D8CC00232DE1 /* TraceMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceMethodTests.swift; sourceTree = "<group>"; };
+		7F092B4E2513D92200232DE1 /* ConnectMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectMethodTests.swift; sourceTree = "<group>"; };
+		7F092B502513D95A00232DE1 /* HeadMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadMethodTests.swift; sourceTree = "<group>"; };
+		7F092B522513D99900232DE1 /* DeleteMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMethodTests.swift; sourceTree = "<group>"; };
+		7F092B542513D9C800232DE1 /* PatchMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMethodTests.swift; sourceTree = "<group>"; };
+		7F092B562513DA0200232DE1 /* PutMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutMethodTests.swift; sourceTree = "<group>"; };
+		7F092B582513DA4700232DE1 /* PostMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMethodTests.swift; sourceTree = "<group>"; };
+		7F092B5A2513DA7A00232DE1 /* GetMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMethodTests.swift; sourceTree = "<group>"; };
 		7F31092A2460AF0500E94C5F /* DownloadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRequest.swift; sourceTree = "<group>"; };
 		7F31092C2460AF3E00E94C5F /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		7F473F442350FCF400175CB8 /* ErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsTests.swift; sourceTree = "<group>"; };
 		7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+StringTests.swift"; sourceTree = "<group>"; };
 		7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionLayerBase.swift; sourceTree = "<group>"; };
-		7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+JSONTests.swift"; sourceTree = "<group>"; };
+		7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+DataTests.swift"; sourceTree = "<group>"; };
 		7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandAuthRefresherTests.swift; sourceTree = "<group>"; };
 		7F473F63235796DC00175CB8 /* CommandTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTestBase.swift; sourceTree = "<group>"; };
-		7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationRefresher.swift; sourceTree = "<group>"; };
 		7F518D032445F99200E57BE3 /* PollingRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingRequestTests.swift; sourceTree = "<group>"; };
 		7F518D052445FA0E00E57BE3 /* DataMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DataMock.json; sourceTree = "<group>"; };
 		7F60037E24DB2E2D00581A43 /* cacert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cacert.pem; sourceTree = "<group>"; };
@@ -534,7 +553,6 @@
 				7F6E7D2522FBB84B0083BD1D /* MockDataModel.swift */,
 				7FFCD4C62303324400E731FA /* MockAuthentication.swift */,
 				7FFCD4CF23034B0D00E731FA /* MockServerEnvironmentConfiguration.swift */,
-				7F473F662357A8AA00175CB8 /* MockAuthenticationRefresher.swift */,
 				7F518D052445FA0E00E57BE3 /* DataMock.json */,
 			);
 			path = Mocks;
@@ -549,7 +567,7 @@
 				7FFCD4ED2305FA5A00E731FA /* URLSessionDataTasksTests.swift */,
 				7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */,
 				7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */,
-				7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */,
+				7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */,
 				7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */,
 				7F518D032445F99200E57BE3 /* PollingRequestTests.swift */,
 			);
@@ -710,6 +728,15 @@
 			children = (
 				7FFCD4C423030ED700E731FA /* URLRequest+MethodTests.swift */,
 				7FFCD4C9230344AD00E731FA /* URLRequest+AdditionTests.swift */,
+				7F092B4A2513D86800232DE1 /* OptionsMethodTests.swift */,
+				7F092B4C2513D8CC00232DE1 /* TraceMethodTests.swift */,
+				7F092B4E2513D92200232DE1 /* ConnectMethodTests.swift */,
+				7F092B502513D95A00232DE1 /* HeadMethodTests.swift */,
+				7F092B522513D99900232DE1 /* DeleteMethodTests.swift */,
+				7F092B542513D9C800232DE1 /* PatchMethodTests.swift */,
+				7F092B562513DA0200232DE1 /* PutMethodTests.swift */,
+				7F092B582513DA4700232DE1 /* PostMethodTests.swift */,
+				7F092B5A2513DA7A00232DE1 /* GetMethodTests.swift */,
 			);
 			path = URLRequestTests;
 			sourceTree = "<group>";
@@ -839,6 +866,7 @@
 				7F6E7CCA22FBB81B0083BD1D /* Sources */,
 				7F6E7CCB22FBB81B0083BD1D /* Frameworks */,
 				7F6E7CCC22FBB81B0083BD1D /* Resources */,
+				7F092B492513CEFA00232DE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -928,7 +956,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "DaVinci Labs";
 				TargetAttributes = {
 					7F65D56822FDBFEB00FA1762 = {
@@ -1038,6 +1066,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7F092B492513CEFA00232DE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		7F65D58922FDC1FE00FA1762 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1160,16 +1205,20 @@
 				7F0C92D423072F15002E103E /* MockAuthentication.swift in Sources */,
 				7F6E7D3422FBB84B0083BD1D /* URLSessionLayer+ImageTests.swift in Sources */,
 				7F0C92D123072F15002E103E /* MockDataModel.swift in Sources */,
+				7F092B592513DA4700232DE1 /* PostMethodTests.swift in Sources */,
 				7F86179F24451B0100FD9993 /* RequestMonitorTests.swift in Sources */,
 				7FFCD4EE2305FA5A00E731FA /* URLSessionDataTasksTests.swift in Sources */,
+				7F092B572513DA0200232DE1 /* PutMethodTests.swift in Sources */,
 				7FED537724E5AABF0074B0B1 /* CertificatePinnerTestsHelpers.swift in Sources */,
 				7FED537424E5A9D60074B0B1 /* CertificatePinnerTests.swift in Sources */,
 				7F0C92D523072F15002E103E /* MockServerEnvironmentConfiguration.swift in Sources */,
 				7F6E7D3222FBB84B0083BD1D /* URLSessionLayerTests.swift in Sources */,
+				7F092B5B2513DA7A00232DE1 /* GetMethodTests.swift in Sources */,
 				7F6E7D3522FBB84B0083BD1D /* HTTPCommandTests.swift in Sources */,
-				7F473F672357A8AA00175CB8 /* MockAuthenticationRefresher.swift in Sources */,
 				7FC40A2B246DFF3A007FC0F6 /* URLSessionDownloadTaskMock.swift in Sources */,
+				7F092B4B2513D86800232DE1 /* OptionsMethodTests.swift in Sources */,
 				7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */,
+				7F092B4F2513D92200232DE1 /* ConnectMethodTests.swift in Sources */,
 				7F698C5A235A406F00978721 /* URLSessionLayer+ObjectTests.swift in Sources */,
 				7FD4DFF42432A8E400307999 /* ResponseTests.swift in Sources */,
 				7FFCD4E32304962B00E731FA /* StringEncodingTests.swift in Sources */,
@@ -1182,14 +1231,18 @@
 				7FFCD4EA2305F5DB00E731FA /* DataTest.swift in Sources */,
 				7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */,
 				7F86179D244517E100FD9993 /* MockRequest.swift in Sources */,
+				7F092B4D2513D8CC00232DE1 /* TraceMethodTests.swift in Sources */,
 				7F60038724DB43D700581A43 /* CertificatePinningStrategyTests.swift in Sources */,
+				7F092B532513D99900232DE1 /* DeleteMethodTests.swift in Sources */,
 				7FC40A29246DFF2D007FC0F6 /* URLSessionMockWithDelay.swift in Sources */,
+				7F092B552513D9C800232DE1 /* PatchMethodTests.swift in Sources */,
 				7F0C92D323072F15002E103E /* URLSessionDataTaskMock.swift in Sources */,
 				7F518D042445F99200E57BE3 /* PollingRequestTests.swift in Sources */,
 				7FFCD4CE230349E300E731FA /* NetworkSettingsTests.swift in Sources */,
 				7FFCD4EC2305F6B000E731FA /* LoosyMapperTests.swift in Sources */,
 				7FFCD4CB230344B200E731FA /* URLRequest+AdditionTests.swift in Sources */,
-				7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */,
+				7F473F4B2351143000175CB8 /* URLSessionLayer+DataTests.swift in Sources */,
+				7F092B512513D95A00232DE1 /* HeadMethodTests.swift in Sources */,
 				7FDCDD8024E32F1500856149 /* PublicKeyPinningStrateyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1208,6 +1261,7 @@
 				7FD90EAA23D2532A0043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A224456C6000FD9993 /* Request.swift in Sources */,
 				7FD90EAB23D2532A0043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE93252AC49000C58091 /* Hasher.swift in Sources */,
 				7FD90EAC23D2532A0043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90EAD23D2532A0043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90EAE23D2532A0043B7A2 /* ParameterEncoding.swift in Sources */,
@@ -1252,6 +1306,7 @@
 				7FD90EC923D253360043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A324456C6100FD9993 /* Request.swift in Sources */,
 				7FD90ECA23D253360043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE9B252AC49100C58091 /* Hasher.swift in Sources */,
 				7FD90ECB23D253360043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90ECC23D253360043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90ECD23D253360043B7A2 /* ParameterEncoding.swift in Sources */,
@@ -1296,6 +1351,7 @@
 				7FD90EF523D253980043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A424456C6100FD9993 /* Request.swift in Sources */,
 				7FD90EF623D253980043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE9C252AC49100C58091 /* Hasher.swift in Sources */,
 				7FD90EF723D253980043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90EF823D253980043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90EF923D253980043B7A2 /* ParameterEncoding.swift in Sources */,
@@ -1482,6 +1538,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1546,6 +1603,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1591,7 +1649,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1621,7 +1679,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1694,7 +1752,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-MacOS";
 				PRODUCT_NAME = QuickHatch;
 				SDKROOT = macosx;
@@ -1720,7 +1778,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "DKO.QuickHatch-MacOS";
 				PRODUCT_NAME = QuickHatch;
 				SDKROOT = macosx;

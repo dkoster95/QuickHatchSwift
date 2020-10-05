@@ -1,36 +1,17 @@
 //
-//  URLRequest+AdditionTests.swift
-//  QuickHatch
+//  TraceMethodTests.swift
+//  QuickHatchTests
 //
-//  Created by Daniel Koster on 8/13/19.
-//  Copyright © 2019 DaVinci Labs. All rights reserved.
+//  Created by Daniel Koster on 9/17/20.
+//  Copyright © 2020 DaVinci Labs. All rights reserved.
 //
 
-@testable import QuickHatch
 import XCTest
+import QuickHatch
+
 // swiftlint:disable force_try
 // swiftlint:disable force_cast
-class URLRequest_AdditionTests: URLRequest_MethodTests {
-    
-    func testAddHeader() {
-        var request = URLRequest(url: commonURl, method: .get)
-        request.allHTTPHeaderFields = Headers.defaultHTTPHeaders
-        request.allHTTPHeaderFields!["User-Agent"] = nil
-        request.addHeader(value: "quickhatch", key: "Framework")
-        print(request.allHTTPHeaderFields!)
-        XCTAssertTrue(request.allHTTPHeaderFields!["Framework"] == "quickhatch")
-        XCTAssertTrue(request.allHTTPHeaderFields!["Accept-Encoding"] == "gzip;q=1.0, compress;q=0.5")
-        XCTAssertTrue(request.allHTTPHeaderFields!["Accept-Language"] == "en;q=1.0")
-    }
-    
-    func testAuthenticate() {
-        var request = URLRequest(url: commonURl, method: .get)
-        let auth = MockAuthentication()
-        request = auth.authorize(request: request)
-        print(request.allHTTPHeaderFields!)
-        XCTAssertTrue(request.allHTTPHeaderFields!["Authorization"] == "Auth 12312")
-    }
-    
+class TraceMethodTests: URLRequest_MethodTests {
     // Trace method tests
     
     func testTraceRequest() {
@@ -74,4 +55,5 @@ class URLRequest_AdditionTests: URLRequest_MethodTests {
         XCTAssertTrue(request.allHTTPHeaderFields!["auth"] == "123")
         XCTAssertTrue(request.httpMethod == "TRACE")
     }
+
 }

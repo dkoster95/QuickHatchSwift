@@ -23,10 +23,9 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     func testSerializationError() {
         let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
-        urlSessionLayer.image(urlRequest: urlRequest) {
-            result in
+        urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
@@ -42,14 +41,13 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     func testError() {
         let fakeUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 404))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
-        urlSessionLayer.image(urlRequest: urlRequest) {
-            result in
+        urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(false)
             case .failure(let error):
                 if let requestError = error as? RequestError {
-                    XCTAssert(requestError == .requestWithError(statusCode: .NotFound))
+                    XCTAssert(requestError == .requestWithError(statusCode: .notFound))
                 }
             }
             }.resume()
@@ -59,12 +57,11 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     func testSuccess() {
         let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
-        urlSessionLayer.image(urlRequest: urlRequest) {
-            result in
+        urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(true)
-            case .failure(_):
+            case .failure:
                 XCTAssert(false)
             }
             }.resume()
@@ -73,12 +70,11 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     func testSuccessWithHalfQuality() {
         let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
-        urlSessionLayer.image(urlRequest: urlRequest,quality: 0.5) {
-            result in
+        urlSessionLayer.image(urlRequest: urlRequest,quality: 0.5) { result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(true)
-            case .failure(_):
+            case .failure:
                 XCTAssert(false)
             }
             }.resume()
@@ -87,12 +83,11 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     func testSuccessWith200Quality() {
         let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
-        urlSessionLayer.image(urlRequest: urlRequest,quality: 2) {
-            result in
+        urlSessionLayer.image(urlRequest: urlRequest,quality: 2) { result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTAssert(true)
-            case .failure(_):
+            case .failure:
                 XCTAssert(false)
             }
             }.resume()

@@ -26,7 +26,7 @@ public class PublicKeyPinningStrategy: PinningStrategy {
     
     private func extractKey(serverTrust: SecTrust) -> String? {
         if let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
-            let serverPublicKey = SecCertificateCopyPublicKey(certificate),
+            let serverPublicKey = SecCertificateCopyKey(certificate),
             let publicKeyData = SecKeyCopyExternalRepresentation(serverPublicKey, nil) as Data? {
             return hasher.hash(data: publicKeyData)
         }

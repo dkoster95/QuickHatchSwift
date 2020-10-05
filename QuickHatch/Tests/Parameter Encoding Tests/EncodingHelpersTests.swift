@@ -61,7 +61,7 @@ class EncodingHelpersTests: XCTestCase {
     func testQueryComponentsWithDic() {
         let string = "quickhatch"
         let int = 2
-        let dic = ["string":string,"int":int] as [String: Any]
+        let dic = ["string": string,"int": int] as [String: Any]
         let result = EncodingHelpers.queryComponents(fromKey: "dicValue", value: dic)
         print(result)
         let containsString = !result.filter({

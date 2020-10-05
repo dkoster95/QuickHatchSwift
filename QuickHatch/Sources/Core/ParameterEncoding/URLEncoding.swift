@@ -20,11 +20,9 @@ public struct URLEncoding: ParameterEncoding {
     
     public let destination: ParamDestination
     
-    
     public init(destination: ParamDestination = .methodDependent) {
         self.destination = destination
     }
-    
     
     public func encode(_ urlRequest: URLRequestProtocol, with parameters: Parameters?) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()

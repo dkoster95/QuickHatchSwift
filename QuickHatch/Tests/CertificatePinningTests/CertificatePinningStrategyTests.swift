@@ -25,8 +25,8 @@ class CertificatePinningStrategyTests: XCTestCase {
     }
     
     func testFailureCase() {
-        XCTAssertFalse(subject.validate(serverTrust: CertificatePinnerTestHelpers.fakeChallenge(with: davinciCertificate!).protectionSpace.serverTrust!))
+        let serverTrust = CertificatePinnerTestHelpers.fakeChallenge(with: davinciCertificate!)
+        XCTAssertFalse(subject.validate(serverTrust: serverTrust.protectionSpace.serverTrust!))
     }
 
 }
-
