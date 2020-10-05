@@ -23,6 +23,9 @@ public class CCSHA256Hasher: Hasher {
     }
 }
 
+@available(tvOS 13.0, *)
+@available(watchOSApplicationExtension 6.0, *)
+@available(OSX 10.15, *)
 @available(iOS 13.0, *)
 public class CKSHA256Hasher: Hasher {
     public func hash(data: Data) -> String {
@@ -30,6 +33,9 @@ public class CKSHA256Hasher: Hasher {
     }
 }
 
+@available(tvOS 13.0, *)
+@available(watchOSApplicationExtension 6.0, *)
+@available(OSX 10.15, *)
 @available(iOS 13.0, *)
 extension Digest {
     var bytes: [UInt8] { Array(makeIterator()) }

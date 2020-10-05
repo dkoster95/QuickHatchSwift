@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 public class QHRequestFactory: NetworkRequestFactory {
     
@@ -14,13 +15,10 @@ public class QHRequestFactory: NetworkRequestFactory {
     private var log: Logger?
     private let unauthorizedCode: Int
     
-    public init(urlSession: URLSession, unauthorizedCode: Int = 401) {
+    public init(urlSession: URLSession, unauthorizedCode: Int = 401, logger: Logger? = nil) {
         self.session = urlSession
         self.unauthorizedCode = unauthorizedCode
-    }
-    
-    public func log(with logger: Logger) {
-        log = logger
+        self.log = logger
     }
     
     fileprivate func execIn(dispatch: DispatchQueue, handler:@escaping () -> Void) {
@@ -33,25 +31,6 @@ public class QHRequestFactory: NetworkRequestFactory {
     fileprivate func logRequestData(urlRequest: URLRequest) {
         guard let method = urlRequest.httpMethod, let url = urlRequest.url else { return }
         log?.debug("\(method.uppercased()) \(url.absoluteString)")
-    }
-    
-    public func json(request: URLRequest,
-                     dispatchQueue: DispatchQueue,
-                     completionHandler completion: @escaping (Result<Response<Any>, Error>) -> Void) -> Request {
-        logRequestData(urlRequest: request)
-        return data(request: request, dispatchQueue: dispatchQueue) { (result: Result<Response<Data>,Error>) in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let response):
-                do {
-                    let json = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))
-                    completion(.success(Response(data: json, httpResponse: response.httpResponse)))
-                } catch let decodingError {
-                    completion(Result.failure(RequestError.serializationError(error: decodingError)))
-                }
-            }
-        }
     }
     
     public func data(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping DataCompletionHandler) -> Request {
@@ -75,23 +54,23 @@ public class QHRequestFactory: NetworkRequestFactory {
         }
     }
     
-    public func string(request: URLRequest,
-                       dispatchQueue: DispatchQueue,
-                       completionHandler completion: @escaping (Result<Response<String>, Error>) -> Void) -> Request {
-        logRequestData(urlRequest: request)
-        return data(request: request, dispatchQueue: dispatchQueue) { (result: Result<Response<Data>,Error>) in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let response):
-                guard let stringData = String(data: response.data, encoding: .utf8) else {
-                    completion(.failure(RequestError.serializationError(error: RequestError.malformedRequest)))
-                    return
+    @available(tvOS 13.0, *)
+    @available(watchOSApplicationExtension 6.0, *)
+    @available(iOS 13.0, *)
+    @available(OSX 10.15, *)
+    public func data(request: URLRequest, dispatchQueue: DispatchQueue) -> AnyPublisher<Data,Error> {
+        return session.dataTaskPublisher(for: request)
+            .receive(on: dispatchQueue)
+            .tryMap { response in
+                if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: response.data,
+                                                                                       response: response.response,
+                                                                                       unauthorizedCode: self.unauthorizedCode) {
+                    throw requestError
                 }
-                let response = Response(data: stringData, httpResponse: response.httpResponse)
-                completion(.success(response))
+                return response.data
             }
-        }
+            .mapError { RequestError.map(error: $0) }
+            .eraseToAnyPublisher()
     }
     
     deinit {

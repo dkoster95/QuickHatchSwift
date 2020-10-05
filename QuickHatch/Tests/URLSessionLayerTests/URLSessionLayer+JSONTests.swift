@@ -8,22 +8,28 @@
 
 import XCTest
 import QuickHatch
+import Combine
 
+@available(iOS 13.0, *)
 class URLSessionLayer_JSONTests: URLSessionLayerBase {
-
+    var subscriptions: Set<AnyCancellable> = []
     func testNoResponseErrorJSON() {
         let dataURLSession = URLSessionMock()
         let urlSessionLayer = getURLSessionLayer(urlSession: dataURLSession)
-        urlSessionLayer.json(request: URLRequest(url: URL(fileURLWithPath: ""))) { result in
-            switch result {
-            case .failure(let error):
-                if let reqError = error as? RequestError {
-                    XCTAssert(reqError == RequestError.noResponse)
-                }
-            case .success:
-                XCTAssert(false)
-            }
-            }.resume()
+        let expectation = XCTestExpectation()
+            urlSessionLayer.data(request: URLRequest(url: URL(fileURLWithPath: ""))).sink(receiveCompletion: { completion in
+                                    switch completion {
+                                    case .failure(let error):
+                                        let errorMapped = RequestError.map(error: error)
+                                        XCTAssertEqual(errorMapped, .other(error: NSError(domain: "", code: 2, userInfo: nil)))
+                                        expectation.fulfill()
+                                    case .finished: break
+                                    }
+                                 }, receiveValue: { _ in
+                                    expectation.fulfill()
+                                    XCTAssert(true)
+                                 }).store(in: &subscriptions)
+        wait(for: [expectation], timeout: 1.0)
     }
 
 }

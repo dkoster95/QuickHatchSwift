@@ -31,8 +31,7 @@ class URLSessionLayerBase: XCTestCase {
     }
     
     func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory {
-        let urlSessionLayer = QHRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode)
-        urlSessionLayer.log(with: log)
+        let urlSessionLayer = QHRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode, logger: log)
         return urlSessionLayer
     }
 

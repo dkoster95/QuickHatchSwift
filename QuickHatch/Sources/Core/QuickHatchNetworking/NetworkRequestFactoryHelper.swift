@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkRequestFactoryHelper {
-    static func checkForRequestError(data: Data?, response: URLResponse?, error: Error?, unauthorizedCode: Int) -> RequestError? {
+    static func checkForRequestError(data: Data?, response: URLResponse?, error: Error? = nil, unauthorizedCode: Int) -> RequestError? {
         guard error == nil || !error!.requestWasCancelled else {
             return RequestError.cancelled
         }

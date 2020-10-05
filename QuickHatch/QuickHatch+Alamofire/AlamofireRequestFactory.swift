@@ -16,11 +16,8 @@ public class AlamofireRequestFactory: NetworkRequestFactory {
     private var unauthorizedError: Int = 401
     private var log: Logger?
     
-    public init(alamofireSession: Session) {
+    public init(alamofireSession: Session, logger: Logger? = nil) {
         self.alamofireSession = alamofireSession
-    }
-    
-    public func log(with logger: Logger) {
         self.log = logger
     }
     

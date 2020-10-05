@@ -36,6 +36,9 @@
 		7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */; };
 		7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */; };
 		7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F63235796DC00175CB8 /* CommandTestBase.swift */; };
+		7F4DEE93252AC49000C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
+		7F4DEE9B252AC49100C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
+		7F4DEE9C252AC49100C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
 		7F518D042445F99200E57BE3 /* PollingRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F518D032445F99200E57BE3 /* PollingRequestTests.swift */; };
 		7F518D072445FFF700E57BE3 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F518D052445FA0E00E57BE3 /* DataMock.json */; };
 		7F60037F24DB2E2D00581A43 /* cacert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7F60037E24DB2E2D00581A43 /* cacert.pem */; };
@@ -1258,6 +1261,7 @@
 				7FD90EAA23D2532A0043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A224456C6000FD9993 /* Request.swift in Sources */,
 				7FD90EAB23D2532A0043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE93252AC49000C58091 /* Hasher.swift in Sources */,
 				7FD90EAC23D2532A0043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90EAD23D2532A0043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90EAE23D2532A0043B7A2 /* ParameterEncoding.swift in Sources */,
@@ -1302,6 +1306,7 @@
 				7FD90EC923D253360043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A324456C6100FD9993 /* Request.swift in Sources */,
 				7FD90ECA23D253360043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE9B252AC49100C58091 /* Hasher.swift in Sources */,
 				7FD90ECB23D253360043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90ECC23D253360043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90ECD23D253360043B7A2 /* ParameterEncoding.swift in Sources */,
@@ -1346,6 +1351,7 @@
 				7FD90EF523D253980043B7A2 /* NetworkRequestFactory+Codable.swift in Sources */,
 				7F8617A424456C6100FD9993 /* Request.swift in Sources */,
 				7FD90EF623D253980043B7A2 /* NetworkRequestFactory+Dispatch.swift in Sources */,
+				7F4DEE9C252AC49100C58091 /* Hasher.swift in Sources */,
 				7FD90EF723D253980043B7A2 /* NetworkRequestFactory+Image.swift in Sources */,
 				7FD90EF823D253980043B7A2 /* URLRequestProtocol.swift in Sources */,
 				7FD90EF923D253980043B7A2 /* ParameterEncoding.swift in Sources */,
