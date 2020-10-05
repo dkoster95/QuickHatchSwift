@@ -8,7 +8,8 @@
 
 import XCTest
 import QuickHatch
-
+// swiftlint:disable force_try
+// swiftlint:disable force_cast
 class PollingRequestTests: URLSessionLayerBase {
     
     private var responsesForPolling: [(Data?,Error?,URLResponse?)] {

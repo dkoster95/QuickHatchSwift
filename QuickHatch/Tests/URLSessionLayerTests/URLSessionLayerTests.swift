@@ -8,7 +8,7 @@
 
 import XCTest
 import QuickHatch
-
+// swiftlint:disable force_try
 class URLSessionLayerTests: URLSessionLayerBase {
 
     func testUnauthorizedResponseUsingCodableObject() {

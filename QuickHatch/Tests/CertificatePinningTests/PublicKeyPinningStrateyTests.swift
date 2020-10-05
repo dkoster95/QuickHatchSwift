@@ -10,6 +10,7 @@ import XCTest
 import QuickHatch
 
 class PublicKeyPinningStrateyTests: XCTestCase {
+    // swiftlint:disable line_length
     let publicKey = "MIIBCgKCAQEAmb404aYHtIqxLT0TUcQEvnhEthC6Wm5nsjY00Ae+ErwrlS0a3Ugd/BUCKpAIiBpqy+mTzfd4By8+tDk/WFW/TnynlxQzw9dkGuc4Q1mmApK2CsGafSi5zUXqCPVQ5/lPtvjEQmOnXeC9n+7mt89wgDsAgkIGm4QvqvzBkroXDVyIQqvr5kRadcAp03viXaunGIupobTNdilAUXCzOreLNfilcriNtSHEme/i14BJej5m5Vy5xRpi8iptOpGp+OKmR5M479l1woMdCyDjhsf+cywkVJBG7xxbVO4CloiPnb0Z0wGxUJFGJ7qW55rLT009KVwe+saRWGHImI8Ynp4uYQIDAQAB"
     
     var subject: PublicKeyPinningStrategy!

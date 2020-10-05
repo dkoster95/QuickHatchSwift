@@ -19,7 +19,7 @@ class DataModel: Codable {
         self.age = age
     }
 }
-
+// swiftlint:disable force_try
 extension DataModel {
     static func getMock() -> DataModel {
         let path = Bundle(for: self).path(forResource: "DataMock", ofType: "json")!

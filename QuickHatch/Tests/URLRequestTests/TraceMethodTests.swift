@@ -8,8 +8,10 @@
 
 import XCTest
 import QuickHatch
-class TraceMethodTests: URLRequest_MethodTests {
 
+// swiftlint:disable force_try
+// swiftlint:disable force_cast
+class TraceMethodTests: URLRequest_MethodTests {
     // Trace method tests
     
     func testTraceRequest() {
@@ -48,8 +50,8 @@ class TraceMethodTests: URLRequest_MethodTests {
                                             encoding: JSONEncoding.default,
                                             headers: ["auth": "123"])
         let dicBody = try! JSONSerialization.jsonObject(with: request.httpBody!, options: .allowFragments) as! [String: Any]
-        XCTAssertTrue(dicBody["age"] as! Int == 12)
-        XCTAssertTrue(dicBody["name"] as! String == "quickhatch")
+        XCTAssertTrue(dicBody["age"] as? Int == 12)
+        XCTAssertTrue(dicBody["name"] as? String == "quickhatch")
         XCTAssertTrue(request.allHTTPHeaderFields!["auth"] == "123")
         XCTAssertTrue(request.httpMethod == "TRACE")
     }

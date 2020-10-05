@@ -28,8 +28,8 @@ class LoosyMapperTests: XCTestCase {
     func testToJSONMapping() {
         let objectMapped = LoosyMapper<DataTest>().mapObject(dict: object)
         let toJSON = objectMapped!.toJSON
-        XCTAssert((toJSON["name"] as! String) == "dan")
-        XCTAssert((toJSON["age"] as! Int) == 12)
+        XCTAssert((toJSON["name"] as? String) == "dan")
+        XCTAssert((toJSON["age"] as? Int) == 12)
     }
     
     func testObjectMappingError() {

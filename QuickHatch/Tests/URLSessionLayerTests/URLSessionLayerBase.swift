@@ -20,14 +20,20 @@ class URLSessionLayerBase: XCTestCase {
     
     var getDataModelSample: Data {
         let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
-        return try! JSONEncoder().encode(dataModel)
+        if let encodedData = try? JSONEncoder().encode(dataModel) {
+            return encodedData
+        }
+        return Data()
     }
     
     var getArrayModelSample: Data {
         let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
         let dataModel2 = DataModel(name: "dani", nick: "sp1", age: 13)
         let array = [dataModel,dataModel2]
-        return try! JSONEncoder().encode(array)
+        if let encodedData = try? JSONEncoder().encode(array) {
+            return encodedData
+        }
+        return Data()
     }
     
     func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory {

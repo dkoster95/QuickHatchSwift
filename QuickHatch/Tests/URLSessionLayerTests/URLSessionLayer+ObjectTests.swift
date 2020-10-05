@@ -9,7 +9,7 @@
 import Foundation
 import QuickHatch
 import XCTest
-
+// swiftlint:disable force_try
 class URLSessionLayer_ObjectTests: URLSessionLayerBase {
     
     func testFailureSerializationDataUsingObject() {

@@ -8,7 +8,8 @@
 
 import QuickHatch
 import XCTest
-
+// swiftlint:disable force_try
+// swiftlint:disable force_cast
 class PutMethodTests: URLRequest_MethodTests {
     // PUT methods tests
     

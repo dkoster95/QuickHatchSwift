@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 import QuickHatch
-
+// swiftlint:disable force_try
 class CommandTestBase: XCTestCase {
     func getResponse(statusCode: Int) -> HTTPURLResponse {
         return HTTPURLResponse(url: URL(string: "www.quickhatch.com")!,

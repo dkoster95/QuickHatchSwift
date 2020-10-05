@@ -8,7 +8,8 @@
 
 @testable import QuickHatch
 import XCTest
-
+// swiftlint:disable force_try
+// swiftlint:disable force_cast
 class URLRequest_AdditionTests: URLRequest_MethodTests {
     
     func testAddHeader() {
@@ -68,8 +69,8 @@ class URLRequest_AdditionTests: URLRequest_MethodTests {
                                             encoding: JSONEncoding.default,
                                             headers: ["auth": "123"])
         let dicBody = try! JSONSerialization.jsonObject(with: request.httpBody!, options: .allowFragments) as! [String: Any]
-        XCTAssertTrue(dicBody["age"] as! Int == 12)
-        XCTAssertTrue(dicBody["name"] as! String == "quickhatch")
+        XCTAssertTrue(dicBody["age"] as? Int == 12)
+        XCTAssertTrue(dicBody["name"] as? String == "quickhatch")
         XCTAssertTrue(request.allHTTPHeaderFields!["auth"] == "123")
         XCTAssertTrue(request.httpMethod == "TRACE")
     }
