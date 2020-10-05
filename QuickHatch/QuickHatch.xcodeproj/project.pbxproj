@@ -33,7 +33,7 @@
 		7F473F452350FCF400175CB8 /* ErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F442350FCF400175CB8 /* ErrorsTests.swift */; };
 		7F473F47235101EB00175CB8 /* URLSessionLayer+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */; };
 		7F473F492351021F00175CB8 /* URLSessionLayerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */; };
-		7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */; };
+		7F473F4B2351143000175CB8 /* URLSessionLayer+DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */; };
 		7F473F622357969E00175CB8 /* CommandAuthRefresherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */; };
 		7F473F652357972400175CB8 /* CommandTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F473F63235796DC00175CB8 /* CommandTestBase.swift */; };
 		7F4DEE93252AC49000C58091 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDCDD7D24E301F300856149 /* Hasher.swift */; };
@@ -269,7 +269,7 @@
 		7F473F442350FCF400175CB8 /* ErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsTests.swift; sourceTree = "<group>"; };
 		7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+StringTests.swift"; sourceTree = "<group>"; };
 		7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionLayerBase.swift; sourceTree = "<group>"; };
-		7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+JSONTests.swift"; sourceTree = "<group>"; };
+		7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionLayer+DataTests.swift"; sourceTree = "<group>"; };
 		7F473F612357969E00175CB8 /* CommandAuthRefresherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandAuthRefresherTests.swift; sourceTree = "<group>"; };
 		7F473F63235796DC00175CB8 /* CommandTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTestBase.swift; sourceTree = "<group>"; };
 		7F518D032445F99200E57BE3 /* PollingRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingRequestTests.swift; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 				7FFCD4ED2305FA5A00E731FA /* URLSessionDataTasksTests.swift */,
 				7F473F46235101EB00175CB8 /* URLSessionLayer+StringTests.swift */,
 				7F473F482351021F00175CB8 /* URLSessionLayerBase.swift */,
-				7F473F4A2351143000175CB8 /* URLSessionLayer+JSONTests.swift */,
+				7F473F4A2351143000175CB8 /* URLSessionLayer+DataTests.swift */,
 				7F698C58235A406600978721 /* URLSessionLayer+ObjectTests.swift */,
 				7F518D032445F99200E57BE3 /* PollingRequestTests.swift */,
 			);
@@ -1241,7 +1241,7 @@
 				7FFCD4CE230349E300E731FA /* NetworkSettingsTests.swift in Sources */,
 				7FFCD4EC2305F6B000E731FA /* LoosyMapperTests.swift in Sources */,
 				7FFCD4CB230344B200E731FA /* URLRequest+AdditionTests.swift in Sources */,
-				7F473F4B2351143000175CB8 /* URLSessionLayer+JSONTests.swift in Sources */,
+				7F473F4B2351143000175CB8 /* URLSessionLayer+DataTests.swift in Sources */,
 				7F092B512513D95A00232DE1 /* HeadMethodTests.swift in Sources */,
 				7FDCDD8024E32F1500856149 /* PublicKeyPinningStrateyTests.swift in Sources */,
 			);
