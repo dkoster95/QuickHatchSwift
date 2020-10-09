@@ -10,7 +10,7 @@ import XCTest
 import QuickHatch
 // swiftlint:disable force_try
 // swiftlint:disable force_cast
-class PollingRequestTests: URLSessionLayerBase {
+class PollingRequestTests: QHNetworkRequestFactoryTestCase {
     
     private var responsesForPolling: [(Data?,Error?,URLResponse?)] {
         let mock = DataModel.getMock()

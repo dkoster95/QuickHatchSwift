@@ -9,7 +9,7 @@
 import XCTest
 import QuickHatch
 
-class URLSessionLayerBase: XCTestCase {
+class QHNetworkRequestFactoryTestCase: XCTestCase {
 
     func getResponse(statusCode: Int) -> HTTPURLResponse {
         return HTTPURLResponse(url: URL(string: "www.google.com")!,
@@ -26,6 +26,8 @@ class URLSessionLayerBase: XCTestCase {
         return Data()
     }
     
+    let fakeURLRequest = URLRequest(url: URL(fileURLWithPath: ""))
+    
     var getArrayModelSample: Data {
         let dataModel = DataModel(name: "dan", nick: "sp", age: 12)
         let dataModel2 = DataModel(name: "dani", nick: "sp1", age: 13)
@@ -36,9 +38,13 @@ class URLSessionLayerBase: XCTestCase {
         return Data()
     }
     
-    func getURLSessionLayer(urlSession: URLSession, unauthorizedCode: Int = 401) -> QHRequestFactory {
+    func getURLSessionLayer(urlSession: URLSessionProtocol, unauthorizedCode: Int = 401) -> QHRequestFactory {
         let urlSessionLayer = QHRequestFactory(urlSession: urlSession, unauthorizedCode: unauthorizedCode, logger: log)
         return urlSessionLayer
+    }
+    
+    func getSessionMock(data: Data? = nil, response: URLResponse? = nil, error: Error? = nil) -> URLSessionProtocol {
+        return URLSessionProtocolMock(data: data, error: error ,urlResponse: response)
     }
 
 }

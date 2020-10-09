@@ -9,9 +9,9 @@
 import XCTest
 import QuickHatch
 
-class URLSessionLayer_ImageTests: URLSessionLayerBase {
+class QHNetworkRequestFactory_ImageTests: QHNetworkRequestFactoryTestCase {
     fileprivate var imageData: Data {
-        let bundle = Bundle.init(for: URLSessionLayer_ImageTests.self)
+        let bundle = Bundle.init(for: QHNetworkRequestFactory_ImageTests.self)
         let image = UIImage(named: "swifticon", in: bundle, compatibleWith: nil)
         return image!.pngData()!
     }
@@ -21,7 +21,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     }
 
     func testSerializationError() {
-        let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
+        let fakeUrlSession = URLSessionProtocolMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
         urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
@@ -39,7 +39,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     }
     
     func testError() {
-        let fakeUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 404))
+        let fakeUrlSession = URLSessionProtocolMock(urlResponse: getResponse(statusCode: 404))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
         urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
@@ -55,7 +55,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     }
     
     func testSuccess() {
-        let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
+        let fakeUrlSession = URLSessionProtocolMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
         urlSessionLayer.image(urlRequest: urlRequest) { result in
             switch result {
@@ -68,7 +68,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     }
     
     func testSuccessWithHalfQuality() {
-        let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
+        let fakeUrlSession = URLSessionProtocolMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
         urlSessionLayer.image(urlRequest: urlRequest,quality: 0.5) { result in
             switch result {
@@ -81,7 +81,7 @@ class URLSessionLayer_ImageTests: URLSessionLayerBase {
     }
     
     func testSuccessWith200Quality() {
-        let fakeUrlSession = URLSessionMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
+        let fakeUrlSession = URLSessionProtocolMock(data: self.imageData, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = QHRequestFactory(urlSession: fakeUrlSession)
         urlSessionLayer.image(urlRequest: urlRequest,quality: 2) { result in
             switch result {
