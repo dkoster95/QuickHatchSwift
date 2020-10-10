@@ -11,16 +11,13 @@
 The name of this networkLayer interface in QuickHatch is NetworkRequestFactory :).
 ```swift
 
-public protocol NetworkRequestFactory {
-    func log(with logger: Logger) 
-    func json(request: URLRequest,dispatchQueue: DispatchQueue, completionHandler completion: @escaping AnyCompletionHandler) -> Request
-    func string(request: URLRequest,dispatchQueue: DispatchQueue, completionHandler completion: @escaping StringCompletionHandler) -> Request
+public protocol NetworkRequestFactory { 
     func data(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping DataCompletionHandler) -> Request
+	func data(request: URLRequest, dispatchQueue: DispatchQueue) -> AnyPublisher<Data,Error>
 }	
 ```
 
-As you can see this is a protocol that provides functions to set response to a request based on the type of response you want to deal with.
-It also provides a function to set a logging system. In this case we can deal with ***json***, ***string*** and ***data*** responses.
+The very base protocol of the RequestFactory provides 2 functions to get Data out of a network request, one is using a ***completionHandler*** with a ***Request*** type return and the other one is using ***Combine's AnyPublisher*** if you choose to use Reactive Programming
 
 Now lets say your app is using a MVP (Model-View-Presenter) pattern and you want to use QuickHatch to map your networking layer.
 Lets show a sample of how that would be:
@@ -66,7 +63,7 @@ And now we have the code of our view and the dependency injector:
 ```swift
 	struct DependencyInjector {
 		func initializeSampleView() {
-			let presenter = ViewPresenter(requestFactory: QuickHatchRequestFactory(urlSession: URLSession.shared)
+			let presenter = ViewPresenter(requestFactory: QHRequestFactory(urlSession: URLSession.shared)
 			let sampleView = SampleView(presenter: presenter)
 			application.rootView = sampleView
 		}
