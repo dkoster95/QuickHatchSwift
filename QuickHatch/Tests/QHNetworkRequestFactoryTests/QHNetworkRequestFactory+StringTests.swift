@@ -9,10 +9,10 @@
 import XCTest
 import QuickHatch
 
-class URLSessionLayer_StringTests: URLSessionLayerBase {
+class QHNetworkRequestFactory_StringTests: QHNetworkRequestFactoryTestCase {
 
     func testUnauthorizedResponseUsingStringObject() {
-        let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 404))
+        let unauthorizedUrlSession = URLSessionProtocolMock(urlResponse: getResponse(statusCode: 404))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
         urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
                                                    method: .get)) { (result: Result<Response<String>, Error>) in
@@ -30,7 +30,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     }
     
     func testNoResponseUsingStringObject() {
-        let unauthorizedUrlSession = URLSessionMock(urlResponse: nil)
+        let unauthorizedUrlSession = URLSessionProtocolMock(urlResponse: nil)
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
         urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
                                                    method: .get)) { (result: Result<Response<String>, Error>) in
@@ -48,7 +48,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     }
     
     func testCancelledError() {
-        let dataURLSession = URLSessionMock(error: NSError(domain: "", code: -999, userInfo: nil), urlResponse: getResponse(statusCode: 200))
+        let dataURLSession = URLSessionProtocolMock(error: NSError(domain: "", code: -999, userInfo: nil), urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: dataURLSession)
         urlSessionLayer.string(request: URLRequest(url: URL(fileURLWithPath: ""))) { (result: Result<Response<String>, Error>) in
             switch result {
@@ -63,7 +63,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     }
     
     func testUnknownErrorUsingStringObject() {
-        let unauthorizedUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 524))
+        let unauthorizedUrlSession = URLSessionProtocolMock(urlResponse: getResponse(statusCode: 524))
         let urlSessionLayer = getURLSessionLayer(urlSession: unauthorizedUrlSession)
         urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
                                                    method: .get)) { (result: Result<Response<String>, Error>) in
@@ -81,7 +81,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
     }
     
     func testEmptyDataUsingStringObject() {
-           let fakeUrlSession = URLSessionMock(urlResponse: getResponse(statusCode: 200))
+           let fakeUrlSession = URLSessionProtocolMock(urlResponse: getResponse(statusCode: 200))
            let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
            urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,
                                                       method: .get)) { (result: Result<Response<String>, Error>) in
@@ -99,7 +99,7 @@ class URLSessionLayer_StringTests: URLSessionLayerBase {
        }
     
     func testSuccessFullDataUsingObject() {
-        let fakeUrlSession = URLSessionMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
+        let fakeUrlSession = URLSessionProtocolMock(data: self.getDataModelSample, urlResponse: getResponse(statusCode: 200))
         let urlSessionLayer = getURLSessionLayer(urlSession: fakeUrlSession)
         let expectation = XCTestExpectation()
         urlSessionLayer.string(request: URLRequest(url: URL(string: "www.google.com")!,  method: .get)) { (result: Result<Response<String>, Error>) in

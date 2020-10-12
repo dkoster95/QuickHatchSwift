@@ -11,11 +11,11 @@ import Combine
 
 public class QHRequestFactory: NetworkRequestFactory {
     
-    private let session: URLSession
+    private let session: URLSessionProtocol
     private var log: Logger?
     private let unauthorizedCode: Int
     
-    public init(urlSession: URLSession, unauthorizedCode: Int = 401, logger: Logger? = nil) {
+    public init(urlSession: URLSessionProtocol, unauthorizedCode: Int = 401, logger: Logger? = nil) {
         self.session = urlSession
         self.unauthorizedCode = unauthorizedCode
         self.log = logger
@@ -35,7 +35,7 @@ public class QHRequestFactory: NetworkRequestFactory {
     
     public func data(request: URLRequest, dispatchQueue: DispatchQueue ,completionHandler completion: @escaping DataCompletionHandler) -> Request {
         logRequestData(urlRequest: request)
-        return session.dataTask(with: request) { [weak self] (data: Data?,response: URLResponse?,error: Error?) in
+        return session.task(with: request) { [weak self] (data: Data?,response: URLResponse?,error: Error?) in
             guard let self = self else { return }
             self.execIn(dispatch: dispatchQueue) {
                 if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: data,
@@ -59,7 +59,7 @@ public class QHRequestFactory: NetworkRequestFactory {
     @available(iOS 13.0, *)
     @available(OSX 10.15, *)
     public func data(request: URLRequest, dispatchQueue: DispatchQueue) -> AnyPublisher<Data,Error> {
-        return session.dataTaskPublisher(for: request)
+        return session.taskPublisher(for: request)
             .receive(on: dispatchQueue)
             .tryMap { response in
                 if let requestError = NetworkRequestFactoryHelper.checkForRequestError(data: response.data,

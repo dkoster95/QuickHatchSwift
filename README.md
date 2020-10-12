@@ -3,7 +3,7 @@
 ![](https://github.com/dkoster95/QuickHatchSwift/blob/master/logo.png)
 - **Use an abstract networking layer**
 - **Use a functional module for your requests**
-- **94.3 % Test coverage**
+- **92.4 % Test coverage**
 - **Keep networking simple**
 ---
 
@@ -14,7 +14,8 @@
 	- [Getting started](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/GettingStarted.md)
 	- [Codable extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CodableExtensions.md)
 	- [Image extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/ImageExtension.md)
-	- [Data, String, JSON responses](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Responses.md)
+	- [Data, String responses](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Responses.md)
+	- [Combine Support](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CombineSupport.md)
 	- [Dispatcher extension](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/DispatcherExtension.md)
 	- [Errors](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/Error.md)
 - **URLRequest Additions**:
@@ -26,25 +27,17 @@
 - **Host Environment protocol sample**
 	- [Index](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/HostEnvironment.md)
 - **Authentication protocol**
-	- Index
-
-- **Command Module (functional)**
-	- Build request
-	- Set completion handler
-	- Handle errors
-	- Manage traffic
-	- Authenticate command
-	- Log command data
-	- Dispatcher results on 
-	- Manage response
+	- [Index](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/AuthenticationDoc.md)
+- **Certificate Pinning**
+	- [Index](https://github.com/dkoster95/QuickHatchSwift/blob/master/Docs/CertificatePinning.md)
 ---
 
 ## Requirements
 
-- iOS 11.0+ 
+- iOS 12.0+ 
 - WatchOS 5.0+
 - TvOS 12.0+
-- MacOS 10.10+
+- MacOS 10.14+
 - Xcode 10.2+
 - Swift 5+
 
@@ -56,7 +49,7 @@
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate QuickHatch into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.2"
+git "https://github.com/dkoster95/QuickHatchSwift.git" "1.1.7"
 ```
 Run `carthage update` to build the framework (you can specify the platform) and then drag the executable `QuickHatch.framework` into your Xcode project.
 ## Swift Package Manager
